@@ -98,20 +98,11 @@ final class ScrollArea {
 		if (max == 0) {
 			return;
 		}
-		int shade = 0x0B1712;
-		if (offset > 0.5F) {
-			Draw.vGradient(context, x, y, x + width, y + 8, Draw.fade(0xB0000000 | shade, alpha), shade);
-		}
-		if (offset < max - 0.5F) {
-			Draw.vGradient(context, x, y + height - 8, x + width, y + height, shade, Draw.fade(0xB0000000 | shade, alpha));
-		}
-		int trackX = x + width + 2;
-		context.fill(trackX, y, trackX + 1, y + height, Draw.fade(0x30FFFFFF, alpha));
-		int thumb = Math.max(12, Math.round(height * (height / (float) content)));
+		int trackX = x + width + 4;
+		int thumb = Math.max(10, Math.round(height * (height / (float) content)));
 		int thumbY = y + Math.round((height - thumb) * (offset / max));
-		float strength = 0.45F + 0.55F * activity;
-		context.fill(trackX - 1, thumbY, trackX + 2, thumbY + thumb, Draw.fade(Draw.GOLD_DIM, alpha * strength));
-		context.fill(trackX, thumbY, trackX + 1, thumbY + thumb, Draw.fade(Draw.GOLD, alpha * strength));
+		float strength = 0.25F + 0.5F * activity;
+		context.fill(trackX, thumbY, trackX + 1, thumbY + thumb, Draw.fade(0xFFD9A3B9, alpha * strength));
 	}
 
 	private void clamp() {

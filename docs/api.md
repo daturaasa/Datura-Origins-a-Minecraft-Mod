@@ -51,7 +51,7 @@ Coloque um arquivo em `datura_races/<id>.json` dentro do seu mod. A ordem na lis
 }
 ```
 
-Variantes da mesma raça usam `"variant_of": "<id da base>"` e `"variant_name"`; o painel mostra um seletor entre elas.
+Variantes da mesma raça usam `"variant_of": "<id da base>"`; elas aparecem na lista logo depois da raça base, como raças próprias.
 Tipos novos de poder/habilidade: entrypoint `datura_origins:powers` (`DaturaOriginsPlugin`) chamando `PowerRegistry.registerPowerType`/`registerAbilityType`.
 
 ## Aparência na prévia (cliente)

@@ -6,9 +6,13 @@ import com.datura.origins.fabric.power.EntityFlags;
 import com.datura.origins.fabric.power.JsonParams;
 import com.google.gson.JsonObject;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.boss.dragon.EnderDragonEntity;
+import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.passive.TameableEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -46,7 +50,8 @@ public final class DarkCometAbility implements Ability {
 
 	@Override
 	public boolean activate(ServerPlayerEntity p) {
-		List<LivingEntity> targets = new ArrayList<>(LegendKit.enemies(p, p.getPos(), radius));
+		List<LivingEntity> targets = new ArrayList<>(p.getServerWorld().getEntitiesByClass(LivingEntity.class,
+				p.getBoundingBox().expand(radius), e -> canBind(p, e)));
 		targets.removeIf(e -> e.getPos().squaredDistanceTo(p.getPos()) > radius * radius || !p.canSee(e));
 		targets.sort(Comparator.comparingDouble(e -> e.squaredDistanceTo(p)));
 		if (targets.isEmpty()) {
@@ -59,6 +64,12 @@ public final class DarkCometAbility implements Ability {
 		burst(p.getServerWorld(), p.getPos().add(0, 1, 0), 0.8F);
 		for (int i = 0; i < Math.min(maxTargets, targets.size()); i++) bind(p, targets.get(i));
 		return true;
+	}
+
+	private static boolean canBind(ServerPlayerEntity p, LivingEntity e) {
+		if (e == p || !e.isAlive() || e.isSpectator() || e instanceof ArmorStandEntity || e instanceof EnderDragonEntity) return false;
+		if (e instanceof PlayerEntity other) return !other.isCreative() && p.shouldDamagePlayer(other);
+		return !(e instanceof TameableEntity pet && pet.isOwner(p));
 	}
 
 	private static void burst(ServerWorld w, Vec3d at, float size) {

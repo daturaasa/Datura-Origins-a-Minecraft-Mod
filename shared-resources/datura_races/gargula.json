@@ -1,28 +1,28 @@
 {
 	"id": "gargula",
 	"order": 18,
-	"name": "Gárgula",
+	"name": "race.datura_origins.gargula.name",
 	"color": "#8A8F99",
 	"model": "asas_gargula",
-	"description": "Estátua que a magia acordou. A carne é pedra, o sangue é encanto e, mesmo de pedra, ela voa de verdade com as próprias asas. Não come nem bebe: quando precisa de forças, fica imóvel e volta a ser estátua até o corpo se refazer.",
+	"description": "race.datura_origins.gargula.description",
 	"advantages": [
-		"Mesma vida de um humano, mas com 8 de armadura natural, 3 de resistência e 2 a mais de dano.",
-		"Voa com as próprias asas, rápida como uma élitra com foguete: no ar, aperte pular de novo para levantar voo. Segure agachar para planar sem impulso.",
-		"Parada no chão por 5 segundos, vira estátua e recupera vida e fome.",
-		"Imune a empurrões e ao fogo, e não se afoga.",
-		"Pele de Pedra: golpes de mais de 5 corações perdem 3 corações de dano.",
-		"Guardiã da noite: à noite causa 2 a mais de dano.",
-		"Olhos de pedra: enxerga no escuro."
+		"race.datura_origins.gargula.advantage.0",
+		"race.datura_origins.gargula.advantage.1",
+		"race.datura_origins.gargula.advantage.2",
+		"race.datura_origins.gargula.advantage.3",
+		"race.datura_origins.gargula.advantage.4",
+		"race.datura_origins.gargula.advantage.5",
+		"race.datura_origins.gargula.advantage.6"
 	],
 	"disadvantages": [
-		"Não consegue comer nada (em compensação, a fome cai bem devagar).",
-		"Afunda na água e não sabe nadar.",
-		"Sob o sol a pedra pesa: de dia anda 10% mais devagar."
+		"race.datura_origins.gargula.disadvantage.0",
+		"race.datura_origins.gargula.disadvantage.1",
+		"race.datura_origins.gargula.disadvantage.2"
 	],
 	"ability": {
 		"type": "datura_origins:meteor",
-		"name": "Meteoro",
-		"description": "Salta altíssimo, vira pedra e despenca: o impacto causa até 16 de dano num raio de 4,5 blocos e arremessa os inimigos para longe. Não toma dano de queda. Recarga de 37,5 segundos.",
+		"name": "race.datura_origins.gargula.ability.name",
+		"description": "race.datura_origins.gargula.ability.description",
 		"cooldown": 750,
 		"launch": 1.9,
 		"fall": 2.6,

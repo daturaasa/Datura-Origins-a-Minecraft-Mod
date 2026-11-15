@@ -9,11 +9,9 @@
 		"EntityRenderDispatcherMixin",
 		"HeldItemRendererMixin",
 		"InGameHudMixin",
-		"LivingEntityInvoker",
 		"LivingEntityRendererMixin",
 		"MinecraftClientMixin",
-		"PlayerEntityRendererMixin",
-		"PlayerJumpMixin"
+		"PlayerEntityRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

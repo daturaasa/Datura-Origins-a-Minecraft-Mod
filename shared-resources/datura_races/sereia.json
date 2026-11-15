@@ -1,28 +1,28 @@
 {
 	"id": "sereia",
 	"order": 13,
-	"name": "Sereia",
-	"variant_name": "Encantada",
+	"name": "race.datura_origins.sereia.name",
+	"variant_name": "race.datura_origins.sereia.variant",
 	"color": "#6FE3FF",
 	"model": "cauda_sereia",
-	"description": "Filha do mar, de escamas brilhantes e voz que acalma tempestades. Gentil com quem respeita o oceano, protege os amigos com o próprio canto. Na água é quase imbatível, mas em terra depende dos outros para chegar longe.",
+	"description": "race.datura_origins.sereia.description",
 	"advantages": [
-		"Respira debaixo d'água, nada como um golfinho (graça do golfinho e poder do conduíte) e enxerga bem no fundo do mar.",
-		"Também respira fora d'água normalmente.",
-		"Na água causa 7 a mais de dano, ganha 8 de armadura e 5 corações a mais, ataca 30% mais rápido e regenera meio coração por segundo.",
-		"Debaixo d'água quebra blocos na velocidade normal."
+		"race.datura_origins.sereia.advantage.0",
+		"race.datura_origins.sereia.advantage.1",
+		"race.datura_origins.sereia.advantage.2",
+		"race.datura_origins.sereia.advantage.3"
 	],
 	"disadvantages": [
-		"Fora d'água não anda: só se arrasta devagar. Se ficar parada por 3 segundos, senta na própria cauda.",
-		"Escamas secas: depois de 60 segundos longe da água e da chuva, fica lenta e fraca até se molhar de novo.",
-		"Fora d'água tem só 9 corações.",
-		"O fogo causa o dobro de dano.",
-		"A cauda não deixa usar calças nem botas."
+		"race.datura_origins.sereia.disadvantage.0",
+		"race.datura_origins.sereia.disadvantage.1",
+		"race.datura_origins.sereia.disadvantage.2",
+		"race.datura_origins.sereia.disadvantage.3",
+		"race.datura_origins.sereia.disadvantage.4"
 	],
 	"ability": {
 		"type": "datura_origins:tidal_song",
-		"name": "Canto das Marés",
-		"description": "Canta por 12 segundos. Os monstros num raio de 16 blocos esquecem o alvo, ficam lentos e fracos e são puxados devagar até ela. Os aliados por perto recuperam 1,5 coração por segundo e ganham respiração aquática. Recarga de 45 segundos.",
+		"name": "race.datura_origins.sereia.ability.name",
+		"description": "race.datura_origins.sereia.ability.description",
 		"cooldown": 900,
 		"radius": 16,
 		"duration": 240,

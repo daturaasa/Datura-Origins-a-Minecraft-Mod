@@ -1,25 +1,25 @@
 {
 	"id": "orc",
 	"order": 14,
-	"name": "Orc",
+	"name": "race.datura_origins.orc.name",
 	"color": "#5E8C3A",
-	"description": "Guerreiro da horda, de pele verde e olhar feroz, criado entre cicatrizes e fogueiras de guerra. Não é sutil nem esperto, mas bate como ninguém e aguenta o tranco. Quando pisa com força, o chão inteiro responde.",
+	"description": "race.datura_origins.orc.description",
 	"advantages": [
-		"Brutamontes: 13 corações e 3 a mais de dano.",
-		"Couro grosso: 3 de armadura natural e recebe 30% menos empurrão.",
-		"Estômago de ferro: imune a veneno e fome.",
-		"Um pouco maior que um humano.",
-		"Açougueiro: animais abatidos por ele deixam o dobro de carne e couro."
+		"race.datura_origins.orc.advantage.0",
+		"race.datura_origins.orc.advantage.1",
+		"race.datura_origins.orc.advantage.2",
+		"race.datura_origins.orc.advantage.3",
+		"race.datura_origins.orc.advantage.4"
 	],
 	"disadvantages": [
-		"Mente simples: ganha 25% menos experiência.",
-		"Malvisto: os aldeões cobram mais caro.",
-		"Pesado: anda 5% mais devagar."
+		"race.datura_origins.orc.disadvantage.0",
+		"race.datura_origins.orc.disadvantage.1",
+		"race.datura_origins.orc.disadvantage.2"
 	],
 	"ability": {
 		"type": "datura_origins:stomp",
-		"name": "Pisão",
-		"description": "Ergue o pé e desce com todo o peso: a onda de choque joga para cima tudo num raio de 4 blocos e causa até 7 de dano. Recarga de 18 segundos.",
+		"name": "race.datura_origins.orc.ability.name",
+		"description": "race.datura_origins.orc.ability.description",
 		"cooldown": 360,
 		"radius": 4,
 		"damage": 7.0,

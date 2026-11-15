@@ -5,7 +5,7 @@ import sys
 
 FACES = ("north", "south", "east", "west", "up", "down")
 STATE_ANIMATIONS = {"swim", "swim_idle", "swim_fast", "crawl", "sit_down", "sit_idle", "fly", "rest"}
-OPTIONS = {"hide_legs", "static"}
+OPTIONS = {"hide_legs", "static", "pulse"}
 INTERPOLATION = {"linear": 1, "step": 2}
 
 
@@ -124,6 +124,8 @@ def convert(path, out_root, name=None, options=()):
              "bones": bones, "animations": animations}
     if "hide_legs" in options:
         model["hide"] = ["legs"]
+    if "pulse" in options:
+        model["pulse"] = True
     models_dir = os.path.join(out_root, "assets", "datura_origins", "models", "part")
     textures_dir = os.path.join(out_root, "assets", "datura_origins", "textures", "entity", "part")
     os.makedirs(models_dir, exist_ok=True)

@@ -1,31 +1,31 @@
 {
 	"id": "dama_cogumelo",
 	"order": 9,
-	"name": "Dama Cogumelo",
+	"name": "race.datura_origins.dama_cogumelo.name",
 	"variant_of": "driade",
-	"variant_name": "Dama Cogumelo",
+	"variant_name": "race.datura_origins.dama_cogumelo.variant",
 	"color": "#B066FF",
 	"model": "chapeu_amanita",
-	"description": "Uma dríade que cresceu na sombra úmida das florestas, onde a luz quase não chega. Em vez de flores, carrega um chapéu de amanita e um caldeirão de esporos venenosos. Quando está à beira da morte, um cogumelo gigante brota da terra e a ergue para longe do perigo.",
+	"description": "race.datura_origins.dama_cogumelo.description",
 	"advantages": [
-		"Meio bloco mais alta que um humano, com 2 corações a mais e 2 de armadura natural.",
-		"Dentro dos próprios esporos não sofre nada: ganha um escudo de 2 corações e se cura.",
-		"Imune a veneno e decomposição.",
-		"Criatura da sombra: à noite causa 2 a mais de dano.",
-		"Raízes firmes: recebe 40% menos empurrão."
+		"race.datura_origins.dama_cogumelo.advantage.0",
+		"race.datura_origins.dama_cogumelo.advantage.1",
+		"race.datura_origins.dama_cogumelo.advantage.2",
+		"race.datura_origins.dama_cogumelo.advantage.3",
+		"race.datura_origins.dama_cogumelo.advantage.4"
 	],
 	"disadvantages": [
-		"O sol a resseca: de dia causa 1 a menos de dano.",
-		"Não come carne.",
-		"O fogo causa o dobro de dano."
+		"race.datura_origins.dama_cogumelo.disadvantage.0",
+		"race.datura_origins.dama_cogumelo.disadvantage.1",
+		"race.datura_origins.dama_cogumelo.disadvantage.2"
 	],
 	"passives": [
-		"Cogumelo de Emergência: ao cair para 4 corações, solta uma explosão de esporos que fere e empurra os inimigos, um cogumelo gigante brota do chão e a leva para o topo, regenerando vida por 10 s. O cogumelo some depois de 30 s. Recarga de 5 minutos."
+		"race.datura_origins.dama_cogumelo.passive.0"
 	],
 	"ability": {
 		"type": "datura_origins:toxic_cauldron",
-		"name": "Caldeirão Venenoso",
-		"description": "Arremessa um caldeirão em arco. Onde cai, ele fica no chão por 10 s soltando uma nuvem de esporos de até 8 blocos: quem está dentro fica envenenado, fraco, tonto e brilhando através das paredes, e perde meio coração por segundo. Recarga de 30 segundos.",
+		"name": "race.datura_origins.dama_cogumelo.ability.name",
+		"description": "race.datura_origins.dama_cogumelo.ability.description",
 		"cooldown": 600,
 		"speed": 1.15,
 		"radius": 8,

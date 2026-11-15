@@ -1,34 +1,34 @@
 {
 	"id": "kitsune",
 	"order": 20,
-	"name": "Kitsune",
-	"variant_name": "Celestial",
+	"name": "race.datura_origins.kitsune.name",
+	"variant_name": "race.datura_origins.kitsune.variant",
 	"color": "#BDE7FF",
 	"model": [
 		"caudas_kitsune",
 		"orelhas_raposa_branca"
 	],
-	"description": "Uma raposa que viveu mil anos e ganhou nove caudas brancas como a neve. Mensageira dos santuários, guarda uma pérola estelar que a traz de volta da morte, e suas chamas-fantasma queimam e congelam quem ela caça.",
+	"description": "race.datura_origins.kitsune.description",
 	"advantages": [
-		"Ágil: 2 corações a mais, 1,5 a mais de dano, corre 18% mais rápido e pula mais alto.",
-		"Olhos de raposa: visão noturna, e a sorte sempre a acompanha.",
-		"Não toma dano de queda.",
-		"Fogo de raposa e gelo espiritual: os golpes queimam e congelam, e ela é imune ao gelo.",
-		"Patas leves: anda sobre a neve fofa sem afundar.",
-		"As raposas a tratam como uma delas."
+		"race.datura_origins.kitsune.advantage.0",
+		"race.datura_origins.kitsune.advantage.1",
+		"race.datura_origins.kitsune.advantage.2",
+		"race.datura_origins.kitsune.advantage.3",
+		"race.datura_origins.kitsune.advantage.4",
+		"race.datura_origins.kitsune.advantage.5"
 	],
 	"disadvantages": [
-		"Caudas encharcadas: 30% mais lenta na água.",
-		"Explosões causam 50% mais dano.",
-		"Criatura da noite: de dia causa 1 a menos de dano."
+		"race.datura_origins.kitsune.disadvantage.0",
+		"race.datura_origins.kitsune.disadvantage.1",
+		"race.datura_origins.kitsune.disadvantage.2"
 	],
 	"passives": [
-		"Pérola Estelar: ao morrer, volta de pé com 1 coração, empurrando e ferindo quem estiver perto (a cada 10 minutos)."
+		"race.datura_origins.kitsune.passive.0"
 	],
 	"ability": {
 		"type": "datura_origins:spirit_orb",
-		"name": "Orbe Espiritual",
-		"description": "Lança uma esfera de mana azul na direção da mira. Se acertar uma criatura, explode, causa 5 de dano e congela os inimigos em volta, depois volta para a Kitsune e explode de novo ao chegar. Se não acertar ninguém, só volta. Recarga de 9 segundos.",
+		"name": "race.datura_origins.kitsune.ability.name",
+		"description": "race.datura_origins.kitsune.ability.description",
 		"cooldown": 180,
 		"range": 14,
 		"speed": 1.1,

@@ -1,27 +1,31 @@
 {
 	"id": "dragao",
 	"order": 7,
-	"name": "Dragão",
+	"name": "race.datura_origins.dragao.name",
 	"color": "#E2593A",
-	"model": "cauda_vermelha",
-	"description": "Um dragão em corpo de gente. Cresce, fica mais forte e mais resistente conforme mata monstros.",
+	"model": [
+		"cauda_vermelha",
+		"chifres_dragao"
+	],
+	"description": "race.datura_origins.dragao.description",
 	"advantages": [
-		"Couraça natural igual a uma armadura de ferro completa. Ela fica mais dura e o corpo ganha mais corações a cada estágio de maturidade.",
-		"Mais forte que um humano: o dano dos golpes sobe a cada estágio.",
-		"Imune a fogo e lava, e recupera vida dentro das chamas. O fogo não gruda no corpo.",
-		"Não sofre repulsão (knockback).",
-		"Cresce matando monstros: cada estágio de maturidade deixa o corpo maior e mais forte."
+		"race.datura_origins.dragao.advantage.0",
+		"race.datura_origins.dragao.advantage.1",
+		"race.datura_origins.dragao.advantage.2",
+		"race.datura_origins.dragao.advantage.3",
+		"race.datura_origins.dragao.advantage.4"
 	],
 	"disadvantages": [
-		"Não pode usar armaduras: são pequenas demais para ele.",
-		"Só come carne.",
-		"Precisa de espaço: com menos de 6 blocos livres acima, fica lento, treme e sente mais fome.",
-		"Não ganha experiência: no lugar dela, a barra mostra a maturidade."
+		"race.datura_origins.dragao.disadvantage.0",
+		"race.datura_origins.dragao.disadvantage.1",
+		"race.datura_origins.dragao.disadvantage.2",
+		"race.datura_origins.dragao.disadvantage.3",
+		"race.datura_origins.dragao.disadvantage.4"
 	],
 	"ability": {
 		"type": "datura_origins:fireball",
-		"name": "Bola de Fogo",
-		"description": "Dispara uma bola de fogo que explode com a força de uma TNT, incendeia quem estiver perto e o chão em volta. O dano cresce com a maturidade. Recarga de 15 segundos.",
+		"name": "race.datura_origins.dragao.ability.name",
+		"description": "race.datura_origins.dragao.ability.description",
 		"cooldown": 300,
 		"speed": 1.6,
 		"life": 50,
@@ -56,8 +60,8 @@
 			"type": "datura_origins:attribute",
 			"attribute": "minecraft:generic.scale",
 			"maturity_range": [
-				0.389,
-				0.944
+				0.667,
+				1.222
 			],
 			"smooth": true,
 			"smooth_step": 0.02,

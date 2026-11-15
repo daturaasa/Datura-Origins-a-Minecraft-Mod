@@ -60,7 +60,6 @@ import com.datura.origins.fabric.power.types.MarkerPower;
 import com.datura.origins.fabric.power.types.MaturityPower;
 import com.datura.origins.fabric.power.types.MonsterTrucePower;
 import com.datura.origins.fabric.power.types.MoonMarkPower;
-import com.datura.origins.fabric.power.types.MountainLeapPower;
 import com.datura.origins.fabric.power.types.NatureOathPower;
 import com.datura.origins.fabric.power.types.NoArmorPower;
 import com.datura.origins.fabric.power.types.NoHungerPower;
@@ -165,7 +164,6 @@ public final class PowerRegistry {
 		registerPowerType(DaturaOriginsMod.id("aquatic"), AquaticPower::new);
 		registerPowerType(DaturaOriginsMod.id("butcher"), ButcherPower::new);
 		registerPowerType(DaturaOriginsMod.id("sleep_altitude"), SleepAltitudePower::new);
-		registerPowerType(DaturaOriginsMod.id("mountain_leap"), MountainLeapPower::new);
 		registerPowerType(DaturaOriginsMod.id("soul_harvest"), SoulHarvestPower::new);
 		registerPowerType(DaturaOriginsMod.id("desperate_regeneration"), DesperateRegenPower::new);
 		registerPowerType(DaturaOriginsMod.id("enchanted_weakness"), EnchantWeaknessPower::new);

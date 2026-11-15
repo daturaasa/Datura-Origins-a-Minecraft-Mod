@@ -1,27 +1,27 @@
 {
 	"id": "elfo_noturno",
 	"order": 4,
-	"name": "Elfo Noturno",
+	"name": "race.datura_origins.elfo_noturno.name",
 	"color": "#9B5CFF",
-	"description": "Elfo que trocou o sol pelas sombras. Assassino silencioso que caça quando a lua sobe e some na escuridão num piscar.",
+	"description": "race.datura_origins.elfo_noturno.description",
 	"advantages": [
-		"À noite causa 2 a mais de dano e fica 15% mais rápido.",
-		"Passos silenciosos, de dia e de noite.",
-		"Visão noturna permanente.",
-		"Cai de 3 blocos a mais sem se machucar.",
-		"Seus golpes causam decomposição (Wither) por 3 segundos.",
-		"Ganha 25% mais experiência."
+		"race.datura_origins.elfo_noturno.advantage.0",
+		"race.datura_origins.elfo_noturno.advantage.1",
+		"race.datura_origins.elfo_noturno.advantage.2",
+		"race.datura_origins.elfo_noturno.advantage.3",
+		"race.datura_origins.elfo_noturno.advantage.4",
+		"race.datura_origins.elfo_noturno.advantage.5"
 	],
 	"disadvantages": [
-		"De dia causa 1,5 a menos de dano.",
-		"Só tem 9 corações.",
-		"O fogo causa 50% a mais de dano.",
-		"Os animais fogem dele."
+		"race.datura_origins.elfo_noturno.disadvantage.0",
+		"race.datura_origins.elfo_noturno.disadvantage.1",
+		"race.datura_origins.elfo_noturno.disadvantage.2",
+		"race.datura_origins.elfo_noturno.disadvantage.3"
 	],
 	"ability": {
 		"type": "datura_origins:shadow_step",
-		"name": "Passo Sombrio",
-		"description": "Some em sombra e reaparece em qualquer chão firme que estiver olhando, até 32 blocos, ficando invisível por 3 segundos. Nunca atravessa paredes. Recarga de 12 segundos.",
+		"name": "race.datura_origins.elfo_noturno.ability.name",
+		"description": "race.datura_origins.elfo_noturno.ability.description",
 		"cooldown": 240,
 		"range": 32,
 		"invis": 60

@@ -1,36 +1,36 @@
 {
 	"id": "driade",
 	"order": 9,
-	"name": "Dríade",
-	"variant_name": "Dríade",
+	"name": "race.datura_origins.driade.name",
+	"variant_name": "race.datura_origins.driade.variant",
 	"color": "#6FBF5A",
 	"model": "chifres_galhos",
 	"nether_suppressed": true,
-	"description": "Ninfa da natureza, nascida da seiva e do orvalho. Onde ela pisa as plantas crescem e os bichos a tratam como parte da floresta. Mas o fogo a consome, o Nether a queima viva e a própria floresta pune a dríade que derrubar uma árvore.",
+	"description": "race.datura_origins.driade.description",
 	"advantages": [
-		"Meio bloco mais alta que um humano, com 2 corações a mais e 4 de armadura natural.",
-		"Fotossíntese: sob o sol regenera vida e a fome se enche sozinha.",
-		"Plantações e plantas por perto crescem sozinhas, e bem mais rápido quando ela fica parada perto delas.",
-		"Em florestas causa 2 a mais de dano.",
-		"Imune a veneno, decomposição e aos espinhos de arbustos de frutas.",
-		"Raízes firmes: recebe metade do empurrão.",
-		"Os animais não a atacam e não fogem dela."
+		"race.datura_origins.driade.advantage.0",
+		"race.datura_origins.driade.advantage.1",
+		"race.datura_origins.driade.advantage.2",
+		"race.datura_origins.driade.advantage.3",
+		"race.datura_origins.driade.advantage.4",
+		"race.datura_origins.driade.advantage.5",
+		"race.datura_origins.driade.advantage.6"
 	],
 	"disadvantages": [
-		"Não come carne.",
-		"À noite causa 1 a menos de dano.",
-		"Quebrar um tronco de árvore é traição: a floresta a mata na hora.",
-		"No deserto e nas terras áridas fica 20% mais lenta.",
-		"O fogo causa o dobro de dano, e no Nether ela pega fogo.",
-		"No Nether perde todas as vantagens e a habilidade (tudo volta ao sair)."
+		"race.datura_origins.driade.disadvantage.0",
+		"race.datura_origins.driade.disadvantage.1",
+		"race.datura_origins.driade.disadvantage.2",
+		"race.datura_origins.driade.disadvantage.3",
+		"race.datura_origins.driade.disadvantage.4",
+		"race.datura_origins.driade.disadvantage.5"
 	],
 	"passives": [
-		"Ao morrer, flores brotam pelo chão ao redor."
+		"race.datura_origins.driade.passive.0"
 	],
 	"ability": {
 		"type": "datura_origins:natural_growth",
-		"name": "Florescer",
-		"description": "Solta uma onda de energia num raio de 20 blocos: mudas viram árvores, plantações amadurecem e as plantas crescem na hora. A onda também empurra para longe as criaturas que estiverem a até 8 blocos dela. Recarga de 5 minutos.",
+		"name": "race.datura_origins.driade.ability.name",
+		"description": "race.datura_origins.driade.ability.description",
 		"cooldown": 6000,
 		"radius": 20,
 		"height": 8,

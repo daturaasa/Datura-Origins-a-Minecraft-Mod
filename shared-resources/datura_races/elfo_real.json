@@ -1,29 +1,29 @@
 {
 	"id": "elfo_real",
 	"order": 3,
-	"name": "Elfo Real",
+	"name": "race.datura_origins.elfo_real.name",
 	"color": "#FFD45E",
-	"description": "Elfo da linhagem real, criado entre ouro, honra e magia antiga. Um pouco mais alto que um humano, protegido por uma égide dourada.",
+	"description": "race.datura_origins.elfo_real.description",
 	"advantages": [
-		"12% mais rápido e cai de 3 blocos a mais sem se machucar.",
-		"+2 de armadura natural.",
-		"Flechas e outros projéteis causam 50% a mais de dano.",
-		"Ganha 25% mais experiência.",
-		"Visão noturna permanente.",
-		"Os animais não fogem dele.",
-		"Égide Dourada: a cada 60 segundos ganha um contorno dourado que anula o próximo ataque. Se for corpo a corpo, o atacante e quem estiver perto são arremessados. Se for projétil ou habilidade lançada, ele se teletransporta antes do impacto (e cai devagar se surgir no ar)."
+		"race.datura_origins.elfo_real.advantage.0",
+		"race.datura_origins.elfo_real.advantage.1",
+		"race.datura_origins.elfo_real.advantage.2",
+		"race.datura_origins.elfo_real.advantage.3",
+		"race.datura_origins.elfo_real.advantage.4",
+		"race.datura_origins.elfo_real.advantage.5",
+		"race.datura_origins.elfo_real.advantage.6"
 	],
 	"disadvantages": [
-		"Só tem 9 corações e causa 1 a menos de dano corpo a corpo.",
-		"Explosões causam 50% a mais de dano.",
-		"Quando a queda machuca, machuca 50% mais.",
-		"Recusa carne podre, olho de aranha e batata venenosa.",
-		"A fome cai 25% mais rápido."
+		"race.datura_origins.elfo_real.disadvantage.0",
+		"race.datura_origins.elfo_real.disadvantage.1",
+		"race.datura_origins.elfo_real.disadvantage.2",
+		"race.datura_origins.elfo_real.disadvantage.3",
+		"race.datura_origins.elfo_real.disadvantage.4"
 	],
 	"ability": {
 		"type": "datura_origins:mirror_shield",
-		"name": "Égide Espelhada",
-		"description": "Abre à frente um círculo rúnico dourado por 3 segundos. Todo golpe de um inimigo nesse tempo é anulado e devolvido a ele. Enquanto o escudo está aberto, anda devagar e não ataca. Recarga de 30 segundos.",
+		"name": "race.datura_origins.elfo_real.ability.name",
+		"description": "race.datura_origins.elfo_real.ability.description",
 		"cooldown": 600,
 		"duration": 60,
 		"reflect": 1.0

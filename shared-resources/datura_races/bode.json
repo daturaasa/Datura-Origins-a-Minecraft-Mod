@@ -1,31 +1,31 @@
 {
 	"id": "bode",
 	"order": 15,
-	"name": "Bode",
+	"name": "race.datura_origins.bode.name",
 	"color": "#C9B48A",
 	"model": "chifres_espiral",
-	"description": "Sátiro das montanhas que herdou tudo do bode: cascos firmes, lã grossa e chifres curvos. Vive nos picos nevados, onde nenhum tombo o assusta e nenhum frio o alcança. Teimoso e incansável, só descansa lá no alto, perto do céu.",
+	"description": "race.datura_origins.bode.description",
 	"advantages": [
-		"4 de armadura natural, com a mesma força e vida de um humano.",
-		"Não toma dano de queda.",
-		"Anda 10% mais rápido e a fome cai mais devagar.",
-		"Os cascos andam sobre neve fofa e blocos de magma sem se ferir.",
-		"A lã protege do frio e do calor: imune a congelar, e o fogo fere 40% menos.",
-		"Filho das alturas: acima da altura 100 causa 2 a mais de dano."
+		"race.datura_origins.bode.advantage.0",
+		"race.datura_origins.bode.advantage.1",
+		"race.datura_origins.bode.advantage.2",
+		"race.datura_origins.bode.advantage.3",
+		"race.datura_origins.bode.advantage.4",
+		"race.datura_origins.bode.advantage.5"
 	],
 	"disadvantages": [
-		"Fica 25% mais lento em desertos.",
-		"Só come vegetais, e cada alimento enche 40% menos.",
-		"Só consegue dormir no alto (acima da altura 100).",
-		"Lã encharcada: 30% mais lento dentro da água."
+		"race.datura_origins.bode.disadvantage.0",
+		"race.datura_origins.bode.disadvantage.1",
+		"race.datura_origins.bode.disadvantage.2",
+		"race.datura_origins.bode.disadvantage.3"
 	],
 	"passives": [
-		"Salto da Montanha: segure a tecla de pular para agachar e carregar; ao soltar, salta até 30 blocos de altura conforme a carga. Um toque rápido faz um pulo normal."
+		"race.datura_origins.bode.passive.0"
 	],
 	"ability": {
 		"type": "datura_origins:headbutt",
-		"name": "Chifrada",
-		"description": "Avança de cabeça e arremessa para bem longe o primeiro alvo à frente, causando 2 de dano. Recarga de 10,5 segundos.",
+		"name": "race.datura_origins.bode.ability.name",
+		"description": "race.datura_origins.bode.ability.description",
 		"cooldown": 210,
 		"range": 3.5,
 		"damage": 2,
@@ -120,10 +120,10 @@
 			"when": "water"
 		},
 		{
-			"type": "datura_origins:mountain_leap",
-			"max_charge": 40,
-			"max_height": 30,
-			"forward": 0.6
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.jump_strength",
+			"operation": "add_value",
+			"amount": 0.505
 		}
 	]
 }

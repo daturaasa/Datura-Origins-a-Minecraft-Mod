@@ -1,12 +1,15 @@
 package com.datura.origins.fabric.client.gui;
 
+import com.datura.origins.DaturaOrigins;
 import com.datura.origins.fabric.client.ClientOrigin;
 import com.datura.origins.fabric.client.model.RaceModels;
+import com.datura.origins.fabric.client.preview.PreviewFrame;
 import com.datura.origins.fabric.client.preview.RacePreviews;
 import com.datura.origins.fabric.network.ChooseOriginPayload;
 import com.datura.origins.race.Race;
 import com.datura.origins.race.RaceRegistry;
 import com.datura.origins.race.RomanNumerals;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
@@ -15,18 +18,25 @@ import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.OrderedText;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.Language;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.MathHelper;
 import org.lwjgl.glfw.GLFW;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class OriginSelectionScreen extends Screen {
-	private static final int ROW_HEIGHT = 18;
-	private static final int PANEL_PAD = 8;
-	private static final long DETAIL_FADE_MS = 280L;
+	private static final Identifier SHADOW = Identifier.of(DaturaOrigins.MOD_ID, "textures/gui/shadow.png");
+	private static final int ROW_HEIGHT = 15;
+	private static final long DETAIL_FADE_MS = 320L;
+
+	static final int ROSE = 0xFFE3B3C6;
+	static final int ROSE_DIM = 0xFF9C7787;
+	static final int INK = 0xFFDCD6D3;
+	static final int INK_SOFT = 0xFFA7ADA8;
+	static final int INK_FAINT = 0xFF7B847E;
+	static final int INK_BRIGHT = 0xFFF6EFEC;
 
 	private final Backdrop backdrop = new Backdrop(Backdrop.SELECTION);
 	private final boolean fromIntro;
@@ -34,31 +44,23 @@ public class OriginSelectionScreen extends Screen {
 	private final ScrollArea list = new ScrollArea();
 	private final ScrollArea details = new ScrollArea();
 
-	private static final int FORM_BAR = 20;
-
 	private List<Race> races = List.of();
-	private List<Race> forms = List.of();
-	private int formIndex;
-	private float[] formHover = new float[0];
-	private int formY0, formY1;
-	private Race chosenBase;
 	private float[] rowHover = new float[0];
 	private int selected;
 	private long changedAt = openedAt;
 	private Details layout = Details.EMPTY;
 
-	private int leftX0, leftX1, rightX0, rightX1, panelTop, panelBottom;
-	private int centerX0, centerX1;
+	private int areaTop, areaBottom;
+	private int listX0, listX1;
+	private int detailX0, detailX1;
+	private int modelX0, modelX1;
 	private int buttonX0, buttonX1, buttonY0, buttonY1;
-	private int headerY;
-	private int titleScale;
 	private float buttonHover;
 
 	private float yaw = 22.0F;
 	private float pitch;
 	private boolean dragging;
 	private boolean dragged;
-	private long lastInteraction = openedAt;
 	private long lastFrame = openedAt;
 	private boolean confirmed;
 	private boolean viewOnly;
@@ -78,156 +80,84 @@ public class OriginSelectionScreen extends Screen {
 
 	@Override
 	protected void init() {
-		races = RaceRegistry.pages();
-		if (rowHover.length != races.size()) {
+		if (races.isEmpty()) {
+			List<Race> all = new ArrayList<>();
+			for (Race page : RaceRegistry.pages()) {
+				all.addAll(RaceRegistry.forms(page));
+			}
+			races = all;
 			rowHover = new float[races.size()];
 			chosen = fromIntro ? null : ClientOrigin.get().orElse(null);
 			viewOnly = chosen != null;
-			chosenBase = chosen == null ? null : RaceRegistry.baseOf(chosen);
-			selected = Math.max(0, races.indexOf(viewOnly ? chosenBase : RaceRegistry.defaultRace()));
-			loadForms();
+			selected = Math.max(0, races.indexOf(viewOnly ? chosen : RaceRegistry.defaultRace()));
+			PreviewFrame.clear();
 		}
 
-		int margin = MathHelper.clamp(Math.round(Math.min(width, height) * 0.04F), 6, 28);
-		headerY = margin;
-		Text title = getTitle();
-		titleScale = textRenderer.getWidth(title) * 2 <= width - margin * 2 && height >= 220 ? 2 : 1;
-		int headerBottom = headerY + 12 + 9 * titleScale + 8;
+		int margin = MathHelper.clamp(Math.round(Math.min(width, height) * 0.08F), 14, 52);
+		int gap = MathHelper.clamp(Math.round(width * 0.045F), 14, 48);
+		areaTop = Math.max(margin, Math.round(height * 0.13F));
 
-		int buttonWidth = MathHelper.clamp(Math.round(width * 0.2F), 110, 180);
-		if (viewOnly) {
-			buttonWidth = Math.min(width - margin * 2, Math.max(buttonWidth, textRenderer.getWidth(currentLabel()) + 30));
-		}
-		int buttonHeight = 20;
+		Text label = viewOnly ? currentLabel() : Text.translatable("screen.datura_origins.select.confirm");
+		int buttonWidth = textRenderer.getWidth(label) + 28;
+		buttonY1 = height - Math.max(margin - 4, Math.round(height * 0.07F));
+		buttonY0 = buttonY1 - 16;
 		buttonX0 = (width - buttonWidth) / 2;
 		buttonX1 = buttonX0 + buttonWidth;
-		buttonY1 = height - margin;
-		buttonY0 = buttonY1 - buttonHeight;
+		areaBottom = Math.max(areaTop + 60, buttonY0 - 18);
 
-		panelTop = headerBottom + 4;
-		panelBottom = Math.max(panelTop + 40, buttonY0 - 10);
-
-		int gap = Math.max(8, margin / 2);
-		int column = MathHelper.clamp(Math.round(width * 0.26F), 110, 220);
-		int minCenter = 90;
-		if (width - margin * 2 - gap * 2 - column * 2 < minCenter) {
-			column = Math.max(80, (width - margin * 2 - gap * 2 - minCenter) / 2);
+		int listWidth = MathHelper.clamp(Math.round(width * 0.19F), 92, 150);
+		int detailWidth = MathHelper.clamp(Math.round(width * 0.27F), 120, 214);
+		int minModel = 80;
+		int spare = width - margin * 2 - gap * 2 - listWidth - detailWidth;
+		if (spare < minModel) {
+			int cut = minModel - spare;
+			listWidth = Math.max(80, listWidth - cut / 2);
+			detailWidth = Math.max(100, detailWidth - cut / 2);
 		}
-		leftX0 = margin;
-		leftX1 = margin + column;
-		rightX1 = width - margin;
-		rightX0 = rightX1 - column;
-		centerX0 = leftX1 + gap;
-		centerX1 = rightX0 - gap;
+		listX0 = margin;
+		listX1 = margin + listWidth;
+		detailX1 = width - margin;
+		detailX0 = detailX1 - detailWidth;
+		modelX0 = listX1 + gap;
+		modelX1 = detailX0 - gap;
 
-		int listTop = panelTop + PANEL_PAD + 9 + 7;
-		list.setBounds(leftX0 + 4, listTop, column - 12, panelBottom - PANEL_PAD + 2 - listTop);
+		int listHeight = Math.min(races.size() * ROW_HEIGHT, areaBottom - areaTop);
+		int listTop = areaTop + (areaBottom - areaTop - listHeight) / 2;
+		list.setBounds(listX0, listTop, listWidth, listHeight);
 		list.setContent(races.size() * ROW_HEIGHT);
-		layoutDetails();
+		list.ensureVisible(selected * ROW_HEIGHT, (selected + 1) * ROW_HEIGHT);
+		details.setBounds(detailX0, areaTop, detailWidth, areaBottom - areaTop);
+		rebuildDetails();
 		layoutDialog();
 	}
 
 	private Text currentLabel() {
-		return Text.translatable("screen.datura_origins.select.current", chosen == null ? Text.empty() : fullName(chosen));
-	}
-
-	private static Text fullName(Race race) {
-		if (race.variantName() == null || race.variantName().isEmpty()) {
-			return text(race.name());
-		}
-		return text(race.name()).copy().append(" (").append(text(race.variantName())).append(")");
+		return Text.translatable("screen.datura_origins.select.current", chosen == null ? Text.empty() : text(chosen.name()));
 	}
 
 	private void layoutDialog() {
-		int dialogWidth = Math.min(260, width - 40);
-		int inner = dialogWidth - 24;
-		dialogLines = textRenderer.wrapLines(Text.translatable("screen.datura_origins.confirm.body", fullName(current())), inner);
-		int dialogHeight = 14 + 9 + 10 + dialogLines.size() * 10 + 12 + 20 + 12;
+		int dialogWidth = Math.min(240, width - 40);
+		int inner = dialogWidth - 32;
+		dialogLines = textRenderer.wrapLines(Text.translatable("screen.datura_origins.confirm.body", text(current().name())), inner);
+		int dialogHeight = 18 + 9 + 12 + dialogLines.size() * 11 + 16 + 14 + 16;
 		dialogX0 = (width - dialogWidth) / 2;
 		dialogX1 = dialogX0 + dialogWidth;
 		dialogY0 = (height - dialogHeight) / 2;
 		dialogY1 = dialogY0 + dialogHeight;
-		int buttonWidth = (inner - 8) / 2;
-		backX0 = dialogX0 + 12;
+		int buttonWidth = (inner - 12) / 2;
+		backX0 = dialogX0 + 16;
 		backX1 = backX0 + buttonWidth;
-		acceptX1 = dialogX1 - 12;
+		acceptX1 = dialogX1 - 16;
 		acceptX0 = acceptX1 - buttonWidth;
-		dialogButtonY1 = dialogY1 - 12;
-		dialogButtonY0 = dialogButtonY1 - 20;
+		dialogButtonY1 = dialogY1 - 16;
+		dialogButtonY0 = dialogButtonY1 - 14;
 	}
 
 	private Race current() {
 		if (races.isEmpty()) {
 			return RaceRegistry.defaultRace();
 		}
-		return forms.isEmpty() ? races.get(MathHelper.clamp(selected, 0, races.size() - 1)) : forms.get(MathHelper.clamp(formIndex, 0, forms.size() - 1));
-	}
-
-	private void loadForms() {
-		forms = races.isEmpty() ? List.of() : RaceRegistry.forms(races.get(MathHelper.clamp(selected, 0, races.size() - 1)));
-		formHover = new float[forms.size()];
-		formIndex = chosen != null && forms.contains(chosen) ? forms.indexOf(chosen) : 0;
-	}
-
-	private void layoutDetails() {
-		int column = rightX1 - rightX0;
-		int top = panelTop + PANEL_PAD;
-		if (forms.size() > 1) {
-			formY0 = top;
-			formY1 = top + FORM_BAR - 4;
-			top += FORM_BAR + 2;
-		}
-		details.setBounds(rightX0 + PANEL_PAD + 2, top, column - PANEL_PAD * 2 - 4, panelBottom - PANEL_PAD - top);
-		rebuildDetails();
-	}
-
-	private void selectForm(int index) {
-		if (index < 0 || index >= forms.size() || index == formIndex) {
-			return;
-		}
-		formIndex = index;
-		changedAt = Util.getMeasuringTimeMs();
-		details.reset();
-		rebuildDetails();
-		if (client != null) {
-			client.getSoundManager().play(PositionedSoundInstance.master(SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, 1.2F, 0.6F));
-		}
-	}
-
-	private int formAt(double mouseX, double mouseY) {
-		if (forms.size() < 2 || mouseY < formY0 || mouseY >= formY1) {
-			return -1;
-		}
-		int x0 = rightX0 + PANEL_PAD;
-		int span = rightX1 - PANEL_PAD - x0;
-		int index = (int) Math.floor((mouseX - x0) / (span / (double) forms.size()));
-		return mouseX >= x0 && index >= 0 && index < forms.size() ? index : -1;
-	}
-
-	private void renderForms(DrawContext context, int mouseX, int mouseY, float alpha) {
-		if (forms.size() < 2) {
-			return;
-		}
-		int hovered = confirming ? -1 : formAt(mouseX, mouseY);
-		int x0 = rightX0 + PANEL_PAD;
-		int span = rightX1 - PANEL_PAD - x0;
-		int gap = 4;
-		for (int i = 0; i < forms.size(); i++) {
-			formHover[i] = MathHelper.lerp(0.3F, formHover[i], i == hovered ? 1.0F : 0.0F);
-			int cx0 = x0 + span * i / forms.size() + (i > 0 ? gap / 2 : 0);
-			int cx1 = x0 + span * (i + 1) / forms.size() - (i < forms.size() - 1 ? gap / 2 : 0);
-			Race form = forms.get(i);
-			boolean active = i == formIndex;
-			int tint = 0xFF000000 | form.color();
-			int fill = active ? Draw.mix(0xE00D0A0C, (tint & 0x00FFFFFF) | 0xE0000000, 0.28F) : Draw.mix(0xC00D0A0C, 0xC0222A26, formHover[i]);
-			context.fill(cx0, formY0, cx1, formY1, Draw.fade(fill, alpha));
-			Draw.frame(context, cx0, formY0, cx1, formY1, Draw.fade(active ? Draw.GOLD : Draw.mix(0xFF3B4A42, tint, formHover[i]), alpha));
-			Text label = text(form.variantName() == null || form.variantName().isEmpty() ? form.name() : form.variantName());
-			OrderedText trimmed = Language.getInstance().reorder(textRenderer.trimToWidth(label, cx1 - cx0 - 6));
-			int color = active ? Draw.TEXT_BRIGHT : Draw.mix(Draw.TEXT_MUTED, Draw.TEXT_BRIGHT, formHover[i]);
-			Draw.text(context, textRenderer, trimmed, (cx0 + cx1) / 2.0F - textRenderer.getWidth(trimmed) / 2.0F,
-					(formY0 + formY1) / 2.0F - 4, Draw.fade(color, alpha), 1.0F, true);
-		}
+		return races.get(MathHelper.clamp(selected, 0, races.size() - 1));
 	}
 
 	private void select(int index) {
@@ -237,11 +167,10 @@ public class OriginSelectionScreen extends Screen {
 		selected = index;
 		changedAt = Util.getMeasuringTimeMs();
 		details.reset();
-		loadForms();
-		layoutDetails();
+		rebuildDetails();
 		list.ensureVisible(index * ROW_HEIGHT, (index + 1) * ROW_HEIGHT);
 		if (client != null) {
-			client.getSoundManager().play(PositionedSoundInstance.master(SoundEvents.ITEM_BOOK_PAGE_TURN, 1.3F, 0.5F));
+			client.getSoundManager().play(PositionedSoundInstance.master(SoundEvents.ITEM_BOOK_PAGE_TURN, 1.3F, 0.45F));
 		}
 	}
 
@@ -262,7 +191,7 @@ public class OriginSelectionScreen extends Screen {
 
 	@Override
 	public void renderBackground(DrawContext context, int mouseX, int mouseY, float delta) {
-		backdrop.render(context, width, height, (Util.getMeasuringTimeMs() - openedAt) / 1000.0F);
+		backdrop.render(context, width, height, (Util.getMeasuringTimeMs() - openedAt) / 1000.0F, mouseX, mouseY);
 	}
 
 	@Override
@@ -271,16 +200,15 @@ public class OriginSelectionScreen extends Screen {
 		float frame = Math.min(0.1F, (now - lastFrame) / 1000.0F);
 		lastFrame = now;
 		float time = (now - openedAt) / 1000.0F;
-		float alpha = Draw.easeOut((time - (fromIntro ? 0.15F : 0.0F)) / 0.6F);
+		float alpha = Draw.easeOut((time - (fromIntro ? 0.1F : 0.0F)) / 0.7F);
 
 		renderBackground(context, mouseX, mouseY, delta);
 		list.update();
 		details.update();
 
-		renderHeader(context, alpha);
-		renderModel(context, mouseX, mouseY, frame, alpha);
-		renderSpecies(context, mouseX, mouseY, alpha);
-		renderDetails(context, mouseX, mouseY, now, alpha);
+		renderModel(context, frame, alpha);
+		renderList(context, mouseX, mouseY, alpha);
+		renderDetails(context, now, alpha);
 		if (viewOnly) {
 			renderCurrent(context, alpha);
 		} else {
@@ -291,164 +219,134 @@ public class OriginSelectionScreen extends Screen {
 		}
 
 		if (fromIntro) {
-			float flash = 1.0F - Draw.easeOut(time / 0.7F);
+			float flash = 0.55F * (1.0F - Draw.easeOut(time / 0.65F));
 			if (flash > 0.0F) {
 				context.getMatrices().push();
 				context.getMatrices().translate(0.0F, 0.0F, 900.0F);
-				Draw.rect(context, 0, 0, width, height, Draw.fade(0xFFF7E3EC, flash));
+				Draw.rect(context, 0, 0, width, height, Draw.fade(0xFFF3E6EC, flash));
 				context.getMatrices().pop();
 			}
 		}
 	}
 
-	private void renderHeader(DrawContext context, float alpha) {
-		int cx = width / 2;
-		Text sub = Draw.spaced("ORIGINS");
-		Draw.centered(context, textRenderer, sub, cx, headerY, Draw.fade(Draw.GOLD, alpha), 1.0F, true);
-		int subHalf = textRenderer.getWidth(sub) / 2;
-		Draw.diamond(context, cx - subHalf - 8, headerY + 4, Draw.fade(Draw.GOLD_DIM, alpha));
-		Draw.diamond(context, cx + subHalf + 8, headerY + 4, Draw.fade(Draw.GOLD_DIM, alpha));
-
-		int titleY = headerY + 13;
-		Draw.centered(context, textRenderer, getTitle(), cx, titleY, Draw.fade(Draw.TEXT_BRIGHT, alpha), titleScale, true);
-		int half = Math.min(width / 2 - 10, textRenderer.getWidth(getTitle()) * titleScale / 2 + 30);
-		Draw.divider(context, cx - half, cx + half, titleY + 9 * titleScale + 4, Draw.fade(Draw.GOLD, alpha * 0.8F));
-	}
-
-	private void renderSpecies(DrawContext context, int mouseX, int mouseY, float alpha) {
-		Draw.ornamentFrame(context, leftX0, panelTop, leftX1, panelBottom, alpha);
-		Text heading = Text.translatable("screen.datura_origins.select.species");
-		int headingWidth = leftX1 - leftX0 - PANEL_PAD * 2;
-		OrderedText trimmed = Language.getInstance().reorder(textRenderer.trimToWidth(heading, headingWidth));
-		Draw.text(context, textRenderer, trimmed, leftX0 + PANEL_PAD, panelTop + PANEL_PAD, Draw.fade(Draw.GOLD, alpha), 1.0F, true);
-		Draw.divider(context, leftX0 + PANEL_PAD - 2, leftX1 - PANEL_PAD + 2, panelTop + PANEL_PAD + 11, Draw.fade(Draw.GOLD_DIM, alpha));
-
+	private void renderList(DrawContext context, int mouseX, int mouseY, float alpha) {
 		int hovered = confirming ? -1 : rowAt(mouseX, mouseY);
-		int numeralWidth = textRenderer.getWidth("VIII.");
+		int numeralWidth = textRenderer.getWidth("XXIV.");
 		list.begin(context);
 		for (int i = 0; i < races.size(); i++) {
-			rowHover[i] = MathHelper.lerp(0.3F, rowHover[i], i == hovered ? 1.0F : 0.0F);
+			rowHover[i] = MathHelper.lerp(0.25F, rowHover[i], i == hovered ? 1.0F : 0.0F);
 			int y0 = list.y() + Math.round(i * ROW_HEIGHT - list.offset());
-			int y1 = y0 + ROW_HEIGHT - 2;
-			if (y1 < list.y() || y0 > list.y() + list.height()) {
+			if (y0 + ROW_HEIGHT < list.y() || y0 > list.y() + list.height()) {
 				continue;
 			}
-			int x0 = list.x();
-			int x1 = list.x() + list.width();
 			boolean active = i == selected;
-			if (active) {
-				Draw.hGradient(context, x0, y0, x1, y1, Draw.fade(0x7A1F5A40, alpha), Draw.fade(0x302F1B2A, alpha));
-				context.fill(x0, y0, x0 + 2, y1, Draw.fade(Draw.GOLD, alpha));
-				Draw.frame(context, x0, y0, x1, y1, Draw.fade(0x50C9A75A, alpha));
-			} else if (rowHover[i] > 0.02F) {
-				Draw.hGradient(context, x0, y0, x1, y1, Draw.fade(0x26FFFFFF, alpha * rowHover[i]), Draw.fade(0x08FFFFFF, alpha * rowHover[i]));
-			}
-			int textY = y0 + (ROW_HEIGHT - 2 - 8) / 2;
-			float shift = rowHover[i] * 2.0F + (active ? 2.0F : 0.0F);
+			float lift = active ? 1.0F : rowHover[i];
+			int textY = y0 + (ROW_HEIGHT - 8) / 2;
 			String numeral = RomanNumerals.of(i + 1) + ".";
-			Draw.text(context, textRenderer, Text.literal(numeral), x0 + 6 + numeralWidth - textRenderer.getWidth(numeral) + shift, textY,
-					Draw.fade(active ? Draw.GOLD : Draw.GOLD_DIM, alpha), 1.0F, true);
-			int nameX = x0 + 6 + numeralWidth + 6;
-			Text name = text(races.get(i).name());
-			OrderedText nameText = Language.getInstance().reorder(textRenderer.trimToWidth(name, x1 - nameX - (races.get(i).equals(chosenBase) ? 14 : 4)));
-			int color = active ? Draw.TEXT_BRIGHT : Draw.mix(Draw.TEXT, Draw.TEXT_BRIGHT, rowHover[i]);
-			if (races.get(i).equals(chosenBase)) {
-				Draw.diamond(context, x1 - 7, y0 + (ROW_HEIGHT - 2) / 2, Draw.fade(Draw.GOLD, alpha));
+			int numeralX = list.x() + numeralWidth - textRenderer.getWidth(numeral);
+			Draw.text(context, textRenderer, Text.literal(numeral), numeralX, textY,
+					Draw.fade(Draw.mix(ROSE_DIM, ROSE, lift), alpha * (0.7F + 0.3F * lift)), 1.0F, false);
+			int nameX = list.x() + numeralWidth + 7 + Math.round(lift * 2.0F);
+			int limit = list.x() + list.width() - nameX - (races.get(i).equals(chosen) ? 10 : 0);
+			OrderedText name = Language.getInstance().reorder(textRenderer.trimToWidth(text(races.get(i).name()), Math.max(10, limit)));
+			int color = active ? INK_BRIGHT : Draw.mix(INK_FAINT, INK, rowHover[i]);
+			Draw.text(context, textRenderer, name, nameX, textY, Draw.fade(color, alpha), 1.0F, active);
+			if (races.get(i).equals(chosen)) {
+				Draw.diamond(context, nameX + textRenderer.getWidth(name) + 6, textY + 4, Draw.fade(ROSE, alpha));
 			}
-			Draw.text(context, textRenderer, nameText, nameX + shift, textY, Draw.fade(color, alpha), 1.0F, true);
 		}
 		list.end(context, alpha);
 	}
 
-	private void renderDetails(DrawContext context, int mouseX, int mouseY, long now, float alpha) {
-		Draw.ornamentFrame(context, rightX0, panelTop, rightX1, panelBottom, alpha);
-		renderForms(context, mouseX, mouseY, alpha);
+	private void renderDetails(DrawContext context, long now, float alpha) {
 		float appear = Draw.easeOut((now - changedAt) / (float) DETAIL_FADE_MS);
 		float a = alpha * appear;
-		float slide = (1.0F - appear) * 12.0F;
+		float slide = (1.0F - appear) * 6.0F;
 		details.begin(context);
-		layout.render(context, textRenderer, details.x() + slide, details.y() - details.offset(), a);
+		layout.render(context, textRenderer, details.x(), details.y() - details.offset() + slide, a);
 		details.end(context, alpha);
 	}
 
-	private void renderModel(DrawContext context, int mouseX, int mouseY, float frame, float alpha) {
-		if (client == null || client.player == null || centerX1 - centerX0 < 20) {
+	private void renderModel(DrawContext context, float frame, float alpha) {
+		if (client == null || client.player == null || modelX1 - modelX0 < 20) {
 			return;
 		}
-		long now = Util.getMeasuringTimeMs();
 		pitch = dragging ? pitch : MathHelper.lerp(0.08F, pitch, 0.0F);
+		Race race = current();
+		PreviewFrame bounds = PreviewFrame.of(race);
 
-		float areaHeight = panelBottom - panelTop;
-		float areaWidth = centerX1 - centerX0;
-		float size = Math.min(areaHeight * 0.74F / 1.9F, areaWidth * 0.8F);
-		float pop = 0.94F + 0.06F * Draw.easeOut((now - changedAt) / (float) DETAIL_FADE_MS);
-		float cx = (centerX0 + centerX1) / 2.0F;
-		float cy = panelTop + areaHeight * 0.47F;
-		float feet = cy + size * 0.92F;
+		float areaHeight = areaBottom - areaTop;
+		float areaWidth = modelX1 - modelX0;
+		float ground = areaBottom - areaHeight * 0.06F;
+		float above = bounds.top() * 0.9375F / 16.0F * bounds.scale();
+		float below = Math.max(0.0F, -bounds.bottom() * 0.9375F / 16.0F * bounds.scale());
+		float size = areaHeight / 3.1F;
+		size = Math.min(size, (ground - areaTop) / Math.max(0.5F, above));
+		if (below > 0.0F) {
+			size = Math.min(size, (areaBottom - ground + areaHeight * 0.02F) / below);
+		}
+		size = Math.min(size, areaWidth * 0.94F / Math.max(0.5F, bounds.width()));
+		float settle = Draw.easeOut((Util.getMeasuringTimeMs() - changedAt) / (float) DETAIL_FADE_MS);
+		float cx = (modelX0 + modelX1) / 2.0F;
+		float cy = ground - bounds.middle() * bounds.scale() * size;
 
-		Draw.glow(context, cx, cy, size * 0.9F, size * 1.3F, Draw.fade(0x3A2F8F64, alpha));
-		Draw.glow(context, cx, feet, size * 0.75F, size * 0.16F, Draw.fade(0x70C25A8C, alpha));
-		Draw.glow(context, cx, feet, size * 0.42F, size * 0.08F, Draw.fade(0x90E6D08F, alpha));
-		Draw.divider(context, Math.round(cx - size * 0.6F), Math.round(cx + size * 0.6F), Math.round(feet + size * 0.05F), Draw.fade(Draw.GOLD, alpha * 0.7F));
+		float shadowWidth = Math.max(size * 0.9F * bounds.scale(), size * bounds.width() * 0.55F);
+		drawShadow(context, cx, ground, shadowWidth, alpha * 0.6F);
 
-		context.enableScissor(centerX0, panelTop, centerX1, panelBottom);
-		RaceModels.beginPreview(current());
+		RaceModels.beginPreview(race);
 		try {
-			RacePreviews.get(current()).render(context, client.player, cx, cy, size * pop, yaw, pitch, frame);
+			RacePreviews.get(race).render(context, client.player, cx, cy + (1.0F - settle) * 3.0F, size, yaw, pitch, frame);
 		} finally {
 			RaceModels.endPreview();
 		}
-		context.disableScissor();
 
-		float hint = dragged ? 0.0F : alpha * 0.7F;
+		float hint = dragged ? 0.0F : alpha * 0.6F;
 		if (hint > 0.02F) {
 			Text drag = Text.translatable("screen.datura_origins.select.drag");
 			if (textRenderer.getWidth(drag) <= areaWidth) {
-				Draw.centered(context, textRenderer, drag, cx, Math.min(panelBottom - 10, feet + size * 0.1F + 4), Draw.fade(Draw.TEXT_MUTED, hint), 1.0F, false);
+				Draw.centered(context, textRenderer, drag, cx, Math.min(areaBottom + 2, ground + 8), Draw.fade(INK_FAINT, hint), 1.0F, false);
 			}
 		}
 	}
 
+	private void drawShadow(DrawContext context, float cx, float cy, float w, float alpha) {
+		float h = w * 0.2F;
+		RenderSystem.enableBlend();
+		RenderSystem.defaultBlendFunc();
+		context.setShaderColor(1.0F, 1.0F, 1.0F, alpha);
+		context.getMatrices().push();
+		context.getMatrices().translate(cx - w / 2.0F, cy - h / 2.0F, 0.0F);
+		context.getMatrices().scale(w / 96.0F, h / 96.0F, 1.0F);
+		context.drawTexture(SHADOW, 0, 0, 0.0F, 0.0F, 96, 96, 96, 96);
+		context.getMatrices().pop();
+		context.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+		RenderSystem.disableBlend();
+	}
+
 	private void renderButton(DrawContext context, int mouseX, int mouseY, float alpha) {
-		buttonHover = MathHelper.lerp(0.3F, buttonHover, isOverButton(mouseX, mouseY) ? 1.0F : 0.0F);
+		buttonHover = MathHelper.lerp(0.25F, buttonHover, isOverButton(mouseX, mouseY) ? 1.0F : 0.0F);
 		drawButton(context, buttonX0, buttonY0, buttonX1, buttonY1, Text.translatable("screen.datura_origins.select.confirm"), buttonHover, alpha, true);
 	}
 
 	private void drawButton(DrawContext context, int x0, int y0, int x1, int y1, Text label, float hover, float alpha, boolean primary) {
-		int background = Draw.mix(0xF20D0A0C, primary ? 0xF2221319 : 0xF2121A16, hover);
-		int border = primary ? Draw.mix(Draw.BUTTON_BORDER, Draw.PINK, hover * 0.8F) : Draw.mix(0xFF3B4A42, 0xFF7E9488, hover);
-		if (primary) {
-			Draw.glow(context, (x0 + x1) / 2.0F, (y0 + y1) / 2.0F, (x1 - x0) * 0.75F, 18.0F,
-					Draw.fade(0x40C25A8C, alpha * (0.4F + 0.6F * hover)));
-		}
-		context.fill(x0, y0, x1, y1, Draw.fade(background, alpha));
-		Draw.frame(context, x0, y0, x1, y1, Draw.fade(border, alpha));
-		context.fill(x0 + 1, y0 + 1, x1 - 1, y0 + 2, Draw.fade(0x18FFFFFF, alpha));
-
-		int labelWidth = textRenderer.getWidth(label);
 		int midY = (y0 + y1) / 2;
-		int textColor = Draw.fade(Draw.mix(Draw.TEXT, Draw.TEXT_BRIGHT, hover), alpha);
-		if (primary) {
-			int x = (x0 + x1 - (10 + labelWidth)) / 2;
-			context.fill(x, midY - 2, x + 4, midY + 2, Draw.fade(Draw.GOLD, alpha));
-			context.fill(x + 1, midY - 1, x + 3, midY + 1, Draw.fade(0xFFF2DFA6, alpha * hover));
-			Draw.text(context, textRenderer, label, x + 10, midY - 4, textColor, 1.0F, true);
-		} else {
-			Draw.centered(context, textRenderer, label, (x0 + x1) / 2.0F, midY - 4, textColor, 1.0F, true);
+		int lineY = y1 - 1;
+		int accent = primary ? ROSE : INK_SOFT;
+		if (hover > 0.01F) {
+			context.fill(x0, y0, x1, y1, Draw.fade(0x14FFFFFF, alpha * hover));
 		}
+		Draw.divider(context, x0, x1, lineY, Draw.fade(accent, alpha * (0.45F + 0.55F * hover)));
+		int color = Draw.mix(primary ? INK : INK_SOFT, INK_BRIGHT, hover);
+		Draw.centered(context, textRenderer, label, (x0 + x1) / 2.0F, midY - 5 - hover, Draw.fade(color, alpha), 1.0F, false);
 	}
 
 	private void renderCurrent(DrawContext context, float alpha) {
-		context.fill(buttonX0, buttonY0, buttonX1, buttonY1, Draw.fade(0xE00D0A0C, alpha));
-		Draw.frame(context, buttonX0, buttonY0, buttonX1, buttonY1, Draw.fade(Draw.GOLD_DIM, alpha));
 		Text label = currentLabel();
-		int midY = (buttonY0 + buttonY1) / 2;
-		int x = (buttonX0 + buttonX1 - (10 + textRenderer.getWidth(label))) / 2;
-		context.fill(x, midY - 2, x + 4, midY + 2, Draw.fade(Draw.GOLD, alpha));
-		Draw.text(context, textRenderer, label, x + 10, midY - 4, Draw.fade(Draw.TEXT_BRIGHT, alpha), 1.0F, true);
+		Draw.centered(context, textRenderer, label, width / 2.0F, buttonY0 + 2, Draw.fade(INK, alpha), 1.0F, false);
+		Draw.divider(context, buttonX0, buttonX1, buttonY1 - 1, Draw.fade(ROSE_DIM, alpha * 0.6F));
 		Text hint = Text.translatable("screen.datura_origins.select.close_hint");
-		if (buttonY1 + 3 + 8 <= height) {
-			Draw.centered(context, textRenderer, hint, width / 2.0F, buttonY1 + 3, Draw.fade(Draw.TEXT_MUTED, alpha * 0.8F), 1.0F, false);
+		if (buttonY1 + 5 + 8 <= height) {
+			Draw.centered(context, textRenderer, hint, width / 2.0F, buttonY1 + 5, Draw.fade(INK_FAINT, alpha * 0.8F), 1.0F, false);
 		}
 	}
 
@@ -456,23 +354,21 @@ public class OriginSelectionScreen extends Screen {
 		float a = Draw.easeOut((now - confirmAt) / 220.0F);
 		context.getMatrices().push();
 		context.getMatrices().translate(0.0F, 0.0F, 500.0F);
-		Draw.rect(context, 0, 0, width, height, Draw.fade(0xC0040907, a));
-		int lift = Math.round((1.0F - a) * 6.0F);
+		Draw.rect(context, 0, 0, width, height, Draw.fade(0xB0030806, a));
+		int lift = Math.round((1.0F - a) * 5.0F);
 		context.getMatrices().translate(0.0F, lift, 0.0F);
-		Draw.ornamentFrame(context, dialogX0, dialogY0, dialogX1, dialogY1, a);
-		context.fill(dialogX0 + 1, dialogY0 + 1, dialogX1 - 1, dialogY1 - 1, Draw.fade(0xF0091310, a));
+		context.fill(dialogX0, dialogY0, dialogX1, dialogY1, Draw.fade(0xF20B1611, a));
+		Draw.frame(context, dialogX0, dialogY0, dialogX1, dialogY1, Draw.fade(0x50E3B3C6, a));
 		int cx = (dialogX0 + dialogX1) / 2;
-		int y = dialogY0 + 14;
-		Draw.centered(context, textRenderer, Draw.spaced(Text.translatable("screen.datura_origins.confirm.title").getString()), cx, y, Draw.fade(Draw.GOLD, a), 1.0F, true);
-		y += 9 + 4;
-		Draw.divider(context, dialogX0 + 16, dialogX1 - 16, y, Draw.fade(Draw.GOLD_DIM, a));
-		y += 7;
+		int y = dialogY0 + 18;
+		Draw.centered(context, textRenderer, Draw.spaced(Text.translatable("screen.datura_origins.confirm.title").getString()), cx, y, Draw.fade(ROSE, a), 1.0F, false);
+		y += 9 + 12;
 		for (OrderedText line : dialogLines) {
-			Draw.text(context, textRenderer, line, cx - textRenderer.getWidth(line) / 2.0F, y, Draw.fade(Draw.TEXT, a), 1.0F, false);
-			y += 10;
+			Draw.text(context, textRenderer, line, cx - textRenderer.getWidth(line) / 2.0F, y, Draw.fade(INK, a), 1.0F, false);
+			y += 11;
 		}
-		backHover = MathHelper.lerp(0.3F, backHover, isOver(mouseX, mouseY, backX0, dialogButtonY0, backX1, dialogButtonY1) ? 1.0F : 0.0F);
-		acceptHover = MathHelper.lerp(0.3F, acceptHover, isOver(mouseX, mouseY, acceptX0, dialogButtonY0, acceptX1, dialogButtonY1) ? 1.0F : 0.0F);
+		backHover = MathHelper.lerp(0.25F, backHover, isOver(mouseX, mouseY, backX0, dialogButtonY0, backX1, dialogButtonY1) ? 1.0F : 0.0F);
+		acceptHover = MathHelper.lerp(0.25F, acceptHover, isOver(mouseX, mouseY, acceptX0, dialogButtonY0, acceptX1, dialogButtonY1) ? 1.0F : 0.0F);
 		drawButton(context, backX0, dialogButtonY0, backX1, dialogButtonY1, Text.translatable("screen.datura_origins.confirm.back"), backHover, a, false);
 		drawButton(context, acceptX0, dialogButtonY0, acceptX1, dialogButtonY1, Text.translatable("screen.datura_origins.confirm.accept"), acceptHover, a, true);
 		context.getMatrices().pop();
@@ -505,11 +401,11 @@ public class OriginSelectionScreen extends Screen {
 	}
 
 	private boolean isOverButton(double mouseX, double mouseY) {
-		return mouseX >= buttonX0 && mouseX < buttonX1 && mouseY >= buttonY0 && mouseY < buttonY1;
+		return mouseX >= buttonX0 - 6 && mouseX < buttonX1 + 6 && mouseY >= buttonY0 - 4 && mouseY < buttonY1 + 4;
 	}
 
 	private boolean isOverModel(double mouseX, double mouseY) {
-		return mouseX >= centerX0 && mouseX < centerX1 && mouseY >= panelTop && mouseY < panelBottom;
+		return mouseX >= modelX0 && mouseX < modelX1 && mouseY >= areaTop && mouseY < areaBottom;
 	}
 
 	private void confirm() {
@@ -540,18 +436,12 @@ public class OriginSelectionScreen extends Screen {
 				select(row);
 				return true;
 			}
-			int form = formAt(mouseX, mouseY);
-			if (form >= 0) {
-				selectForm(form);
-				return true;
-			}
 			if (!viewOnly && isOverButton(mouseX, mouseY)) {
 				openConfirm();
 				return true;
 			}
 			if (isOverModel(mouseX, mouseY)) {
 				dragging = true;
-				lastInteraction = Util.getMeasuringTimeMs();
 				return true;
 			}
 		}
@@ -564,7 +454,6 @@ public class OriginSelectionScreen extends Screen {
 			yaw += (float) deltaX * 1.2F;
 			pitch = MathHelper.clamp(pitch + (float) deltaY * 0.5F, -20.0F, 20.0F);
 			dragged = true;
-			lastInteraction = Util.getMeasuringTimeMs();
 			return true;
 		}
 		return super.mouseDragged(mouseX, mouseY, button, deltaX, deltaY);
@@ -574,7 +463,6 @@ public class OriginSelectionScreen extends Screen {
 	public boolean mouseReleased(double mouseX, double mouseY, int button) {
 		if (dragging && button == 0) {
 			dragging = false;
-			lastInteraction = Util.getMeasuringTimeMs();
 			return true;
 		}
 		return super.mouseReleased(mouseX, mouseY, button);
@@ -620,18 +508,18 @@ public class OriginSelectionScreen extends Screen {
 		static final Details EMPTY = new Details(List.of(), List.of(), 0);
 
 		private final List<Line> lines;
-		private final List<Block> blocks;
+		private final List<Rule> rules;
 		private final int height;
 
-		private Details(List<Line> lines, List<Block> blocks, int height) {
+		private Details(List<Line> lines, List<Rule> rules, int height) {
 			this.lines = lines;
-			this.blocks = blocks;
+			this.rules = rules;
 			this.height = height;
 		}
 
 		static Details build(TextRenderer font, Race race, int width) {
 			List<Line> lines = new ArrayList<>();
-			List<Block> blocks = new ArrayList<>();
+			List<Rule> rules = new ArrayList<>();
 			if (width <= 20) {
 				return EMPTY;
 			}
@@ -640,85 +528,70 @@ public class OriginSelectionScreen extends Screen {
 			Text name = text(race.name());
 			int scale = font.getWidth(name) * 2 <= width ? 2 : 1;
 			for (OrderedText part : font.wrapLines(name, width / scale)) {
-				lines.add(new Line(part, 0, y, Draw.TEXT_BRIGHT, scale, true));
-				y += 9 * scale + 1;
+				lines.add(new Line(part, 0, y, INK_BRIGHT, scale, true));
+				y += 9 * scale + 2;
 			}
-			y += 3;
-			blocks.add(new Block(Block.DIVIDER, 0, y, Math.min(width, Math.max(60, width * 3 / 4)), 1, 0xFF000000 | race.color()));
-			y += 7;
+			y += 5;
+			rules.add(new Rule(0, y, Math.min(width, 34)));
+			y += 9;
 
 			if (!race.description().isEmpty()) {
 				for (OrderedText part : font.wrapLines(text(race.description()), width)) {
-					lines.add(new Line(part, 0, y, Draw.TEXT, 1, false));
+					lines.add(new Line(part, 0, y, INK_SOFT, 1, false));
 					y += 10;
 				}
-				y += 6;
+				y += 14;
 			}
 
-			y = section(font, lines, blocks, y, width, "screen.datura_origins.select.advantages", "+", Draw.GREEN, race.advantages());
-			y = section(font, lines, blocks, y, width, "screen.datura_origins.select.disadvantages", "-", Draw.RED, race.disadvantages());
+			y = section(font, lines, y, width, "screen.datura_origins.select.advantages", "+", race.advantages());
+			y = section(font, lines, y, width, "screen.datura_origins.select.disadvantages", "−", race.disadvantages());
 			if (race.abilityName() != null && !race.abilityName().isEmpty()) {
-				y = abilitySection(font, lines, blocks, y, width, race);
-			}
-			y = section(font, lines, blocks, y, width, "screen.datura_origins.select.passives", "*", Draw.PINK, race.passives());
-			return new Details(lines, blocks, Math.max(0, y - 4));
-		}
-
-		private static int abilitySection(TextRenderer font, List<Line> lines, List<Block> blocks, int y, int width, Race race) {
-			int start = y;
-			y += 5;
-			lines.add(new Line(Language.getInstance().reorder(font.trimToWidth(Text.translatable("screen.datura_origins.select.ability"), width - 10)), 7, y, Draw.GOLD, 1, true));
-			y += 13;
-			for (OrderedText part : font.wrapLines(text(race.abilityName()), width - 11)) {
-				lines.add(new Line(part, 7, y, Draw.TEXT_BRIGHT, 1, true));
-				y += 10;
-			}
-			y += 2;
-			if (race.ability() != null && !race.ability().isEmpty()) {
-				for (OrderedText part : font.wrapLines(text(race.ability()), width - 11)) {
-					lines.add(new Line(part, 7, y, Draw.TEXT, 1, false));
+				y = label(font, lines, y, width, "screen.datura_origins.select.ability");
+				for (OrderedText part : font.wrapLines(text(race.abilityName()), width)) {
+					lines.add(new Line(part, 0, y, INK_BRIGHT, 1, false));
 					y += 10;
 				}
+				y += 2;
+				if (race.ability() != null && !race.ability().isEmpty()) {
+					for (OrderedText part : font.wrapLines(text(race.ability()), width)) {
+						lines.add(new Line(part, 0, y, INK_SOFT, 1, false));
+						y += 10;
+					}
+				}
+				y += 14;
 			}
-			y += 5;
-			blocks.add(new Block(Block.SECTION, 0, start, width, y - start, Draw.GOLD));
-			return y + 8;
+			y = section(font, lines, y, width, "screen.datura_origins.select.passives", "·", race.passives());
+			return new Details(lines, rules, Math.max(0, y - 14));
 		}
 
-		private static int section(TextRenderer font, List<Line> lines, List<Block> blocks, int y, int width,
-				String key, String marker, int color, List<String> entries) {
+		private static int label(TextRenderer font, List<Line> lines, int y, int width, String key) {
+			Text heading = Draw.spaced(Text.translatable(key).getString());
+			lines.add(new Line(Language.getInstance().reorder(font.trimToWidth(heading, width)), 0, y, ROSE_DIM, 1, false));
+			return y + 14;
+		}
+
+		private static int section(TextRenderer font, List<Line> lines, int y, int width, String key, String marker, List<String> entries) {
 			if (entries.isEmpty()) {
 				return y;
 			}
-			int start = y;
-			y += 5;
-			lines.add(new Line(Language.getInstance().reorder(font.trimToWidth(Text.translatable(key), width - 10)), 7, y, color, 1, true));
-			y += 13;
-			int indent = 16;
+			y = label(font, lines, y, width, key);
+			int indent = 10;
 			for (String entry : entries) {
-				lines.add(new Line(Text.literal(marker).asOrderedText(), 7, y, color, 1, true));
-				for (OrderedText part : font.wrapLines(text(entry), width - indent - 4)) {
-					lines.add(new Line(part, indent, y, Draw.TEXT, 1, false));
+				lines.add(new Line(Text.literal(marker).asOrderedText(), 0, y, ROSE_DIM, 1, false));
+				for (OrderedText part : font.wrapLines(text(entry), width - indent)) {
+					lines.add(new Line(part, indent, y, INK, 1, false));
 					y += 10;
 				}
-				y += 3;
+				y += 4;
 			}
-			y += 2;
-			blocks.add(new Block(Block.SECTION, 0, start, width, y - start, color));
-			return y + 8;
+			return y + 10;
 		}
 
 		void render(DrawContext context, TextRenderer font, float x, float y, float alpha) {
-			for (Block block : blocks) {
-				int x0 = Math.round(x + block.x);
-				int y0 = Math.round(y + block.y);
-				if (block.type == Block.DIVIDER) {
-					Draw.hGradient(context, x0, y0, x0 + block.width, y0 + 1, Draw.fade(block.color, alpha), block.color & 0x00FFFFFF);
-				} else {
-					Draw.hGradient(context, x0, y0, x0 + block.width, y0 + block.height,
-							Draw.fade((block.color & 0x00FFFFFF) | 0x22000000, alpha), Draw.fade((block.color & 0x00FFFFFF) | 0x08000000, alpha));
-					context.fill(x0, y0, x0 + 1, y0 + block.height, Draw.fade((block.color & 0x00FFFFFF) | 0xA0000000, alpha));
-				}
+			for (Rule rule : rules) {
+				int x0 = Math.round(x + rule.x);
+				int y0 = Math.round(y + rule.y);
+				Draw.hGradient(context, x0, y0, x0 + rule.width, y0 + 1, Draw.fade(ROSE, alpha * 0.8F), ROSE & 0x00FFFFFF);
 			}
 			for (Line line : lines) {
 				Draw.text(context, font, line.text, x + line.x, y + line.y, Draw.fade(line.color, alpha), line.scale, line.shadow);
@@ -728,9 +601,7 @@ public class OriginSelectionScreen extends Screen {
 		private record Line(OrderedText text, int x, int y, int color, float scale, boolean shadow) {
 		}
 
-		private record Block(int type, int x, int y, int width, int height, int color) {
-			static final int DIVIDER = 0;
-			static final int SECTION = 1;
+		private record Rule(int x, int y, int width) {
 		}
 	}
 }

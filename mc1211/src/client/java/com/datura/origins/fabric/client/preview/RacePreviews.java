@@ -1,5 +1,6 @@
 package com.datura.origins.fabric.client.preview;
 
+import com.datura.origins.fabric.client.model.RaceModels;
 import com.datura.origins.race.Race;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
@@ -44,8 +45,9 @@ public final class RacePreviews {
 		Quaternionf tilt = new Quaternionf().rotateX(pitch * ((float) Math.PI / 180.0F));
 		Quaternionf rotation = new Quaternionf().rotateZ((float) Math.PI).mul(tilt);
 		float scale = entity.getScale();
-		Vector3f offset = new Vector3f(0.0F, entity.getHeight() / 2.0F + 0.0625F * scale, 0.0F);
-		InventoryScreen.drawEntity(context, x, y, size / scale, offset, rotation, tilt, entity);
+		PreviewFrame frame = PreviewFrame.of(RaceModels.previewRace());
+		Vector3f offset = new Vector3f(0.0F, frame.middle() * scale, 0.0F);
+		InventoryScreen.drawEntity(context, x, y, size * frame.scale() / scale, offset, rotation, tilt, entity);
 
 		entity.bodyYaw = bodyYaw;
 		entity.prevBodyYaw = prevBodyYaw;

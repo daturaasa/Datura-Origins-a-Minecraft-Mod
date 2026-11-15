@@ -25,7 +25,7 @@ import java.util.function.Consumer;
 
 public final class PartModel {
 	private static final Map<Identifier, PartModel> CACHE = new ConcurrentHashMap<>();
-	private static final PartModel EMPTY = new PartModel(List.of(), 16, 16, null, Map.of(), false, false, false);
+	private static final PartModel EMPTY = new PartModel(List.of(), 16, 16, null, Map.of(), false, false, false, false);
 	private static final String[] FACES = {"down", "up", "north", "south", "west", "east"};
 	private static final float[][] NORMALS = {{0, -1, 0}, {0, 1, 0}, {0, 0, -1}, {0, 0, 1}, {-1, 0, 0}, {1, 0, 0}};
 
@@ -39,10 +39,12 @@ public final class PartModel {
 	private final boolean physics;
 	private final boolean hidesLegs;
 	private final boolean glows;
+	private final boolean pulses;
 
 	private PartModel(List<Bone> roots, float textureWidth, float textureHeight, String liftBone, Map<String, Animation> animations,
-			boolean onHead, boolean physics, boolean hidesLegs) {
+			boolean onHead, boolean physics, boolean hidesLegs, boolean pulses) {
 		this.roots = roots;
+		this.pulses = pulses;
 		this.onHead = onHead;
 		this.physics = physics;
 		this.hidesLegs = hidesLegs;
@@ -85,6 +87,10 @@ public final class PartModel {
 
 	public boolean glows() {
 		return glows;
+	}
+
+	public boolean pulses() {
+		return pulses;
 	}
 
 	public boolean hasAnimation(String name) {
@@ -365,7 +371,8 @@ public final class PartModel {
 			if (json.has("hide")) {
 				for (JsonElement part : json.getAsJsonArray("hide")) hidesLegs |= "legs".equals(part.getAsString());
 			}
-			return new PartModel(roots, size.get(0).getAsFloat(), size.get(1).getAsFloat(), lift, animations, head, physics && !head, hidesLegs);
+			boolean pulse = json.has("pulse") && json.get("pulse").getAsBoolean();
+			return new PartModel(roots, size.get(0).getAsFloat(), size.get(1).getAsFloat(), lift, animations, head, physics && !head, hidesLegs, pulse);
 		} catch (Exception e) {
 			DaturaOriginsMod.LOGGER.error("Failed to load part model {}", file, e);
 			return EMPTY;

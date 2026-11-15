@@ -2,7 +2,6 @@ package com.datura.origins.fabric.network;
 
 import com.datura.origins.fabric.OriginData;
 import com.datura.origins.fabric.power.types.BatFormPower;
-import com.datura.origins.fabric.power.types.MountainLeapPower;
 import com.datura.origins.fabric.race.RaceManager;
 import com.datura.origins.race.RaceRegistry;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
@@ -37,7 +36,6 @@ public final class Networking {
 		PayloadTypeRegistry.playC2S().register(AirJumpPayload.ID, AirJumpPayload.CODEC);
 		PayloadTypeRegistry.playS2C().register(AltarOffersPayload.ID, AltarOffersPayload.CODEC);
 		PayloadTypeRegistry.playC2S().register(AltarChoicePayload.ID, AltarChoicePayload.CODEC);
-		PayloadTypeRegistry.playC2S().register(LeapPayload.ID, LeapPayload.CODEC);
 		PayloadTypeRegistry.playS2C().register(CasinoPayload.ID, CasinoPayload.CODEC);
 
 		ServerPlayNetworking.registerGlobalReceiver(ChooseOriginPayload.ID, (payload, context) -> {
@@ -57,12 +55,6 @@ public final class Networking {
 
 		ServerPlayNetworking.registerGlobalReceiver(AltarChoicePayload.ID,
 				(payload, context) -> RaceManager.choose(context.player(), payload.option()));
-
-		ServerPlayNetworking.registerGlobalReceiver(LeapPayload.ID, (payload, context) ->
-				MountainLeapPower.of(context.player()).ifPresent(power -> {
-					if (payload.released()) power.leap(context.player(), payload.charge());
-					else power.charging(context.player(), true);
-				}));
 
 		ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
 			ServerPlayerEntity player = handler.getPlayer();

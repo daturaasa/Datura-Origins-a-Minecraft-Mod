@@ -68,6 +68,12 @@ public final class AttributePower extends ConditionalPower {
 				: Identifier.of(idStr);
 	}
 
+	public double previewScale() {
+		if (attribute.value() != EntityAttributes.GENERIC_SCALE.value()) return 1.0;
+		double value = stageValues != null && stageValues.length > 0 ? stageValues[0] : continuous ? rangeMin : amount;
+		return Math.max(0.1, 1.0 + value);
+	}
+
 	@Override
 	public void onApply(ServerPlayerEntity player) {
 		sync(player);

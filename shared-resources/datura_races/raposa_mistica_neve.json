@@ -1,32 +1,35 @@
 {
 	"id": "raposa_mistica_neve",
 	"order": 8,
-	"name": "Raposa Mística",
+	"name": "race.datura_origins.raposa_mistica_neve.name",
 	"variant_of": "raposa_mistica",
-	"variant_name": "Neve",
+	"variant_name": "race.datura_origins.raposa_mistica_neve.variant",
 	"color": "#BFD3E6",
-	"model": ["cauda_raposa_branca", "orelhas_raposa_branca"],
-	"description": "Raposa encantada que vive entre as pessoas, mas prefere a companhia das raposas. Existe em duas formas, Fogo e Neve, escolhidas aqui mesmo antes de confirmar.",
+	"model": [
+		"cauda_raposa_branca",
+		"orelhas_raposa_branca"
+	],
+	"description": "race.datura_origins.raposa_mistica_neve.description",
 	"advantages": [
-		"Mais forte que um humano: +1,5 de dano.",
-		"Não toma dano de queda.",
-		"Forma de Neve: imune a congelamento, e cada golpe congela o inimigo e o deixa lento.",
-		"Forma de Neve: anda sobre a neve fofa sem afundar.",
-		"Passos silenciosos. Parada por 3 segundos, fica completamente camuflada e nenhum monstro a percebe.",
-		"As raposas confiam nela e a seguem por um tempo.",
-		"Visão noturna permanente."
+		"race.datura_origins.raposa_mistica_neve.advantage.0",
+		"race.datura_origins.raposa_mistica_neve.advantage.1",
+		"race.datura_origins.raposa_mistica_neve.advantage.2",
+		"race.datura_origins.raposa_mistica_neve.advantage.3",
+		"race.datura_origins.raposa_mistica_neve.advantage.4",
+		"race.datura_origins.raposa_mistica_neve.advantage.5",
+		"race.datura_origins.raposa_mistica_neve.advantage.6"
 	],
 	"disadvantages": [
-		"Só tem 8 corações.",
-		"Nenhum efeito funciona nela, bom ou ruim (nem a maçã dourada).",
-		"Só come carne.",
-		"Não sabe nadar: afunda na água.",
-		"Explosões causam 50% a mais de dano."
+		"race.datura_origins.raposa_mistica_neve.disadvantage.0",
+		"race.datura_origins.raposa_mistica_neve.disadvantage.1",
+		"race.datura_origins.raposa_mistica_neve.disadvantage.2",
+		"race.datura_origins.raposa_mistica_neve.disadvantage.3",
+		"race.datura_origins.raposa_mistica_neve.disadvantage.4"
 	],
 	"ability": {
 		"type": "datura_origins:fox_clones",
-		"name": "Ilusões de Raposa",
-		"description": "Cria três ilusões suas que lutam ao seu lado por 10 segundos e congelam os inimigos que atingem. Recarga de 67 segundos.",
+		"name": "race.datura_origins.raposa_mistica_neve.ability.name",
+		"description": "race.datura_origins.raposa_mistica_neve.ability.description",
 		"cooldown": 1350,
 		"count": 3,
 		"duration": 200,

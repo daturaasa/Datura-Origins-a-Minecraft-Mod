@@ -1,28 +1,28 @@
 {
 	"id": "fada",
 	"order": 12,
-	"name": "Fada",
+	"name": "race.datura_origins.fada.name",
 	"color": "#C8FFB0",
 	"model": "asas_mariposa",
-	"description": "Pequena, brilhante e travessa, nascida do orvalho das florestas. Voa sem parar com asas de mariposa, faz as plantas crescerem e prefere ajudar a lutar: abre um campo de flores que cura os amigos e afasta os monstros. Sozinha é frágil, mas um grupo com uma fada por perto dificilmente cai.",
+	"description": "race.datura_origins.fada.description",
 	"advantages": [
-		"Voa sem limite, rápida como uma élitra com foguete: no ar, aperte pular de novo para levantar voo. Segure agachar para planar sem impulso.",
-		"Pequena demais para ser notada: os monstros não a atacam até ela atacar um deles (a trégua volta 30 segundos depois).",
-		"Come como um passarinho: cada alimento enche o dobro e a fome cai pela metade.",
-		"Regenera vida aos poucos e faz as plantas por perto crescerem.",
-		"Vitória-régia: ao pousar na água, uma vitória-régia surge sob seus pés e a mantém boiando (agache para mergulhar).",
-		"Não toma dano de queda, enxerga no escuro, tem sorte, anda 15% mais rápido e alcança blocos 1,5 bloco mais longe."
+		"race.datura_origins.fada.advantage.0",
+		"race.datura_origins.fada.advantage.1",
+		"race.datura_origins.fada.advantage.2",
+		"race.datura_origins.fada.advantage.3",
+		"race.datura_origins.fada.advantage.4",
+		"race.datura_origins.fada.advantage.5"
 	],
 	"disadvantages": [
-		"Tem só um bloco de altura e 6 corações, e seus golpes causam 1 a menos de dano.",
-		"Não veste nenhuma armadura.",
-		"Não sabe nadar: dentro d'água, afunda.",
-		"Voar cansa: a fome cai enquanto ela está no ar."
+		"race.datura_origins.fada.disadvantage.0",
+		"race.datura_origins.fada.disadvantage.1",
+		"race.datura_origins.fada.disadvantage.2",
+		"race.datura_origins.fada.disadvantage.3"
 	],
 	"ability": {
 		"type": "datura_origins:flower_sanctuary",
-		"name": "Santuário de Flores",
-		"description": "Abre no chão um círculo de flores de 10 blocos por 20 segundos. Nenhum monstro consegue entrar, e quem estiver lá dentro (jogadores e animais domados) recupera 1 coração por segundo. Recarga de 52 segundos.",
+		"name": "race.datura_origins.fada.ability.name",
+		"description": "race.datura_origins.fada.ability.description",
 		"cooldown": 1050,
 		"radius": 10,
 		"duration": 400,

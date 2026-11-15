@@ -1,35 +1,36 @@
 {
 	"id": "kitsune_corrompida",
 	"order": 20,
-	"name": "Kitsune Corrompida",
+	"name": "race.datura_origins.kitsune_corrompida.name",
 	"variant_of": "kitsune",
-	"variant_name": "Corrompida",
+	"variant_name": "race.datura_origins.kitsune_corrompida.variant",
 	"color": "#7A0A1C",
 	"model": [
 		"caudas_kitsune_corrompida",
-		"orelhas_raposa_corrompida"
+		"orelhas_raposa_corrompida",
+		"aureola_kitsune"
 	],
-	"description": "Uma Kitsune que provou a força dos outros e não conseguiu parar. As nove caudas escureceram num vermelho de sangue, e ela acorrenta as presas antes de acabar com elas.",
+	"description": "race.datura_origins.kitsune_corrompida.description",
 	"advantages": [
-		"Mais bruta: 2,5 corações a mais, 3 a mais de dano e corre 10% mais rápido.",
-		"Olhos de raposa: visão noturna, e a sorte sempre a acompanha.",
-		"Não toma dano de queda.",
-		"Fogo de raposa e gelo espiritual: os golpes queimam e congelam, e ela é imune ao gelo.",
-		"Patas leves: anda sobre a neve fofa sem afundar.",
-		"As raposas a tratam como uma delas."
+		"race.datura_origins.kitsune_corrompida.advantage.0",
+		"race.datura_origins.kitsune_corrompida.advantage.1",
+		"race.datura_origins.kitsune_corrompida.advantage.2",
+		"race.datura_origins.kitsune_corrompida.advantage.3",
+		"race.datura_origins.kitsune_corrompida.advantage.4",
+		"race.datura_origins.kitsune_corrompida.advantage.5"
 	],
 	"disadvantages": [
-		"Caudas encharcadas: 30% mais lenta na água.",
-		"Explosões causam 50% mais dano.",
-		"Criatura da noite: de dia causa 1 a menos de dano."
+		"race.datura_origins.kitsune_corrompida.disadvantage.0",
+		"race.datura_origins.kitsune_corrompida.disadvantage.1",
+		"race.datura_origins.kitsune_corrompida.disadvantage.2"
 	],
 	"passives": [
-		"Pérola Estelar: ao morrer, volta de pé com 1 coração, empurrando e ferindo quem estiver perto (a cada 10 minutos)."
+		"race.datura_origins.kitsune_corrompida.passive.0"
 	],
 	"ability": {
 		"type": "datura_origins:dark_comet",
-		"name": "Prisão de Correntes",
-		"description": "Correntes vermelhas saltam dela e prendem na hora os 3 inimigos mais próximos num raio de 10 blocos, causando 5 de dano. Presos por 3 segundos, ficam imóveis; depois seguem acorrentados por mais 5 segundos, puxados de volta se passarem de 10 blocos e tomando dano contínuo. Recarga de 30 segundos.",
+		"name": "race.datura_origins.kitsune_corrompida.ability.name",
+		"description": "race.datura_origins.kitsune_corrompida.ability.description",
 		"cooldown": 600,
 		"radius": 10,
 		"damage": 5,

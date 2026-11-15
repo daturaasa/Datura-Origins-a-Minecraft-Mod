@@ -1,28 +1,28 @@
 {
 	"id": "demonio",
 	"order": 17,
-	"name": "Demônio",
+	"name": "race.datura_origins.demonio.name",
 	"color": "#A3121F",
 	"model": "chifres_demonio",
-	"description": "Criatura das trevas que vive de enganar e negociar com os humanos. Sorri na troca e cobra depois. Os monstros o reconhecem e se afastam, e o Nether o recebe como em casa. Cada alma que colhe o torna mais forte, mas o brilho de um encantamento o fere como nada mais.",
+	"description": "race.datura_origins.demonio.description",
 	"advantages": [
-		"Mais forte e 10% mais rápido que um humano: 2 a mais de dano, 2 corações a mais, 4 de armadura natural e recebe 40% menos empurrão.",
-		"No Nether causa mais 2 de dano e ganha mais 3 de armadura.",
-		"Lábia infernal: os aldeões dão desconto.",
-		"Os monstros não o atacam, a menos que ele ataque primeiro.",
-		"Quanto mais perto da morte, mais rápido regenera.",
-		"Imune ao fogo, enxerga no escuro e seus golpes incendeiam os inimigos.",
-		"Maldições (Vínculo e Desaparecimento) não o afetam."
+		"race.datura_origins.demonio.advantage.0",
+		"race.datura_origins.demonio.advantage.1",
+		"race.datura_origins.demonio.advantage.2",
+		"race.datura_origins.demonio.advantage.3",
+		"race.datura_origins.demonio.advantage.4",
+		"race.datura_origins.demonio.advantage.5",
+		"race.datura_origins.demonio.advantage.6"
 	],
 	"disadvantages": [
-		"Armas encantadas causam 75% a mais de dano nele, e ele não pode usar nem vestir nada encantado.",
-		"Carregar qualquer item encantado no inventário causa dano.",
-		"Veneno, fome e decomposição o machucam 50% mais.",
-		"Só come carne.",
-		"Dentro da água causa 2 a menos de dano."
+		"race.datura_origins.demonio.disadvantage.0",
+		"race.datura_origins.demonio.disadvantage.1",
+		"race.datura_origins.demonio.disadvantage.2",
+		"race.datura_origins.demonio.disadvantage.3",
+		"race.datura_origins.demonio.disadvantage.4"
 	],
 	"passives": [
-		"Colheita de almas: quem ele mata deixa almas vermelhas (mais almas quanto mais forte a vítima). Ao absorvê-las, amadurece em 5 fases, cada uma com mais dano, vida e armadura. Na forma final, Espinhos Infernais devolvem 30% do dano recebido a quem o atacou. A experiência normal continua à parte."
+		"race.datura_origins.demonio.passive.0"
 	],
 	"powers": [
 		{

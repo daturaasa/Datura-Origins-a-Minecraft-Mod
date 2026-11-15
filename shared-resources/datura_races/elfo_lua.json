@@ -1,27 +1,27 @@
 {
 	"id": "elfo_lua",
 	"order": 5,
-	"name": "Elfo da Lua",
+	"name": "race.datura_origins.elfo_lua.name",
 	"color": "#B8BCFF",
-	"description": "Elfo gracioso que dança sob o luar. Um pouco mais alto que um humano, delicado de dia e perigoso quando a lua nasce.",
+	"description": "race.datura_origins.elfo_lua.description",
 	"advantages": [
-		"À noite causa 3 a mais de dano, fica 15% mais rápido e ganha +4 de armadura.",
-		"Visão noturna permanente e passos silenciosos.",
-		"Os animais não fogem dele.",
-		"O Warden não o ataca.",
-		"Seus golpes causam decomposição (Wither) por 3 segundos.",
-		"Marca do Eclipse: à noite, a cada 3 golpes no mesmo alvo um clarão lunar explode nele, causando 5 de dano e cegueira.",
-		"À noite tem mais sorte em pescas e baús."
+		"race.datura_origins.elfo_lua.advantage.0",
+		"race.datura_origins.elfo_lua.advantage.1",
+		"race.datura_origins.elfo_lua.advantage.2",
+		"race.datura_origins.elfo_lua.advantage.3",
+		"race.datura_origins.elfo_lua.advantage.4",
+		"race.datura_origins.elfo_lua.advantage.5",
+		"race.datura_origins.elfo_lua.advantage.6"
 	],
 	"disadvantages": [
-		"De dia causa 2 a menos de dano.",
-		"Só tem 9 corações.",
-		"O fogo causa 50% a mais de dano."
+		"race.datura_origins.elfo_lua.disadvantage.0",
+		"race.datura_origins.elfo_lua.disadvantage.1",
+		"race.datura_origins.elfo_lua.disadvantage.2"
 	],
 	"ability": {
 		"type": "datura_origins:moonfall",
-		"name": "Queda da Lua",
-		"description": "Ergue os braços e invoca uma lua enorme: quem está perto fica cego e muito lento, e ele não pode atacar durante a invocação. Depois a lua cai sobre o alvo da mira, abrindo uma cratera e causando dano altíssimo. Recarga de 4 minutos.",
+		"name": "race.datura_origins.elfo_lua.ability.name",
+		"description": "race.datura_origins.elfo_lua.ability.description",
 		"cooldown": 4800,
 		"windup": 50,
 		"radius": 10,

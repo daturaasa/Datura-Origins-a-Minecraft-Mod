@@ -1,24 +1,24 @@
 {
 	"id": "lilac",
 	"order": 19,
-	"name": "Lilac",
+	"name": "race.datura_origins.lilac.name",
 	"color": "#FFC83A",
-	"description": "Uma gênia da lâmpada que só realiza os próprios desejos. Cercada de ouro e viciada em apostas, sente o cheiro de minério de longe e transforma qualquer coisa numa aposta.",
+	"description": "race.datura_origins.lilac.description",
 	"advantages": [
-		"Mais forte e resistente que um humano: 2 a mais de dano, 2 corações a mais e 2 de armadura.",
-		"Fortuna natural: os minérios que ela quebra caem como se a ferramenta tivesse Fortuna II, mesmo sem encantamento.",
-		"Ganha 30% mais experiência e tem sorte.",
-		"Toque de Midas: monstros derrotados às vezes deixam pepitas de ouro."
+		"race.datura_origins.lilac.advantage.0",
+		"race.datura_origins.lilac.advantage.1",
+		"race.datura_origins.lilac.advantage.2",
+		"race.datura_origins.lilac.advantage.3"
 	],
 	"disadvantages": [
-		"Só usa ferramentas e armas de ouro, diamante ou netherita.",
-		"Sem ouro no inventário, causa 2 a menos de dano e anda 10% mais devagar.",
-		"Ouro molhado: 25% mais lenta na água."
+		"race.datura_origins.lilac.disadvantage.0",
+		"race.datura_origins.lilac.disadvantage.1",
+		"race.datura_origins.lilac.disadvantage.2"
 	],
 	"ability": {
 		"type": "datura_origins:casino",
-		"name": "Cassino",
-		"description": "Aposta o item da mão numa roleta que só ela vê: pode perder tudo, empatar ou multiplicar por 2, 3, 4 ou até 5. Quanto mais raro o item, mais difícil ganhar. Recarga de 5 minutos.",
+		"name": "race.datura_origins.lilac.ability.name",
+		"description": "race.datura_origins.lilac.ability.description",
 		"cooldown": 6000,
 		"spin": 140
 	},

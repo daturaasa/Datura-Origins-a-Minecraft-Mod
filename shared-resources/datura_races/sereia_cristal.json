@@ -1,29 +1,29 @@
 {
 	"id": "sereia_cristal",
 	"order": 13,
-	"name": "Sereia das Profundezas",
+	"name": "race.datura_origins.sereia_cristal.name",
 	"variant_of": "sereia",
-	"variant_name": "Profundezas",
+	"variant_name": "race.datura_origins.sereia_cristal.variant",
 	"color": "#7FE8FF",
 	"model": "cauda_sereia_cristal",
-	"description": "Vive no fundo escuro do oceano, onde a cauda maior se cobriu de cristais que brilham sozinhos. Guarda os segredos antigos do mar e sabe despertar a magia escondida em armas e armaduras.",
+	"description": "race.datura_origins.sereia_cristal.description",
 	"advantages": [
-		"Respira debaixo d'água, nada como um golfinho (graça do golfinho e poder do conduíte) e enxerga bem no fundo do mar.",
-		"Também respira fora d'água normalmente.",
-		"Na água causa 7 a mais de dano, ganha 8 de armadura e 5 corações a mais, ataca 30% mais rápido e regenera meio coração por segundo.",
-		"Debaixo d'água quebra blocos na velocidade normal."
+		"race.datura_origins.sereia_cristal.advantage.0",
+		"race.datura_origins.sereia_cristal.advantage.1",
+		"race.datura_origins.sereia_cristal.advantage.2",
+		"race.datura_origins.sereia_cristal.advantage.3"
 	],
 	"disadvantages": [
-		"Fora d'água não anda: só se arrasta devagar. Se ficar parada por 3 segundos, senta na própria cauda.",
-		"Escamas secas: depois de 60 segundos longe da água e da chuva, fica lenta e fraca até se molhar de novo.",
-		"Fora d'água tem só 9 corações.",
-		"O fogo causa o dobro de dano.",
-		"A cauda não deixa usar calças nem botas."
+		"race.datura_origins.sereia_cristal.disadvantage.0",
+		"race.datura_origins.sereia_cristal.disadvantage.1",
+		"race.datura_origins.sereia_cristal.disadvantage.2",
+		"race.datura_origins.sereia_cristal.disadvantage.3",
+		"race.datura_origins.sereia_cristal.disadvantage.4"
 	],
 	"ability": {
 		"type": "datura_origins:blessing_altar",
-		"name": "Altar Abissal",
-		"description": "Abre só para ela uma mesa de encantamento com três encantamentos sorteados, em níveis também sorteados, para o item da mão. Escolher um não custa nada. Recarga de 3 minutos.",
+		"name": "race.datura_origins.sereia_cristal.ability.name",
+		"description": "race.datura_origins.sereia_cristal.ability.description",
 		"cooldown": 3600,
 		"options": 3
 	},

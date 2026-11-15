@@ -5,6 +5,7 @@ cd /d "%~dp0"
 
 set REPO=https://github.com/daturaasa/Datura-Origins-a-Minecraft-Mod.git
 set SLUG=daturaasa/Datura-Origins-a-Minecraft-Mod
+set AUTO=%~1
 
 where git >nul 2>nul
 if errorlevel 1 (
@@ -24,7 +25,7 @@ echo Repositorio: %REPO%
 echo O conteudo do branch main sera substituido por este projeto.
 echo O historico e os releases antigos NAO serao apagados.
 echo.
-set /p OK=Confirmar envio? (S/N): 
+if /i "%AUTO%"=="S" (set OK=S) else set /p OK=Confirmar envio? (S/N): 
 if /i not "%OK%"=="S" goto cancelado
 
 if not exist .git (
@@ -66,7 +67,7 @@ if not exist "%JAR%" (
 	goto fim
 )
 
-set /p REL=Criar o release v%VERSAO% com o .jar? (S/N): 
+if /i "%AUTO%"=="S" (set REL=S) else set /p REL=Criar o release v%VERSAO% com o .jar? (S/N): 
 if /i not "%REL%"=="S" goto fim
 
 where gh >nul 2>nul

@@ -1,1 +1,1151 @@
-{"meta": {"format_version": "4.10", "model_format": "free", "box_uv": false}, "name": "orelhas_raposa_branca", "model_identifier": "orelhas_raposa_branca", "visible_box": [1, 1, 0], "variable_placeholders": "", "variable_placeholder_buttons": [], "timeline_setups": [], "unhandled_root_fields": {}, "resolution": {"width": 128, "height": 16}, "elements": [{"name": "orelha_r_casca", "box_uv": false, "rescale": false, "locked": false, "light_emission": 0, "render_order": "default", "allow_mirror_modeling": true, "from": [0.5, 31.5, -2.0], "to": [4.0, 36.0, 0.0], "autouv": 0, "color": 0, "origin": [2.25, 31.5, -1.0], "rotation": [0, 0, -5.625], "uuid": "b9b23e3b-0593-421b-bb31-3fea82ed79d5", "faces": {"north": {"uv": [0, 0, 7, 9], "texture": 0}, "east": {"uv": [32, 0, 36, 9], "texture": 0}, "south": {"uv": [8, 0, 15, 9], "texture": 0}, "west": {"uv": [37, 0, 41, 9], "texture": 0}, "up": {"uv": [0, 10, 7, 14], "texture": 0}, "down": {"uv": [8, 10, 15, 14], "texture": 0}}, "type": "cube"}, {"name": "orelha_r_ponta", "box_uv": false, "rescale": false, "locked": false, "light_emission": 0, "render_order": "default", "allow_mirror_modeling": true, "from": [1.0, 36.0, -2.0], "to": [3.5, 38.5, 0.0], "autouv": 0, "color": 0, "origin": [2.25, 31.5, -1.0], "rotation": [0, 0, -5.625], "uuid": "ea6fa6e1-87c2-4372-97ea-0ae63a99994b", "faces": {"north": {"uv": [84, 0, 89, 5], "texture": 0}, "east": {"uv": [108, 0, 112, 5], "texture": 0}, "south": {"uv": [90, 0, 95, 5], "texture": 0}, "west": {"uv": [113, 0, 117, 5], "texture": 0}, "up": {"uv": [32, 10, 37, 14], "texture": 0}, "down": {"uv": [38, 10, 43, 14], "texture": 0}}, "type": "cube"}, {"name": "orelha_r_miolo", "box_uv": false, "rescale": false, "locked": false, "light_emission": 0, "render_order": "default", "allow_mirror_modeling": true, "from": [1.0, 32.0, -2.25], "to": [3.5, 36.0, -1.75], "autouv": 0, "color": 0, "origin": [2.25, 31.5, -1.0], "rotation": [0, 0, -5.625], "uuid": "6bcbf823-d594-4cb2-bd03-87f3577546ed", "faces": {"north": {"uv": [52, 0, 57, 8], "texture": 0}, "east": {"uv": [76, 0, 77, 8], "texture": 0}, "south": {"uv": [58, 0, 63, 8], "texture": 0}, "west": {"uv": [78, 0, 79, 8], "texture": 0}, "up": {"uv": [80, 10, 85, 11], "texture": 0}, "down": {"uv": [86, 10, 91, 11], "texture": 0}}, "type": "cube"}, {"name": "orelha_r_miolo_ponta", "box_uv": false, "rescale": false, "locked": false, "light_emission": 0, "render_order": "default", "allow_mirror_modeling": true, "from": [1.5, 36.0, -2.25], "to": [3.0, 38.0, -1.75], "autouv": 0, "color": 0, "origin": [2.25, 31.5, -1.0], "rotation": [0, 0, -5.625], "uuid": "bc7b77c8-1787-4f81-9611-5686a9dcd1c3", "faces": {"north": {"uv": [56, 10, 59, 14], "texture": 0}, "east": {"uv": [72, 10, 73, 14], "texture": 0}, "south": {"uv": [60, 10, 63, 14], "texture": 0}, "west": {"uv": [74, 10, 75, 14], "texture": 0}, "up": {"uv": [104, 10, 107, 11], "texture": 0}, "down": {"uv": [108, 10, 111, 11], "texture": 0}}, "type": "cube"}, {"name": "orelha_l_casca", "box_uv": false, "rescale": false, "locked": false, "light_emission": 0, "render_order": "default", "allow_mirror_modeling": true, "from": [-4.0, 31.5, -2.0], "to": [-0.5, 36.0, 0.0], "autouv": 0, "color": 0, "origin": [-2.25, 31.5, -1.0], "rotation": [0, 0, 5.625], "uuid": "11664fb7-d26d-4489-a3e0-903c47ea3132", "faces": {"north": {"uv": [16, 0, 23, 9], "texture": 0}, "east": {"uv": [42, 0, 46, 9], "texture": 0}, "south": {"uv": [24, 0, 31, 9], "texture": 0}, "west": {"uv": [47, 0, 51, 9], "texture": 0}, "up": {"uv": [16, 10, 23, 14], "texture": 0}, "down": {"uv": [24, 10, 31, 14], "texture": 0}}, "type": "cube"}, {"name": "orelha_l_ponta", "box_uv": false, "rescale": false, "locked": false, "light_emission": 0, "render_order": "default", "allow_mirror_modeling": true, "from": [-3.5, 36.0, -2.0], "to": [-1.0, 38.5, 0.0], "autouv": 0, "color": 0, "origin": [-2.25, 31.5, -1.0], "rotation": [0, 0, 5.625], "uuid": "5ba6d929-74f4-418a-b850-d32119ba277d", "faces": {"north": {"uv": [96, 0, 101, 5], "texture": 0}, "east": {"uv": [118, 0, 122, 5], "texture": 0}, "south": {"uv": [102, 0, 107, 5], "texture": 0}, "west": {"uv": [123, 0, 127, 5], "texture": 0}, "up": {"uv": [44, 10, 49, 14], "texture": 0}, "down": {"uv": [50, 10, 55, 14], "texture": 0}}, "type": "cube"}, {"name": "orelha_l_miolo", "box_uv": false, "rescale": false, "locked": false, "light_emission": 0, "render_order": "default", "allow_mirror_modeling": true, "from": [-3.5, 32.0, -2.25], "to": [-1.0, 36.0, -1.75], "autouv": 0, "color": 0, "origin": [-2.25, 31.5, -1.0], "rotation": [0, 0, 5.625], "uuid": "6a4cc482-51d6-44ef-a274-f3fc629365f9", "faces": {"north": {"uv": [64, 0, 69, 8], "texture": 0}, "east": {"uv": [80, 0, 81, 8], "texture": 0}, "south": {"uv": [70, 0, 75, 8], "texture": 0}, "west": {"uv": [82, 0, 83, 8], "texture": 0}, "up": {"uv": [92, 10, 97, 11], "texture": 0}, "down": {"uv": [98, 10, 103, 11], "texture": 0}}, "type": "cube"}, {"name": "orelha_l_miolo_ponta", "box_uv": false, "rescale": false, "locked": false, "light_emission": 0, "render_order": "default", "allow_mirror_modeling": true, "from": [-3.0, 36.0, -2.25], "to": [-1.5, 38.0, -1.75], "autouv": 0, "color": 0, "origin": [-2.25, 31.5, -1.0], "rotation": [0, 0, 5.625], "uuid": "2f5bea27-343e-4af4-82d6-6947a626eb49", "faces": {"north": {"uv": [64, 10, 67, 14], "texture": 0}, "east": {"uv": [76, 10, 77, 14], "texture": 0}, "south": {"uv": [68, 10, 71, 14], "texture": 0}, "west": {"uv": [78, 10, 79, 14], "texture": 0}, "up": {"uv": [112, 10, 115, 11], "texture": 0}, "down": {"uv": [116, 10, 119, 11], "texture": 0}}, "type": "cube"}], "outliner": [{"name": "head", "origin": [0, 24, 0], "rotation": [0, 0, 0], "color": 0, "uuid": "74a22015-07cd-4556-a0f3-a7e1957ee51e", "export": true, "mirror_uv": false, "isOpen": true, "locked": false, "visibility": true, "autouv": 0, "children": [{"name": "orelha_r", "origin": [2.25, 31.5, -1.0], "rotation": [0, 0, 0], "color": 0, "uuid": "dcc73db5-751a-456c-9997-68835c4664cc", "export": true, "mirror_uv": false, "isOpen": true, "locked": false, "visibility": true, "autouv": 0, "children": ["b9b23e3b-0593-421b-bb31-3fea82ed79d5", "ea6fa6e1-87c2-4372-97ea-0ae63a99994b", "6bcbf823-d594-4cb2-bd03-87f3577546ed", "bc7b77c8-1787-4f81-9611-5686a9dcd1c3"]}, {"name": "orelha_l", "origin": [-2.25, 31.5, -1.0], "rotation": [0, 0, 0], "color": 0, "uuid": "62e882c1-0f91-417f-b716-3d5703d39900", "export": true, "mirror_uv": false, "isOpen": true, "locked": false, "visibility": true, "autouv": 0, "children": ["11664fb7-d26d-4489-a3e0-903c47ea3132", "5ba6d929-74f4-418a-b850-d32119ba277d", "6a4cc482-51d6-44ef-a274-f3fc629365f9", "2f5bea27-343e-4af4-82d6-6947a626eb49"]}]}], "textures": [{"path": "", "name": "orelhas_raposa_branca.png", "folder": "", "namespace": "", "id": "0", "width": 128, "height": 16, "uv_width": 128, "uv_height": 16, "particle": false, "use_as_default": false, "layers_enabled": false, "sync_to_project": "", "render_mode": "normal", "render_sides": "auto", "frame_time": 1, "frame_order_type": "loop", "frame_order": "", "frame_interpolate": false, "visible": true, "internal": true, "saved": false, "uuid": "0d1cb8a2-ddde-45bd-b5b3-53101f36d8aa", "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAQCAYAAADeWHeIAAACgklEQVR4Xu2YsW4TQRCG9yznYgkSCVCMBUkT0UKBRA0FUp6AmhahvAANBQ0vgBBt6jxBJBdQI6VwQRUhpBDk2CKREoqLY8XoX2dOe3O7N9m7MwKzX3O62392vHN7M+uJdh48nCjGzfaSfvKo+yl6u7yWG7/TWtTjzwd7UZ328AufW+17qc9OZ1lt9HYzfop0L1vtSacZpytqL8bqxc+v0bP4hp5zpbGghhfn6n58Tb3+9d1b/+b66oTs3ieD3D2Ph+23Atu6gI++jng14LTfP+F7IMPBaFQ4Pgv7H8lZzqfNj01nY3gxTl8+NkF/XLwmX72JKx6u31qHvmy8GjbnR4PTdD22l286m4V92cVI4MsHdJXw1Rd9TFgTxVKKH/DRV4lXA8ZIRwS9UHMT3I3jNO1z6rYHCBSVGYL7cen+BhBPKqME1oQ48jiDOvSIl/keXfNyXaYE7H4bFu5iVymgTVPV/kvvIPPCAc1pfl2i7jK9S2k+fRmeegkeDw6PY1m9GIfL0l6ka9p2pA2p1krngDL2ZVIb0rZZ4wdnUq3309NmofLA73Ew1vHr7unLq+6+vr5LDiOVKKXouJUc6udV9drHyf7UZ2/qyzavS6czAGFLIyZFpQBUtecpjObkXFUXkMlsAEL6WqV/BVXtA3+OtAQQs0jlJtLmqMr26HiaDhkfx6fW5756/PfH1GTH7wOBf4ro89PHuU4fga7cZuu2cxwHm1nYu/y6/BXpqTNodgRxSES30OwEusalzt+HW+u5+KDz+KS5lHuOLFRFz+fl89nGpd2YKwEBPxB0n5JTVc9LGZ/PVepcWA+B847UCZTG54n/bgOgxw9cTSJpPBAIBOaH32uKiiH1F4LkAAAAAElFTkSuQmCC"}], "animations": [{"uuid": "9890beef-53e2-4081-a462-6215435652be", "name": "idle", "loop": "loop", "override": false, "length": 4.0, "snapping": 48, "selected": false, "anim_time_update": "", "blend_weight": "", "start_delay": "", "loop_delay": "", "animators": {"dcc73db5-751a-456c-9997-68835c4664cc": {"name": "orelha_r", "type": "bone", "keyframes": [{"channel": "rotation", "data_points": [{"x": 0, "y": 0, "z": 0}], "uuid": "110339a0-108c-4b53-b4b6-2893ad21160a", "time": 0, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": 2, "y": 0, "z": -2}], "uuid": "b3ad8720-f534-479c-b443-cde07b5845de", "time": 1.2, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": 0, "y": 0, "z": 0}], "uuid": "0a28ae3c-e5db-4288-92d2-a681d9a6af54", "time": 2.4, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": -9, "y": 0, "z": 8}], "uuid": "ddc70928-becc-4cf4-ae1d-a6c1805c5f17", "time": 2.6, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": 3, "y": 0, "z": -3}], "uuid": "8941b603-329b-40bc-89a7-ddf1783836d2", "time": 2.75, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": 0, "y": 0, "z": 0}], "uuid": "9afc6395-8e76-4cdb-88b0-81cf3ec1e32b", "time": 2.9, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": 0, "y": 0, "z": 0}], "uuid": "34f80c27-ae91-4290-bbd9-48b2ca9dfb35", "time": 4.0, "color": -1, "interpolation": "catmullrom"}]}, "62e882c1-0f91-417f-b716-3d5703d39900": {"name": "orelha_l", "type": "bone", "keyframes": [{"channel": "rotation", "data_points": [{"x": 0, "y": 0, "z": 0}], "uuid": "201a94ac-f391-4300-8300-25e6f15aa6bb", "time": 0, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": 1.5, "y": 0, "z": 1.5}], "uuid": "cb7001ba-7c93-42fa-acb5-5c7c92a619a4", "time": 0.8, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": 0, "y": 0, "z": 0}], "uuid": "2f58bcab-1b65-44c9-b626-f6df810e278f", "time": 1.6, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": 2, "y": 0, "z": 2}], "uuid": "a71c73f6-e7d1-4f00-b49e-8c3bf5461ff3", "time": 3.2, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": 0, "y": 0, "z": 0}], "uuid": "674cc43a-b41c-40a9-b49c-ab72ea931503", "time": 4.0, "color": -1, "interpolation": "catmullrom"}]}}}, {"uuid": "54e7e817-e448-486e-abbf-e3a77d65254b", "name": "walk", "loop": "loop", "override": false, "length": 0.5, "snapping": 48, "selected": false, "anim_time_update": "", "blend_weight": "", "start_delay": "", "loop_delay": "", "animators": {"dcc73db5-751a-456c-9997-68835c4664cc": {"name": "orelha_r", "type": "bone", "keyframes": [{"channel": "rotation", "data_points": [{"x": 4, "y": 0, "z": -2}], "uuid": "be643fad-7684-4536-afc6-d3c6b5e6d4d2", "time": 0, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": -3, "y": 0, "z": 3}], "uuid": "7d15e883-ad2c-4fee-b86a-e7713deea960", "time": 0.25, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": 4, "y": 0, "z": -2}], "uuid": "ae30634e-c34b-47b3-95dc-d9cedd7695ef", "time": 0.5, "color": -1, "interpolation": "catmullrom"}]}, "62e882c1-0f91-417f-b716-3d5703d39900": {"name": "orelha_l", "type": "bone", "keyframes": [{"channel": "rotation", "data_points": [{"x": -3, "y": 0, "z": -3}], "uuid": "84795e68-80bd-48ad-b802-df89acd005ed", "time": 0, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": 4, "y": 0, "z": 2}], "uuid": "44b9fd92-1f91-480e-aebf-90fe56b7aa7b", "time": 0.25, "color": -1, "interpolation": "catmullrom"}, {"channel": "rotation", "data_points": [{"x": -3, "y": 0, "z": -3}], "uuid": "166b07ce-1527-4639-af14-89b717b6ec74", "time": 0.5, "color": -1, "interpolation": "catmullrom"}]}}}]}
+{
+	"meta": {
+		"format_version": "4.10",
+		"model_format": "free",
+		"box_uv": false
+	},
+	"name": "orelhas_raposa_branca",
+	"model_identifier": "orelhas_raposa_branca",
+	"visible_box": [
+		1,
+		1,
+		0
+	],
+	"variable_placeholders": "",
+	"variable_placeholder_buttons": [],
+	"timeline_setups": [],
+	"unhandled_root_fields": {},
+	"resolution": {
+		"width": 128,
+		"height": 16
+	},
+	"elements": [
+		{
+			"name": "orelha_r_casca",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-0.2875000000000001,
+				31.5,
+				-2.45
+			],
+			"to": [
+				4.7875,
+				38.547,
+				0.44999999999999996
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				2.25,
+				31.5,
+				-1.0
+			],
+			"rotation": [
+				0,
+				0,
+				-5.625
+			],
+			"uuid": "b9b23e3b-0593-421b-bb31-3fea82ed79d5",
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						0,
+						7,
+						9
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						32,
+						0,
+						36,
+						9
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						8,
+						0,
+						15,
+						9
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						37,
+						0,
+						41,
+						9
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						0,
+						10,
+						7,
+						14
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						8,
+						10,
+						15,
+						14
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "orelha_r_ponta",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				0.4375,
+				38.547,
+				-2.45
+			],
+			"to": [
+				4.0625,
+				42.462,
+				0.44999999999999996
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				2.25,
+				31.5,
+				-1.0
+			],
+			"rotation": [
+				0,
+				0,
+				-5.625
+			],
+			"uuid": "ea6fa6e1-87c2-4372-97ea-0ae63a99994b",
+			"faces": {
+				"north": {
+					"uv": [
+						84,
+						0,
+						89,
+						5
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						108,
+						0,
+						112,
+						5
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						90,
+						0,
+						95,
+						5
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						113,
+						0,
+						117,
+						5
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						32,
+						10,
+						37,
+						14
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						38,
+						10,
+						43,
+						14
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "orelha_r_miolo",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				0.4375,
+				32.283,
+				-2.8125
+			],
+			"to": [
+				4.0625,
+				38.547,
+				-2.0875
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				2.25,
+				31.5,
+				-1.0
+			],
+			"rotation": [
+				0,
+				0,
+				-5.625
+			],
+			"uuid": "6bcbf823-d594-4cb2-bd03-87f3577546ed",
+			"faces": {
+				"north": {
+					"uv": [
+						52,
+						0,
+						57,
+						8
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						76,
+						0,
+						77,
+						8
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						58,
+						0,
+						63,
+						8
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						78,
+						0,
+						79,
+						8
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						80,
+						10,
+						85,
+						11
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						86,
+						10,
+						91,
+						11
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "orelha_r_miolo_ponta",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				1.1625,
+				38.547,
+				-2.8125
+			],
+			"to": [
+				3.3375,
+				41.679,
+				-2.0875
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				2.25,
+				31.5,
+				-1.0
+			],
+			"rotation": [
+				0,
+				0,
+				-5.625
+			],
+			"uuid": "bc7b77c8-1787-4f81-9611-5686a9dcd1c3",
+			"faces": {
+				"north": {
+					"uv": [
+						56,
+						10,
+						59,
+						14
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						72,
+						10,
+						73,
+						14
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						60,
+						10,
+						63,
+						14
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						74,
+						10,
+						75,
+						14
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						104,
+						10,
+						107,
+						11
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						108,
+						10,
+						111,
+						11
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "orelha_l_casca",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-4.7875,
+				31.5,
+				-2.45
+			],
+			"to": [
+				0.2875000000000001,
+				38.547,
+				0.44999999999999996
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				-2.25,
+				31.5,
+				-1.0
+			],
+			"rotation": [
+				0,
+				0,
+				5.625
+			],
+			"uuid": "11664fb7-d26d-4489-a3e0-903c47ea3132",
+			"faces": {
+				"north": {
+					"uv": [
+						16,
+						0,
+						23,
+						9
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						42,
+						0,
+						46,
+						9
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						24,
+						0,
+						31,
+						9
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						47,
+						0,
+						51,
+						9
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						16,
+						10,
+						23,
+						14
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						24,
+						10,
+						31,
+						14
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "orelha_l_ponta",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-4.0625,
+				38.547,
+				-2.45
+			],
+			"to": [
+				-0.4375,
+				42.462,
+				0.44999999999999996
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				-2.25,
+				31.5,
+				-1.0
+			],
+			"rotation": [
+				0,
+				0,
+				5.625
+			],
+			"uuid": "5ba6d929-74f4-418a-b850-d32119ba277d",
+			"faces": {
+				"north": {
+					"uv": [
+						96,
+						0,
+						101,
+						5
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						118,
+						0,
+						122,
+						5
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						102,
+						0,
+						107,
+						5
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						123,
+						0,
+						127,
+						5
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						44,
+						10,
+						49,
+						14
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						50,
+						10,
+						55,
+						14
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "orelha_l_miolo",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-4.0625,
+				32.283,
+				-2.8125
+			],
+			"to": [
+				-0.4375,
+				38.547,
+				-2.0875
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				-2.25,
+				31.5,
+				-1.0
+			],
+			"rotation": [
+				0,
+				0,
+				5.625
+			],
+			"uuid": "6a4cc482-51d6-44ef-a274-f3fc629365f9",
+			"faces": {
+				"north": {
+					"uv": [
+						64,
+						0,
+						69,
+						8
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						80,
+						0,
+						81,
+						8
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						70,
+						0,
+						75,
+						8
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						82,
+						0,
+						83,
+						8
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						92,
+						10,
+						97,
+						11
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						98,
+						10,
+						103,
+						11
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "orelha_l_miolo_ponta",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-3.3375,
+				38.547,
+				-2.8125
+			],
+			"to": [
+				-1.1625,
+				41.679,
+				-2.0875
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				-2.25,
+				31.5,
+				-1.0
+			],
+			"rotation": [
+				0,
+				0,
+				5.625
+			],
+			"uuid": "2f5bea27-343e-4af4-82d6-6947a626eb49",
+			"faces": {
+				"north": {
+					"uv": [
+						64,
+						10,
+						67,
+						14
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						76,
+						10,
+						77,
+						14
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						68,
+						10,
+						71,
+						14
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						78,
+						10,
+						79,
+						14
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						112,
+						10,
+						115,
+						11
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						116,
+						10,
+						119,
+						11
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		}
+	],
+	"outliner": [
+		{
+			"name": "head",
+			"origin": [
+				0,
+				24,
+				0
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"color": 0,
+			"uuid": "74a22015-07cd-4556-a0f3-a7e1957ee51e",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"children": [
+				{
+					"name": "orelha_r",
+					"origin": [
+						2.25,
+						31.5,
+						-1.0
+					],
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"color": 0,
+					"uuid": "dcc73db5-751a-456c-9997-68835c4664cc",
+					"export": true,
+					"mirror_uv": false,
+					"isOpen": true,
+					"locked": false,
+					"visibility": true,
+					"autouv": 0,
+					"children": [
+						"b9b23e3b-0593-421b-bb31-3fea82ed79d5",
+						"ea6fa6e1-87c2-4372-97ea-0ae63a99994b",
+						"6bcbf823-d594-4cb2-bd03-87f3577546ed",
+						"bc7b77c8-1787-4f81-9611-5686a9dcd1c3"
+					]
+				},
+				{
+					"name": "orelha_l",
+					"origin": [
+						-2.25,
+						31.5,
+						-1.0
+					],
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"color": 0,
+					"uuid": "62e882c1-0f91-417f-b716-3d5703d39900",
+					"export": true,
+					"mirror_uv": false,
+					"isOpen": true,
+					"locked": false,
+					"visibility": true,
+					"autouv": 0,
+					"children": [
+						"11664fb7-d26d-4489-a3e0-903c47ea3132",
+						"5ba6d929-74f4-418a-b850-d32119ba277d",
+						"6a4cc482-51d6-44ef-a274-f3fc629365f9",
+						"2f5bea27-343e-4af4-82d6-6947a626eb49"
+					]
+				}
+			]
+		}
+	],
+	"textures": [
+		{
+			"path": "",
+			"name": "orelhas_raposa_branca.png",
+			"folder": "",
+			"namespace": "",
+			"id": "0",
+			"width": 128,
+			"height": 16,
+			"uv_width": 128,
+			"uv_height": 16,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "normal",
+			"render_sides": "auto",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": false,
+			"uuid": "0d1cb8a2-ddde-45bd-b5b3-53101f36d8aa",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAQCAYAAADeWHeIAAACaElEQVR4Xu2Yv1LjMBDGbSdhCAccHHNQURwFNTO0VLzIvQqvci9CwdAyQ3EVRa6gYOBmgCNAgPzxzaewRl5LWhTbDAT9GrD1rdZaybvOxj+/baQR48fSorqz1zmOt1vLhfGvzRk1vt87j6u0h1/43G2vZT7X21+iX5ednB+XbrO5kM7FjWxF841WdPjwN15vzKk523Ej6qXDaCWZiY771976rdZSSnYng27hmsfD9KzAtC7go68iXgmcnvbu+BnI0U0HzvE67P8Nngo+TX5MOhOP6SjbfByC+3ToXJOvXscWD9uzVqGfNF6Jyfmf65tsPabN153VYT/pYiTw5gP6K+Grd71MWBPFUoof8NGXiVcCY6QjgjZUPwQLcTNL+5yq7QECRWWG4H5suvcA4klllMCaEEceZ1CFHvHS99E2L9flSsDv7pXzFNtKAR2asvYHZ2e5DQc0p/52STpK71KaJ3z1EjweHB7HSfVSHGhely47klIdl2ptHfaTpDakbb3G3w77zv3y1dNhofLAr/FhDIf7nXPl96gzfqnwwaj+eX6ck0FXXZbVKx/9KzX30eXYl2lem05lAMKURnRcpQCUtecpjObkvFYXkMkdAEJ626VfBWXtA2/Hy1fJM3Wkch3pcJTldHg/TrWMi9GD8b6vnlI52fHrQOBDEe9tbBU6fQS6cuis2VaE01+Hvc2vzZ9LT51BvSOIj0R0C/VOoG1c6vztzH4vxAedx9VktnAfWaiMns/L5zON2/aOKJSAgB8Iuk/JKavnpYzPZyt1NowfgdOO1AmUxqeJT3cA0OMHtiaRNB4IBALTw3+Oup6DlUjlzwAAAABJRU5ErkJggg=="
+		}
+	],
+	"animations": [
+		{
+			"uuid": "9890beef-53e2-4081-a462-6215435652be",
+			"name": "idle",
+			"loop": "loop",
+			"override": false,
+			"length": 4.0,
+			"snapping": 48,
+			"selected": false,
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "",
+			"animators": {
+				"dcc73db5-751a-456c-9997-68835c4664cc": {
+					"name": "orelha_r",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 0,
+									"y": 0,
+									"z": 0
+								}
+							],
+							"uuid": "110339a0-108c-4b53-b4b6-2893ad21160a",
+							"time": 0,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 2,
+									"y": 0,
+									"z": -2
+								}
+							],
+							"uuid": "b3ad8720-f534-479c-b443-cde07b5845de",
+							"time": 1.2,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 0,
+									"y": 0,
+									"z": 0
+								}
+							],
+							"uuid": "0a28ae3c-e5db-4288-92d2-a681d9a6af54",
+							"time": 2.4,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": -9,
+									"y": 0,
+									"z": 8
+								}
+							],
+							"uuid": "ddc70928-becc-4cf4-ae1d-a6c1805c5f17",
+							"time": 2.6,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 3,
+									"y": 0,
+									"z": -3
+								}
+							],
+							"uuid": "8941b603-329b-40bc-89a7-ddf1783836d2",
+							"time": 2.75,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 0,
+									"y": 0,
+									"z": 0
+								}
+							],
+							"uuid": "9afc6395-8e76-4cdb-88b0-81cf3ec1e32b",
+							"time": 2.9,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 0,
+									"y": 0,
+									"z": 0
+								}
+							],
+							"uuid": "34f80c27-ae91-4290-bbd9-48b2ca9dfb35",
+							"time": 4.0,
+							"color": -1,
+							"interpolation": "catmullrom"
+						}
+					]
+				},
+				"62e882c1-0f91-417f-b716-3d5703d39900": {
+					"name": "orelha_l",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 0,
+									"y": 0,
+									"z": 0
+								}
+							],
+							"uuid": "201a94ac-f391-4300-8300-25e6f15aa6bb",
+							"time": 0,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 1.5,
+									"y": 0,
+									"z": 1.5
+								}
+							],
+							"uuid": "cb7001ba-7c93-42fa-acb5-5c7c92a619a4",
+							"time": 0.8,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 0,
+									"y": 0,
+									"z": 0
+								}
+							],
+							"uuid": "2f58bcab-1b65-44c9-b626-f6df810e278f",
+							"time": 1.6,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 2,
+									"y": 0,
+									"z": 2
+								}
+							],
+							"uuid": "a71c73f6-e7d1-4f00-b49e-8c3bf5461ff3",
+							"time": 3.2,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 0,
+									"y": 0,
+									"z": 0
+								}
+							],
+							"uuid": "674cc43a-b41c-40a9-b49c-ab72ea931503",
+							"time": 4.0,
+							"color": -1,
+							"interpolation": "catmullrom"
+						}
+					]
+				}
+			}
+		},
+		{
+			"uuid": "54e7e817-e448-486e-abbf-e3a77d65254b",
+			"name": "walk",
+			"loop": "loop",
+			"override": false,
+			"length": 0.5,
+			"snapping": 48,
+			"selected": false,
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "",
+			"animators": {
+				"dcc73db5-751a-456c-9997-68835c4664cc": {
+					"name": "orelha_r",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 4,
+									"y": 0,
+									"z": -2
+								}
+							],
+							"uuid": "be643fad-7684-4536-afc6-d3c6b5e6d4d2",
+							"time": 0,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": -3,
+									"y": 0,
+									"z": 3
+								}
+							],
+							"uuid": "7d15e883-ad2c-4fee-b86a-e7713deea960",
+							"time": 0.25,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 4,
+									"y": 0,
+									"z": -2
+								}
+							],
+							"uuid": "ae30634e-c34b-47b3-95dc-d9cedd7695ef",
+							"time": 0.5,
+							"color": -1,
+							"interpolation": "catmullrom"
+						}
+					]
+				},
+				"62e882c1-0f91-417f-b716-3d5703d39900": {
+					"name": "orelha_l",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": -3,
+									"y": 0,
+									"z": -3
+								}
+							],
+							"uuid": "84795e68-80bd-48ad-b802-df89acd005ed",
+							"time": 0,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": 4,
+									"y": 0,
+									"z": 2
+								}
+							],
+							"uuid": "44b9fd92-1f91-480e-aebf-90fe56b7aa7b",
+							"time": 0.25,
+							"color": -1,
+							"interpolation": "catmullrom"
+						},
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": -3,
+									"y": 0,
+									"z": -3
+								}
+							],
+							"uuid": "166b07ce-1527-4639-af14-89b717b6ec74",
+							"time": 0.5,
+							"color": -1,
+							"interpolation": "catmullrom"
+						}
+					]
+				}
+			}
+		}
+	]
+}

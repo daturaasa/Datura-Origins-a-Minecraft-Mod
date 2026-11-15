@@ -1,5 +1,6 @@
 package com.datura.origins.fabric.power.ability;
 
+import com.datura.origins.fabric.DaturaOriginsMod;
 import com.datura.origins.fabric.entity.SpellProjectileEntity;
 import com.datura.origins.fabric.power.Ability;
 import com.datura.origins.fabric.power.JsonParams;
@@ -8,10 +9,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundEvents;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
@@ -31,6 +31,9 @@ public final class SpiritOrbAbility implements Ability {
 			return 0.0F;
 		}
 	};
+
+	private static final SoundEvent CAST = SoundEvent.of(DaturaOriginsMod.id("mana_cast"));
+	private static final SoundEvent BURST = SoundEvent.of(DaturaOriginsMod.id("mana_burst"));
 
 	private final double range;
 	private final double speed;
@@ -57,8 +60,7 @@ public final class SpiritOrbAbility implements Ability {
 		orb.setVelocity(p.getRotationVec(1.0F).multiply(speed));
 		w.spawnEntity(orb);
 		LegendKit.anim(p, "cast", 10);
-		LegendKit.snd(p, SoundEvents.ENTITY_EVOKER_CAST_SPELL, 0.8F, 1.6F);
-		LegendKit.snd(p, SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, 1.0F, 1.4F);
+		LegendKit.snd(p, CAST, 1.0F, 1.0F);
 		Vec3d start = orb.getPos();
 		boolean[] back = {false};
 		boolean[] hit = {false};
@@ -72,7 +74,7 @@ public final class SpiritOrbAbility implements Ability {
 				if (victim != null) {
 					hit[0] = true;
 					back[0] = true;
-					blast(pl, w, victim.getPos().add(0, victim.getHeight() * 0.5, 0), radius, damage, victim);
+					blast(pl, w, victim.getPos().add(0, victim.getHeight() * 0.5, 0), radius, damage, victim, 2.2F);
 				} else if (w.raycast(new RaycastContext(pos, next, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, orb))
 						.getType() != HitResult.Type.MISS || pos.distanceTo(start) >= range) {
 					back[0] = true;
@@ -84,7 +86,7 @@ public final class SpiritOrbAbility implements Ability {
 			Vec3d to = home.subtract(pos);
 			double d = to.length();
 			if (d < 1.1) {
-				if (hit[0]) blast(pl, w, home, returnRadius, returnDamage, null);
+				if (hit[0]) blast(pl, w, home, returnRadius, returnDamage, null, 3.2F);
 				orb.discard();
 				return false;
 			}
@@ -104,14 +106,11 @@ public final class SpiritOrbAbility implements Ability {
 		target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, ticks, 3, false, true));
 	}
 
-	private static void blast(ServerPlayerEntity p, ServerWorld w, Vec3d c, float r, float dmg, LivingEntity primary) {
+	private static void blast(ServerPlayerEntity p, ServerWorld w, Vec3d c, float r, float dmg, LivingEntity primary, float fx) {
 		if (primary != null) {
 			LegendKit.hurt(p, primary, dmg, false);
 			freeze(primary, 60);
 			w.createExplosion(p, null, HARMLESS, c.x, c.y, c.z, 1.6F, false, World.ExplosionSourceType.MOB);
-		} else {
-			w.spawnParticles(ParticleTypes.EXPLOSION, c.x, c.y, c.z, 1, 0, 0, 0, 0);
-			LegendKit.sndAt(w, c, SoundEvents.ENTITY_GENERIC_EXPLODE, 0.6F, 1.4F);
 		}
 		for (LivingEntity e : LegendKit.enemies(p, c, r)) {
 			if (e == primary) continue;
@@ -121,7 +120,8 @@ public final class SpiritOrbAbility implements Ability {
 			e.addVelocity(push.x, 0.2, push.z);
 			e.velocityModified = true;
 		}
-		w.spawnParticles(ParticleTypes.SNOWFLAKE, c.x, c.y, c.z, 10, r * 0.25, 0.3, r * 0.25, 0.05);
+		LegendKit.fxAt(w, "boom_mana", c, fx, 0, 0);
+		LegendKit.sndAt(w, c, BURST, 1.1F, 0.9F + w.random.nextFloat() * 0.2F);
 	}
 
 	@Override

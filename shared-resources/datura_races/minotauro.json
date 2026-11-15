@@ -1,31 +1,31 @@
 {
 	"id": "minotauro",
 	"order": 11,
-	"name": "Minotauro",
+	"name": "race.datura_origins.minotauro.name",
 	"color": "#A0522D",
 	"model": "chifres_touro",
-	"description": "Gigante com cabeça de touro, criado nos labirintos de pedra. Lento e pesado, mas cada golpe derruba muralhas. Odeia ser encurralado, e quando sangra de verdade a fúria toma conta: bufando fumaça, fica ainda mais forte.",
+	"description": "race.datura_origins.minotauro.description",
 	"advantages": [
-		"3 blocos de altura, com 3 corações a mais, 3 de dano a mais e 6 de armadura natural.",
-		"Quebra blocos 60% mais rápido e sobe degraus mais altos.",
-		"A fome cai mais devagar.",
-		"Pisada firme: quase impossível de empurrar."
+		"race.datura_origins.minotauro.advantage.0",
+		"race.datura_origins.minotauro.advantage.1",
+		"race.datura_origins.minotauro.advantage.2",
+		"race.datura_origins.minotauro.advantage.3"
 	],
 	"disadvantages": [
-		"Grande demais para portas e túneis comuns.",
-		"Ataca 20% mais devagar e anda 5% mais devagar.",
-		"Fica lento e cansado em lugares apertados.",
-		"Vegetariano, e cada alimento enche 40% menos.",
-		"Os chifres não deixam usar capacete.",
-		"Quedas pesadas: dano de queda dobrado."
+		"race.datura_origins.minotauro.disadvantage.0",
+		"race.datura_origins.minotauro.disadvantage.1",
+		"race.datura_origins.minotauro.disadvantage.2",
+		"race.datura_origins.minotauro.disadvantage.3",
+		"race.datura_origins.minotauro.disadvantage.4",
+		"race.datura_origins.minotauro.disadvantage.5"
 	],
 	"passives": [
-		"Fúria do Touro: com 4 corações ou menos entra em fúria, com força e regeneração fortes, bufando fumaça. Passa quando volta a 6 corações."
+		"race.datura_origins.minotauro.passive.0"
 	],
 	"ability": {
 		"type": "datura_origins:boulder",
-		"name": "Arremesso de Rocha",
-		"description": "Arranca um bloco grande de pedra do chão, ergue acima da cabeça e arremessa na mira: causa 10 de dano, explode no impacto e solta estilhaços. Precisa estar no chão. Recarga de 30 segundos.",
+		"name": "race.datura_origins.minotauro.ability.name",
+		"description": "race.datura_origins.minotauro.ability.description",
 		"cooldown": 600,
 		"windup": 14,
 		"speed": 1.25,

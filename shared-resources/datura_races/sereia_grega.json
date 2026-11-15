@@ -1,30 +1,30 @@
 {
 	"id": "sereia_grega",
 	"order": 13,
-	"name": "Sereia Grega",
+	"name": "race.datura_origins.sereia_grega.name",
 	"variant_of": "sereia",
-	"variant_name": "Grega",
+	"variant_name": "race.datura_origins.sereia_grega.variant",
 	"color": "#5A7F8C",
 	"model": "cauda_sereia_grega",
-	"description": "A sereia dos mitos gregos: canta para atrair marinheiros e os arrasta para o fundo. A mesma força da sereia encantada, mas com fome de carne e nada além disso.",
+	"description": "race.datura_origins.sereia_grega.description",
 	"advantages": [
-		"Respira debaixo d'água, nada como um golfinho (graça do golfinho e poder do conduíte) e enxerga bem no fundo do mar.",
-		"Também respira fora d'água normalmente.",
-		"Na água causa 7 a mais de dano, ganha 8 de armadura e 5 corações a mais, ataca 30% mais rápido e regenera meio coração por segundo.",
-		"Debaixo d'água quebra blocos na velocidade normal."
+		"race.datura_origins.sereia_grega.advantage.0",
+		"race.datura_origins.sereia_grega.advantage.1",
+		"race.datura_origins.sereia_grega.advantage.2",
+		"race.datura_origins.sereia_grega.advantage.3"
 	],
 	"disadvantages": [
-		"Fora d'água não anda: só se arrasta devagar. Se ficar parada por 3 segundos, senta na própria cauda.",
-		"Escamas secas: depois de 60 segundos longe da água e da chuva, fica lenta e fraca até se molhar de novo.",
-		"Fora d'água tem só 9 corações.",
-		"O fogo causa o dobro de dano.",
-		"A cauda não deixa usar calças nem botas.",
-		"Só come carne."
+		"race.datura_origins.sereia_grega.disadvantage.0",
+		"race.datura_origins.sereia_grega.disadvantage.1",
+		"race.datura_origins.sereia_grega.disadvantage.2",
+		"race.datura_origins.sereia_grega.disadvantage.3",
+		"race.datura_origins.sereia_grega.disadvantage.4",
+		"race.datura_origins.sereia_grega.disadvantage.5"
 	],
 	"ability": {
 		"type": "datura_origins:tidal_song",
-		"name": "Canto das Marés",
-		"description": "Canta por 12 segundos. Os monstros num raio de 16 blocos esquecem o alvo, ficam lentos e fracos e são puxados devagar até ela. Os aliados por perto recuperam 1,5 coração por segundo e ganham respiração aquática. Recarga de 45 segundos.",
+		"name": "race.datura_origins.sereia_grega.ability.name",
+		"description": "race.datura_origins.sereia_grega.ability.description",
 		"cooldown": 900,
 		"radius": 16,
 		"duration": 240,

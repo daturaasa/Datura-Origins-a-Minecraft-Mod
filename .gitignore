@@ -7,3 +7,5 @@ out/
 *.log
 *.iml
 release/*.jar
+__pycache__/
+release/*.bat

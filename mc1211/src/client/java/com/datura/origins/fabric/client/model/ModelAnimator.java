@@ -19,6 +19,7 @@ public final class ModelAnimator {
 		final Map<String, float[]> clips = new HashMap<>();
 		String target = "";
 		float since;
+		float still;
 		float last = -1;
 	}
 
@@ -66,16 +67,25 @@ public final class ModelAnimator {
 		double speed = player.getPos().subtract(player.prevX, player.prevY, player.prevZ).length();
 
 		String target = preview ? pick(model, model.hidesLegs() ? "sit_idle" : "idle", "idle", "swim_idle") : target(model, player, speed);
+		state.still = !preview && player.isOnGround() && speed < 0.01 ? state.still + dt : 0.0F;
+		if (state.still >= 3.0F && model.hasAnimation("coil") && (target.equals("idle") || target.equals("rest"))) {
+			target = "coil";
+		}
 		if (!target.equals(state.target)) {
 			state.target = target;
 			state.since = 0;
 		} else {
 			state.since += dt;
 		}
-		String clip = !target.equals("sit") ? target
-				: state.since < model.length("sit_down") || !model.hasAnimation("sit_idle") ? "sit_down" : "sit_idle";
+		String clip = switch (target) {
+			case "sit" -> state.since < model.length("sit_down") || !model.hasAnimation("sit_idle") ? "sit_down" : "sit_idle";
+			case "coil" -> state.since < model.length("coil") || !model.hasAnimation("coil_idle") ? "coil" : "coil_idle";
+			default -> target;
+		};
+		boolean coiling = target.equals("coil");
+		boolean coiled = coiling || state.clips.containsKey("coil") || state.clips.containsKey("coil_idle");
 		float rate = rate(clip, speed);
-		float blend = 1.0F - (float) Math.exp(-dt * BLEND_RATE);
+		float blend = 1.0F - (float) Math.exp(-dt * (coiled ? 2.6F : BLEND_RATE));
 		if (state.clips.isEmpty()) state.clips.put(clip, new float[]{1, 0});
 		state.clips.computeIfAbsent(clip, k -> new float[]{0, 0});
 		state.clips.entrySet().removeIf(e -> {
@@ -83,7 +93,7 @@ public final class ModelAnimator {
 			boolean active = e.getKey().equals(clip);
 			c[0] += ((active ? 1 : 0) - c[0]) * blend;
 			c[1] += dt * (active ? rate : 1.0F);
-			if (e.getKey().equals("sit_down")) c[1] = Math.min(c[1], state.since);
+			if (e.getKey().equals("sit_down") || (coiling && e.getKey().equals("coil"))) c[1] = Math.min(c[1], state.since);
 			return !active && c[0] < 0.01F;
 		});
 
@@ -110,7 +120,10 @@ public final class ModelAnimator {
 			if (speed > 0.01) return "crawl";
 			return pick(model, "swim_idle", "idle");
 		}
-		if (player.isOnGround()) return pick(model, speed > 0.05 ? "walk" : "rest", "rest", "idle");
+		if (player.isOnGround()) {
+			if (speed > 0.05 && player.isSprinting() && model.hasAnimation("run")) return "run";
+			return pick(model, speed > 0.05 ? "walk" : "rest", "rest", "idle");
+		}
 		return pick(model, "idle", "rest");
 	}
 
@@ -119,6 +132,7 @@ public final class ModelAnimator {
 			case "swim", "swim_fast" -> MathHelper.clamp(0.7F + (float) speed * 3.0F, 0.7F, 1.6F);
 			case "crawl" -> MathHelper.clamp(0.5F + (float) speed * 8.0F, 0.5F, 1.4F);
 			case "walk" -> MathHelper.clamp(0.6F + (float) speed * 5.0F, 0.6F, 1.8F);
+			case "run" -> MathHelper.clamp(0.8F + (float) speed * 2.5F, 0.8F, 1.5F);
 			default -> 1.0F;
 		};
 	}

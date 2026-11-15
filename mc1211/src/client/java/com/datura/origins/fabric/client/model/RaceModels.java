@@ -25,6 +25,10 @@ public final class RaceModels {
 		preview = race;
 	}
 
+	public static Race previewRace() {
+		return preview;
+	}
+
 	public static void endPreview() {
 		preview = null;
 	}

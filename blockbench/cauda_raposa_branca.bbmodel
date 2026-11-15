@@ -1,0 +1,2646 @@
+{
+	"meta": {
+		"format_version": "4.10",
+		"model_format": "free",
+		"box_uv": false
+	},
+	"name": "cauda_raposa_branca_gordinha_longa",
+	"model_identifier": "cauda_raposa_branca_gordinha_longa",
+	"visible_box": [
+		1,
+		1,
+		0
+	],
+	"variable_placeholders": "",
+	"variable_placeholder_buttons": [],
+	"timeline_setups": [],
+	"unhandled_root_fields": {},
+	"resolution": {
+		"width": 128,
+		"height": 64
+	},
+	"elements": [
+		{
+			"name": "cauda_seg1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-3.4219999999999997,
+				12.478,
+				-0.8999999999999999
+			],
+			"to": [
+				3.4219999999999997,
+				19.322,
+				4.9
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				13.0,
+				2.0
+			],
+			"rotation": [
+				95,
+				0,
+				0
+			],
+			"uuid": "274b5b1d-2c85-4280-82e7-b30e1ae3b320",
+			"faces": {
+				"north": {
+					"uv": [
+						96,
+						13,
+						104,
+						21
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						105,
+						13,
+						113,
+						21
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						114,
+						13,
+						122,
+						21
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						0,
+						22,
+						8,
+						30
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						9,
+						22,
+						17,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						18,
+						22,
+						26,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-4.7052499999999995,
+				12.022989999999998,
+				3.212635
+			],
+			"to": [
+				4.7052499999999995,
+				18.866989999999998,
+				11.187634999999998
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				12.544989999999999,
+				7.2001349999999995
+			],
+			"rotation": [
+				85,
+				0,
+				0
+			],
+			"uuid": "d8d28bd9-55ac-40a8-bc3b-cd7cb3f15d19",
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						13,
+						11,
+						21
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						12,
+						13,
+						23,
+						21
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						24,
+						13,
+						35,
+						21
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						36,
+						13,
+						47,
+						21
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						26,
+						0,
+						37,
+						11
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						38,
+						0,
+						49,
+						11
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg2_pelo_x1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				3.1464999999999996,
+				13.12499,
+				4.300135
+			],
+			"to": [
+				6.278499999999999,
+				17.03999,
+				10.100135
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				12.544989999999999,
+				7.2001349999999995
+			],
+			"rotation": [
+				85,
+				0,
+				0
+			],
+			"uuid": "6ecbfa63-71bb-4633-bbd5-22b5e1460532",
+			"faces": {
+				"north": {
+					"uv": [
+						18,
+						39,
+						22,
+						44
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						38,
+						31,
+						46,
+						36
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						23,
+						39,
+						27,
+						44
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						47,
+						31,
+						55,
+						36
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						45,
+						22,
+						49,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						50,
+						22,
+						54,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg2_pelo_x2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-6.278499999999999,
+				14.60399,
+				4.300135
+			],
+			"to": [
+				-3.1464999999999996,
+				17.735989999999997,
+				10.100135
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				12.544989999999999,
+				7.2001349999999995
+			],
+			"rotation": [
+				85,
+				0,
+				0
+			],
+			"uuid": "d9c02b1f-0645-4498-81ae-c77ae1f61577",
+			"faces": {
+				"north": {
+					"uv": [
+						27,
+						45,
+						31,
+						49
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						78,
+						39,
+						86,
+						43
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						32,
+						45,
+						36,
+						49
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						87,
+						39,
+						95,
+						43
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						55,
+						22,
+						59,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						60,
+						22,
+						64,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg3",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-5.132999999999999,
+				12.41275,
+				8.050270000000001
+			],
+			"to": [
+				5.132999999999999,
+				20.11225,
+				16.75027
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				13.0,
+				12.400269999999999
+			],
+			"rotation": [
+				70,
+				0,
+				0
+			],
+			"uuid": "ba48da31-087e-40ac-91dd-3c6b6b3d2d82",
+			"faces": {
+				"north": {
+					"uv": [
+						74,
+						0,
+						86,
+						9
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						87,
+						0,
+						99,
+						9
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						100,
+						0,
+						112,
+						9
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						113,
+						0,
+						125,
+						9
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						12,
+						12
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						13,
+						0,
+						25,
+						12
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg3_pelo_x1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				3.5089999999999995,
+				13.58,
+				9.50027
+			],
+			"to": [
+				6.640999999999999,
+				17.495,
+				15.300269999999998
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				13.0,
+				12.400269999999999
+			],
+			"rotation": [
+				70,
+				0,
+				0
+			],
+			"uuid": "7d0962d1-6fd3-4159-b9d3-18d505a58422",
+			"faces": {
+				"north": {
+					"uv": [
+						28,
+						39,
+						32,
+						44
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						56,
+						31,
+						64,
+						36
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						33,
+						39,
+						37,
+						44
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						65,
+						31,
+						73,
+						36
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						65,
+						22,
+						69,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						70,
+						22,
+						74,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg3_pelo_x2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-6.640999999999999,
+				15.030000000000001,
+				9.50027
+			],
+			"to": [
+				-3.5089999999999995,
+				18.945,
+				15.300269999999998
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				13.0,
+				12.400269999999999
+			],
+			"rotation": [
+				70,
+				0,
+				0
+			],
+			"uuid": "4e6f270c-a0a3-4cd6-b4d2-c1c3b6b1c558",
+			"faces": {
+				"north": {
+					"uv": [
+						38,
+						39,
+						42,
+						44
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						74,
+						31,
+						82,
+						36
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						43,
+						39,
+						47,
+						44
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						83,
+						31,
+						91,
+						36
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						75,
+						22,
+						79,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						80,
+						22,
+						84,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg3_pelo_z1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-3.132,
+				15.030000000000001,
+				16.02527
+			],
+			"to": [
+				3.132,
+				18.945,
+				18.925269999999998
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				13.0,
+				12.400269999999999
+			],
+			"rotation": [
+				70,
+				0,
+				0
+			],
+			"uuid": "d1617e56-8eb8-434d-be01-74b59be8194a",
+			"faces": {
+				"north": {
+					"uv": [
+						92,
+						31,
+						100,
+						36
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						48,
+						39,
+						52,
+						44
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						101,
+						31,
+						109,
+						36
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						53,
+						39,
+						57,
+						44
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						96,
+						39,
+						104,
+						43
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						105,
+						39,
+						113,
+						43
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg3_pelo_z2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-3.132,
+				12.855,
+				5.87527
+			],
+			"to": [
+				3.132,
+				16.77,
+				8.775269999999999
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				13.0,
+				12.400269999999999
+			],
+			"rotation": [
+				70,
+				0,
+				0
+			],
+			"uuid": "c44b650a-19d6-496d-bf34-7bccee9e0676",
+			"faces": {
+				"north": {
+					"uv": [
+						110,
+						31,
+						118,
+						36
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						58,
+						39,
+						62,
+						44
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						119,
+						31,
+						127,
+						36
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						63,
+						39,
+						67,
+						44
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						114,
+						39,
+						122,
+						43
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						0,
+						45,
+						8,
+						49
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg4",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-4.7052499999999995,
+				14.511335000000003,
+				13.999184999999999
+			],
+			"to": [
+				4.7052499999999995,
+				21.355334999999997,
+				21.974185
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				15.033335000000001,
+				17.986685
+			],
+			"rotation": [
+				45,
+				0,
+				0
+			],
+			"uuid": "3c86d3c0-3295-4837-8ed4-32e3e41c4299",
+			"faces": {
+				"north": {
+					"uv": [
+						48,
+						13,
+						59,
+						21
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						60,
+						13,
+						71,
+						21
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						72,
+						13,
+						83,
+						21
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						84,
+						13,
+						95,
+						21
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						50,
+						0,
+						61,
+						11
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						62,
+						0,
+						73,
+						11
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg4_pelo_x1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				3.1464999999999996,
+				15.613335000000001,
+				15.086685
+			],
+			"to": [
+				6.278499999999999,
+				19.528335000000002,
+				20.886685
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				15.033335000000001,
+				17.986685
+			],
+			"rotation": [
+				45,
+				0,
+				0
+			],
+			"uuid": "677a603c-f30c-4e88-afa6-9088b3324a32",
+			"faces": {
+				"north": {
+					"uv": [
+						68,
+						39,
+						72,
+						44
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						0,
+						39,
+						8,
+						44
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						73,
+						39,
+						77,
+						44
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						9,
+						39,
+						17,
+						44
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						85,
+						22,
+						89,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						90,
+						22,
+						94,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg4_pelo_x2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-6.278499999999999,
+				17.092335,
+				15.086685
+			],
+			"to": [
+				-3.1464999999999996,
+				20.224335000000004,
+				20.886685
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				15.033335000000001,
+				17.986685
+			],
+			"rotation": [
+				45,
+				0,
+				0
+			],
+			"uuid": "929bbc97-fd68-4522-bd28-81555b3aa01e",
+			"faces": {
+				"north": {
+					"uv": [
+						37,
+						45,
+						41,
+						49
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						9,
+						45,
+						17,
+						49
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						42,
+						45,
+						46,
+						49
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						18,
+						45,
+						26,
+						49
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						95,
+						22,
+						99,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						100,
+						22,
+						104,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg5",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-3.4219999999999997,
+				18.267705,
+				18.777805
+			],
+			"to": [
+				3.4219999999999997,
+				24.256205,
+				24.577805
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				18.724455,
+				21.677805
+			],
+			"rotation": [
+				25,
+				0,
+				0
+			],
+			"uuid": "1286f709-9d47-42d6-a5ad-0bff8c604fa5",
+			"faces": {
+				"north": {
+					"uv": [
+						105,
+						22,
+						113,
+						29
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						114,
+						22,
+						122,
+						29
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						0,
+						31,
+						8,
+						38
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						9,
+						31,
+						17,
+						38
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						27,
+						22,
+						35,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						36,
+						22,
+						44,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_ponta",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-1.7109999999999999,
+				22.406730000000003,
+				22.12745
+			],
+			"to": [
+				1.7109999999999999,
+				27.53973,
+				25.027449999999998
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				22.79823,
+				23.57745
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"uuid": "613ee68d-3fa4-43ca-a923-a20034cc812a",
+			"faces": {
+				"north": {
+					"uv": [
+						18,
+						31,
+						22,
+						37
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						23,
+						31,
+						27,
+						37
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						28,
+						31,
+						32,
+						37
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						33,
+						31,
+						37,
+						37
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						47,
+						45,
+						51,
+						49
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						52,
+						45,
+						56,
+						49
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg1_pelo_y1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-2.1216399999999997,
+				18.699196,
+				-0.26200000000000045
+			],
+			"to": [
+				2.1216399999999997,
+				20.478635999999998,
+				4.2620000000000005
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				13.0,
+				2.0
+			],
+			"rotation": [
+				95,
+				0,
+				0
+			],
+			"uuid": "629a624a-0a8c-47b7-a887-4a675e126ef7",
+			"faces": {
+				"north": {
+					"uv": [
+						96,
+						13,
+						104,
+						21
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						105,
+						13,
+						113,
+						21
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						114,
+						13,
+						122,
+						21
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						0,
+						22,
+						8,
+						30
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						9,
+						22,
+						17,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						18,
+						22,
+						26,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg1_pelo_y2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-2.1216399999999997,
+				11.321363999999999,
+				-0.26200000000000045
+			],
+			"to": [
+				2.1216399999999997,
+				13.100804,
+				4.2620000000000005
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				13.0,
+				2.0
+			],
+			"rotation": [
+				95,
+				0,
+				0
+			],
+			"uuid": "b1946550-27e1-43e1-bc50-f0c47f63e874",
+			"faces": {
+				"north": {
+					"uv": [
+						96,
+						13,
+						104,
+						21
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						105,
+						13,
+						113,
+						21
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						114,
+						13,
+						122,
+						21
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						0,
+						22,
+						8,
+						30
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						9,
+						22,
+						17,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						18,
+						22,
+						26,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg1_pelo_x1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				2.847104,
+				13.77836,
+				-0.26200000000000045
+			],
+			"to": [
+				4.489663999999999,
+				18.021639999999998,
+				4.2620000000000005
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				13.0,
+				2.0
+			],
+			"rotation": [
+				95,
+				0,
+				0
+			],
+			"uuid": "002858bc-fb22-4931-b443-8c5d3977c7a3",
+			"faces": {
+				"north": {
+					"uv": [
+						96,
+						13,
+						104,
+						21
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						105,
+						13,
+						113,
+						21
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						114,
+						13,
+						122,
+						21
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						0,
+						22,
+						8,
+						30
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						9,
+						22,
+						17,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						18,
+						22,
+						26,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg1_pelo_x2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-4.489663999999999,
+				13.77836,
+				-0.26200000000000045
+			],
+			"to": [
+				-2.847104,
+				18.021639999999998,
+				4.2620000000000005
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				13.0,
+				2.0
+			],
+			"rotation": [
+				95,
+				0,
+				0
+			],
+			"uuid": "c978a85b-f10c-4377-be29-ff2fbb2b4ad0",
+			"faces": {
+				"north": {
+					"uv": [
+						96,
+						13,
+						104,
+						21
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						105,
+						13,
+						113,
+						21
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						114,
+						13,
+						122,
+						21
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						0,
+						22,
+						8,
+						30
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						9,
+						22,
+						17,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						18,
+						22,
+						26,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg2_pelo_y1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-2.9172549999999995,
+				18.244186,
+				4.089885000000001
+			],
+			"to": [
+				2.9172549999999995,
+				20.023625999999997,
+				10.310384999999998
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				12.544989999999999,
+				7.2001349999999995
+			],
+			"rotation": [
+				85,
+				0,
+				0
+			],
+			"uuid": "4eec410f-a13d-46e4-8707-e2ea8a2db828",
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						13,
+						11,
+						21
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						12,
+						13,
+						23,
+						21
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						24,
+						13,
+						35,
+						21
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						36,
+						13,
+						47,
+						21
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						26,
+						0,
+						37,
+						11
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						38,
+						0,
+						49,
+						11
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg2_pelo_y2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-2.9172549999999995,
+				10.866353999999998,
+				4.089885000000001
+			],
+			"to": [
+				2.9172549999999995,
+				12.645793999999999,
+				10.310384999999998
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				12.544989999999999,
+				7.2001349999999995
+			],
+			"rotation": [
+				85,
+				0,
+				0
+			],
+			"uuid": "7f70de8f-9b3c-43da-9ce2-ec3d8fe305cc",
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						13,
+						11,
+						21
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						12,
+						13,
+						23,
+						21
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						24,
+						13,
+						35,
+						21
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						36,
+						13,
+						47,
+						21
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						26,
+						0,
+						37,
+						11
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						38,
+						0,
+						49,
+						11
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg3_pelo_y1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-3.1824599999999994,
+				19.4115955,
+				9.007270000000002
+			],
+			"to": [
+				3.1824599999999994,
+				21.4134655,
+				15.79327
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				13.0,
+				12.400269999999999
+			],
+			"rotation": [
+				70,
+				0,
+				0
+			],
+			"uuid": "5a0619c1-2f8b-42b4-aaa7-fff0d50628d8",
+			"faces": {
+				"north": {
+					"uv": [
+						74,
+						0,
+						86,
+						9
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						87,
+						0,
+						99,
+						9
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						100,
+						0,
+						112,
+						9
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						113,
+						0,
+						125,
+						9
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						12,
+						12
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						13,
+						0,
+						25,
+						12
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg3_pelo_y2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-3.1824599999999994,
+				11.111534500000001,
+				9.007270000000002
+			],
+			"to": [
+				3.1824599999999994,
+				13.113404500000001,
+				15.79327
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				13.0,
+				12.400269999999999
+			],
+			"rotation": [
+				70,
+				0,
+				0
+			],
+			"uuid": "f5c7641d-cbec-42c2-aaa2-9f5c937ad0d3",
+			"faces": {
+				"north": {
+					"uv": [
+						74,
+						0,
+						86,
+						9
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						87,
+						0,
+						99,
+						9
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						100,
+						0,
+						112,
+						9
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						113,
+						0,
+						125,
+						9
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						12,
+						12
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						13,
+						0,
+						25,
+						12
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg4_pelo_y1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-2.9172549999999995,
+				20.732530999999998,
+				14.876434999999997
+			],
+			"to": [
+				2.9172549999999995,
+				22.511970999999996,
+				21.096935
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				15.033335000000001,
+				17.986685
+			],
+			"rotation": [
+				45,
+				0,
+				0
+			],
+			"uuid": "edbbedef-d8c3-4e14-95a1-3105e07ab0a9",
+			"faces": {
+				"north": {
+					"uv": [
+						48,
+						13,
+						59,
+						21
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						60,
+						13,
+						71,
+						21
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						72,
+						13,
+						83,
+						21
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						84,
+						13,
+						95,
+						21
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						50,
+						0,
+						61,
+						11
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						62,
+						0,
+						73,
+						11
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg4_pelo_y2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-2.9172549999999995,
+				13.354699000000004,
+				14.876434999999997
+			],
+			"to": [
+				2.9172549999999995,
+				15.134139000000001,
+				21.096935
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				15.033335000000001,
+				17.986685
+			],
+			"rotation": [
+				45,
+				0,
+				0
+			],
+			"uuid": "a8ad287c-588c-4d1d-8fa2-74779aaf57a2",
+			"faces": {
+				"north": {
+					"uv": [
+						48,
+						13,
+						59,
+						21
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						60,
+						13,
+						71,
+						21
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						72,
+						13,
+						83,
+						21
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						84,
+						13,
+						95,
+						21
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						50,
+						0,
+						61,
+						11
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						62,
+						0,
+						73,
+						11
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg5_pelo_y1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-2.1216399999999997,
+				23.711251500000003,
+				19.415805
+			],
+			"to": [
+				2.1216399999999997,
+				25.2682615,
+				23.939805
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				18.724455,
+				21.677805
+			],
+			"rotation": [
+				25,
+				0,
+				0
+			],
+			"uuid": "6039e651-532a-4058-be98-be8d6a28da41",
+			"faces": {
+				"north": {
+					"uv": [
+						105,
+						22,
+						113,
+						29
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						114,
+						22,
+						122,
+						29
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						0,
+						31,
+						8,
+						38
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						9,
+						31,
+						17,
+						38
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						27,
+						22,
+						35,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						36,
+						22,
+						44,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg5_pelo_y2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-2.1216399999999997,
+				17.2556485,
+				19.415805
+			],
+			"to": [
+				2.1216399999999997,
+				18.812658499999998,
+				23.939805
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				18.724455,
+				21.677805
+			],
+			"rotation": [
+				25,
+				0,
+				0
+			],
+			"uuid": "4ee42c04-9a59-4f21-9f53-46ab290bbba4",
+			"faces": {
+				"north": {
+					"uv": [
+						105,
+						22,
+						113,
+						29
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						114,
+						22,
+						122,
+						29
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						0,
+						31,
+						8,
+						38
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						9,
+						31,
+						17,
+						38
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						27,
+						22,
+						35,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						36,
+						22,
+						44,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg5_pelo_x1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				2.847104,
+				19.40552,
+				19.415805
+			],
+			"to": [
+				4.489663999999999,
+				23.11839,
+				23.939805
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				18.724455,
+				21.677805
+			],
+			"rotation": [
+				25,
+				0,
+				0
+			],
+			"uuid": "a3e60906-c0cf-4743-af78-1dc138544cfb",
+			"faces": {
+				"north": {
+					"uv": [
+						105,
+						22,
+						113,
+						29
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						114,
+						22,
+						122,
+						29
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						0,
+						31,
+						8,
+						38
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						9,
+						31,
+						17,
+						38
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						27,
+						22,
+						35,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						36,
+						22,
+						44,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		},
+		{
+			"name": "cauda_seg5_pelo_x2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [
+				-4.489663999999999,
+				19.40552,
+				19.415805
+			],
+			"to": [
+				-2.847104,
+				23.11839,
+				23.939805
+			],
+			"autouv": 0,
+			"color": 0,
+			"origin": [
+				0.0,
+				18.724455,
+				21.677805
+			],
+			"rotation": [
+				25,
+				0,
+				0
+			],
+			"uuid": "5bf67d28-69e6-4a59-ac0f-b35867bc39f4",
+			"faces": {
+				"north": {
+					"uv": [
+						105,
+						22,
+						113,
+						29
+					],
+					"texture": 0
+				},
+				"east": {
+					"uv": [
+						114,
+						22,
+						122,
+						29
+					],
+					"texture": 0
+				},
+				"south": {
+					"uv": [
+						0,
+						31,
+						8,
+						38
+					],
+					"texture": 0
+				},
+				"west": {
+					"uv": [
+						9,
+						31,
+						17,
+						38
+					],
+					"texture": 0
+				},
+				"up": {
+					"uv": [
+						27,
+						22,
+						35,
+						30
+					],
+					"texture": 0
+				},
+				"down": {
+					"uv": [
+						36,
+						22,
+						44,
+						30
+					],
+					"texture": 0
+				}
+			},
+			"type": "cube"
+		}
+	],
+	"outliner": [
+		{
+			"name": "body",
+			"origin": [
+				0,
+				12,
+				0
+			],
+			"color": 0,
+			"uuid": "b3be89b1-80e7-4e7b-af6c-db0cd6fa0c61",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"children": [
+				{
+					"name": "cauda_1_base",
+					"origin": [
+						0.0,
+						13.0,
+						2.0
+					],
+					"color": 0,
+					"uuid": "2237ffb4-e767-4776-b071-dc31b26635c1",
+					"export": true,
+					"mirror_uv": false,
+					"isOpen": true,
+					"locked": false,
+					"visibility": true,
+					"autouv": 0,
+					"children": [
+						"274b5b1d-2c85-4280-82e7-b30e1ae3b320",
+						"d8d28bd9-55ac-40a8-bc3b-cd7cb3f15d19",
+						"6ecbfa63-71bb-4633-bbd5-22b5e1460532",
+						"d9c02b1f-0645-4498-81ae-c77ae1f61577",
+						{
+							"name": "cauda_2_meio",
+							"origin": [
+								0.0,
+								13.0,
+								12.40085
+							],
+							"color": 0,
+							"uuid": "fcf8a432-3cdd-45df-b822-0fe8023152cc",
+							"export": true,
+							"mirror_uv": false,
+							"isOpen": true,
+							"locked": false,
+							"visibility": true,
+							"autouv": 0,
+							"children": [
+								"ba48da31-087e-40ac-91dd-3c6b6b3d2d82",
+								"7d0962d1-6fd3-4159-b9d3-18d505a58422",
+								"4e6f270c-a0a3-4cd6-b4d2-c1c3b6b1c558",
+								"d1617e56-8eb8-434d-be01-74b59be8194a",
+								"c44b650a-19d6-496d-bf34-7bccee9e0676",
+								"3c86d3c0-3295-4837-8ed4-32e3e41c4299",
+								"677a603c-f30c-4e88-afa6-9088b3324a32",
+								"929bbc97-fd68-4522-bd28-81555b3aa01e",
+								{
+									"name": "cauda_3_ponta",
+									"origin": [
+										0.0,
+										18.724600000000002,
+										21.67795
+									],
+									"color": 0,
+									"uuid": "caa4d6dd-f643-4e2b-bdb0-ba20eb40726c",
+									"export": true,
+									"mirror_uv": false,
+									"isOpen": true,
+									"locked": false,
+									"visibility": true,
+									"autouv": 0,
+									"children": [
+										"1286f709-9d47-42d6-a5ad-0bff8c604fa5",
+										"613ee68d-3fa4-43ca-a923-a20034cc812a",
+										"6039e651-532a-4058-be98-be8d6a28da41",
+										"4ee42c04-9a59-4f21-9f53-46ab290bbba4",
+										"a3e60906-c0cf-4743-af78-1dc138544cfb",
+										"5bf67d28-69e6-4a59-ac0f-b35867bc39f4"
+									]
+								},
+								"5a0619c1-2f8b-42b4-aaa7-fff0d50628d8",
+								"f5c7641d-cbec-42c2-aaa2-9f5c937ad0d3",
+								"edbbedef-d8c3-4e14-95a1-3105e07ab0a9",
+								"a8ad287c-588c-4d1d-8fa2-74779aaf57a2"
+							]
+						},
+						"629a624a-0a8c-47b7-a887-4a675e126ef7",
+						"b1946550-27e1-43e1-bc50-f0c47f63e874",
+						"002858bc-fb22-4931-b443-8c5d3977c7a3",
+						"c978a85b-f10c-4377-be29-ff2fbb2b4ad0",
+						"4eec410f-a13d-46e4-8707-e2ea8a2db828",
+						"7f70de8f-9b3c-43da-9ce2-ec3d8fe305cc"
+					]
+				}
+			]
+		}
+	],
+	"textures": [
+		{
+			"path": "",
+			"name": "cauda_raposa_branca_gordinha_longa.png",
+			"folder": "",
+			"namespace": "",
+			"id": "0",
+			"width": 128,
+			"height": 64,
+			"uv_width": 128,
+			"uv_height": 64,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "normal",
+			"render_sides": "auto",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": false,
+			"uuid": "63f3b5e4-b4e4-45c4-a5fe-492af13bc14b",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABACAYAAADS1n9/AAAF1ElEQVR4nO2cwWocRxBAawYbZFsLc9o1RGYPu2BYYgTxIQj5HAghwTf/gT5Cl6BLPiJ/4JuxD/4BC510EIIBg/Yg5IN3TwuKY0MMm4NSnZqe6u7q3p6VEtW7LNNT3TPT013VVdWzxR9//rWECDbv3y1+/e33qDoH+3tFzHVir7GO9j/MLlvyVW8DFpdfWmV4jZQ6x6cXy7PpOYxHQ8BfhJbv7mzDbL6Ap08eFcenF63rDPoVzOaLVhkAwNagV2BZGXh2hWB3qORcbJ2z6TnUdQ1n03NzTH9fv3nL1sXzHL5zOgCEcC/Lnsl2WUqduq5b57kXSMu489y1ubI7rRLFyaBfeVR4la3OZDIxqp5CzYHNeDT0qn0XqgESWIcpAOC1QehcrCnQARBJSIXnqhNS+xxStU9RE5DA/8kUqAZYgdDsylXHZwpchLQFogMgAnx5s/kCFpdfTCdj+fvpRwDgPYGYOhSpKaDu4my+MIMGyw+PThrXRdQECHn65FERllq9zsH+XnSdF8+fsXUO9sN1VQPccqJCqADpoeC421IUZS0UH2aXy9l8YVwH6i7Q8u++3YKiKKLlX75619IWnGuzu7MNW4OeOBny0w/fRyVcvulvmvuPkZcmWh6PHppkTi75Qb8yfRKS8fXzeDR0rkdKukrFRqvehjk+PDqBQb+CT5+/GrkYeYC4iBZdzeIDDPqVOX795i2MR8NgzN13LiVB4yI2YJMS4JHKpLiLJTZOR9T76UdzPB4N2cyTVF6a3LDr0NF7eHRijieTSaO+NOFiD2CpvDTRgm10IS+RkfazTYm5ZYCmWpnNF/B49NCU0xuOkQf4N6JlMx4NYTKZtB7kl59/NOftHDiW0w7AKJtN1dtgI2Ax8jgYEaqhbPNHn8t1XVc/cPL0HiUyrn72JYRKevN2sABf4my+aDxgrDziU1FcehNz33bw5Gx6Lp5pCDfLJfKocQb9ypgfHJSo8VwzzTcDY01NjEyMKTBxgBy20iffta2MTbhI5VEDHB6dmMFAX7p9jOToT/t+JDKxE6MRCPKpLq48Vt5nCrjyWHmfaufKJfL0pQNceSucl4Lmyb7PHP0ZK+PqNw42EihNJKTKx65WY+VjEy4+eXtBSs0Q9VJitZ+P6/QKlFuGKIDABU8oW4NeMDx8sL9XLJfL5afPX+HBvTvA/W7ev8veD+XF82et8DUXnuZ2Cv9X5XzBq6q3EQyIoYx9HuAfE7AuVeF7+Q/uaWLSh8Sspew1KFMDCCn4Xj6NHCpNcnkIHCVAWgAhBdUA6bg8FtpvEhmbhhfQtSlQDbA6uU2BGQCxAYQUVAOshi9nESNDaWiAmABCCqoBVsel5mNlEHba1XXdStLkQDVAGpK9hSn7DxUFsu1IoYEILjiBZbQtrn3anmvnEQAEdw8BgDOIZQdIYp+v63ZSg3Mp7ZgNISEkMtIMmCTT59t5hPbNt3vIlat3kfp8XbUj8chytFPm2pGS8+VjWegjirqugx9A5EqhrrMdSXAuVzslQL4dKdzqkyvj2pKW2deUBLEkAZLU5+uqnVzPFWqn4QbmMgXSzRaraA0bn6pz7WCirqdrFxK3+XQd7eR6rlA7xctX75Y4QuyFFN1yHJI5Pr1Y0tHpKqNtAVwt1Lgy51MrWWl1Pt3cwA0Al8w6b1pRlExk9W+pv25/rcL5r5y/mkPOFVfILZcjThH6NlPyLabkb/K8G0Jy+LfU7aIrU27xId0yvoqcNLmVKpczTnGdlLn8W+q3Uz89VK8LuS5ePl6b+zZhlTjFdVMC5PNvORnOD+Wul1uOu5dUOfq1EpXt6mudddJIwXG2zIazZTah2XalJh+aGdOFHKpZnHExcoj9ddDuzraRc/0rB0Xyvwgu29xFO4rSQrTCvAmeArcSt7eZcxkwyUy9zYj/I+gmeAp2+7qhZHVEA+AmeArcSly3lK2OWANct6fArcRVAyiKoiiKoiiKoiiKoiiKoiiKoiiKoigKy9/Q9Zorgm4i8gAAAABJRU5ErkJggg=="
+		}
+	]
+}

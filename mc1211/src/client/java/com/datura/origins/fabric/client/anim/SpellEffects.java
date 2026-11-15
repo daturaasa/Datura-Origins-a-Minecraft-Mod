@@ -7,6 +7,7 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.component.type.FireworkExplosionComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particle.DustColorTransitionParticleEffect;
 import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
@@ -24,6 +25,9 @@ public final class SpellEffects {
 	private static final DustParticleEffect SHADOW = new DustParticleEffect(new Vector3f(0.16f, 0.05f, 0.26f), 1.7f);
 	private static final DustParticleEffect SHADOW_EDGE = new DustParticleEffect(new Vector3f(0.55f, 0.3f, 0.85f), 0.8f);
 	private static final DustParticleEffect LEAF = new DustParticleEffect(new Vector3f(0.42f, 0.72f, 0.36f), 1.0f);
+	private static final DustColorTransitionParticleEffect MANA = new DustColorTransitionParticleEffect(
+			new Vector3f(0.55f, 0.85f, 1f), new Vector3f(0.75f, 0.5f, 1f), 1.4f);
+	private static final DustParticleEffect MANA_WHITE = new DustParticleEffect(new Vector3f(0.92f, 0.97f, 1f), 1.1f);
 
 	private enum Kind { BOOM_GOLD, BOOM_ARCANE, FLASH }
 
@@ -97,6 +101,7 @@ public final class SpellEffects {
 		switch (name) {
 			case "boom_gold" -> SHAPES.add(new Shape(Kind.BOOM_GOLD, p, a, 14, null));
 			case "boom_arcane" -> SHAPES.add(new Shape(Kind.BOOM_ARCANE, p, a, 16, null));
+			case "boom_mana" -> manaBurst(world, p, a, rnd);
 			case "shadow_step" -> {
 				Vec3d to = new Vec3d(a, b, c);
 				for (Vec3d end : new Vec3d[]{p, to}) {
@@ -170,6 +175,34 @@ public final class SpellEffects {
 	private static void firework(ClientWorld w, Vec3d at, int color, int fade) {
 		w.addFireworkParticle(at.x, at.y, at.z, 0, 0, 0, List.of(new FireworkExplosionComponent(
 				FireworkExplosionComponent.Type.SMALL_BALL, IntList.of(color), IntList.of(fade), false, false)));
+	}
+
+	private static void manaBurst(ClientWorld w, Vec3d c, float size, Random r) {
+		float s = Math.max(0.5f, size) * 1.8f;
+		w.addParticle(ParticleTypes.FLASH, c.x, c.y, c.z, 0, 0, 0);
+		w.addParticle(ParticleTypes.EXPLOSION, c.x, c.y, c.z, 0, 0, 0);
+		int n = (int) (36 * s);
+		for (int i = 0; i < n; i++) {
+			double th = r.nextDouble() * Math.PI * 2, ph = r.nextDouble() * Math.PI - Math.PI / 2, sp = (0.15 + r.nextDouble() * 0.35) * s;
+			double vx = Math.cos(th) * Math.cos(ph) * sp, vy = Math.sin(ph) * sp, vz = Math.sin(th) * Math.cos(ph) * sp;
+			ParticleEffect fx = switch (i % 6) {
+				case 0 -> ParticleTypes.END_ROD;
+				case 1 -> ParticleTypes.SNOWFLAKE;
+				case 2 -> ParticleTypes.GLOW;
+				case 3 -> ParticleTypes.ELECTRIC_SPARK;
+				case 4 -> MANA_WHITE;
+				default -> MANA;
+			};
+			w.addParticle(fx, c.x, c.y, c.z, vx, vy, vz);
+		}
+		double rad = 1.4 * s;
+		int count = (int) (28 * s);
+		for (int i = 0; i < count; i++) {
+			double a = i * Math.PI * 2 / count;
+			w.addParticle(ParticleTypes.END_ROD, c.x + Math.cos(a) * rad * 0.3, c.y, c.z + Math.sin(a) * rad * 0.3,
+					Math.cos(a) * 0.12 * rad, 0.01, Math.sin(a) * 0.12 * rad);
+		}
+		for (int i = 0; i < 8 * s; i++) w.addParticle(ParticleTypes.FIREWORK, c.x, c.y, c.z, r.nextGaussian() * 0.25, r.nextDouble() * 0.3, r.nextGaussian() * 0.25);
 	}
 
 	private static void boom(ClientWorld w, Vec3d p, float radius, int age, ParticleEffect color) {

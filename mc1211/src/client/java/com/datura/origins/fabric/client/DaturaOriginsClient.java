@@ -2,7 +2,6 @@ package com.datura.origins.fabric.client;
 
 import com.datura.origins.fabric.client.anim.AbilityAnimations;
 import com.datura.origins.fabric.client.anim.BatDisguise;
-import com.datura.origins.fabric.client.anim.MountainLeap;
 import com.datura.origins.fabric.client.anim.RaceEffects;
 import com.datura.origins.fabric.client.anim.SpellEffects;
 import com.datura.origins.fabric.client.anim.WingFlight;
@@ -170,7 +169,6 @@ public class DaturaOriginsClient implements ClientModInitializer {
 			}
 			tickAirJump(client);
 			WingFlight.tick(client);
-			MountainLeap.tick(client);
 			RaceEffects.tick(client);
 			SpellEffects.tick(client);
 		});

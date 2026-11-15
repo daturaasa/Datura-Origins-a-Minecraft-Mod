@@ -11,15 +11,19 @@ import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RotationAxis;
+import net.minecraft.util.math.Vec3d;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
 public class SpellProjectileRenderer extends EntityRenderer<SpellProjectileEntity> {
 	private static final Identifier SUN = DaturaOriginsMod.id("textures/entity/sun_cube.png");
 	private static final Identifier MOON = DaturaOriginsMod.id("textures/entity/moon_cube.png");
+	private static final Identifier SPIRIT = DaturaOriginsMod.id("textures/entity/spirit_cube.png");
 	private static final float[][] FACES = {
 			{0, 0, -1, -1, 0, 0, 0, 1, 0}, {0, 0, 1, 1, 0, 0, 0, 1, 0}, {-1, 0, 0, 0, 0, 1, 0, 1, 0},
 			{1, 0, 0, 0, 0, -1, 0, 1, 0}, {0, 1, 0, 1, 0, 0, 0, 0, -1}, {0, -1, 0, 1, 0, 0, 0, 0, 1}};
@@ -45,7 +49,8 @@ public class SpellProjectileRenderer extends EntityRenderer<SpellProjectileEntit
 			return;
 		}
 		if (entity.kind() == SpellProjectileEntity.MANA) {
-			mana(matrices, vertexConsumers, t, 0.45F * entity.size());
+			trail(entity);
+			cube(matrices, vertexConsumers, SPIRIT, t, 0.75f * entity.size(), 0x9FD4FF, 0.32f, 2.2f);
 			super.render(entity, yaw, tickDelta, matrices, vertexConsumers, light);
 			return;
 		}
@@ -78,20 +83,21 @@ public class SpellProjectileRenderer extends EntityRenderer<SpellProjectileEntit
 		ms.pop();
 	}
 
-	private static void mana(MatrixStack ms, VertexConsumerProvider vcp, float t, float side) {
-		float h = side / 2;
-		float pulse = 0.85F + 0.15F * MathHelper.sin(t * 0.3F);
-		ms.push();
-		ms.translate(0, 0.3F, 0);
-		ms.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(t * 9.0F));
-		ms.multiply(RotationAxis.POSITIVE_X.rotationDegrees(t * 6.0F));
-		Matrix4f m = ms.peek().getPositionMatrix();
-		VertexConsumer g = vcp.getBuffer(RenderLayer.getLightning());
-		glowBox(m, g, h * 0.45F, 0xFFFFFF, 0.9F);
-		glowBox(m, g, h * 0.8F, 0x7FD6FF, 0.55F * pulse);
-		glowBox(m, g, h * 1.15F, 0x4A9CFF, 0.3F * pulse);
-		glowBox(m, g, h * 1.5F, 0x4A9CFF, 0.12F * pulse);
-		ms.pop();
+	private static void trail(SpellProjectileEntity entity) {
+		var world = entity.getWorld();
+		var random = world.random;
+		Vec3d velocity = entity.getVelocity();
+		for (int i = 0; i < 4; i++) {
+			double x = entity.getX() + random.nextGaussian() * 0.18, y = entity.getY() + 0.3 + random.nextGaussian() * 0.18, z = entity.getZ() + random.nextGaussian() * 0.18;
+			double vx = -velocity.x * 0.05 + random.nextGaussian() * 0.03, vy = random.nextGaussian() * 0.03, vz = -velocity.z * 0.05 + random.nextGaussian() * 0.03;
+			ParticleEffect effect = switch (i) {
+				case 0 -> ParticleTypes.END_ROD;
+				case 1 -> ParticleTypes.GLOW;
+				case 2 -> ParticleTypes.SNOWFLAKE;
+				default -> ParticleTypes.ELECTRIC_SPARK;
+			};
+			world.addParticle(effect, x, y, z, vx, vy, vz);
+		}
 	}
 
 	private static void texBox(MatrixStack.Entry e, VertexConsumer vc, float h) {

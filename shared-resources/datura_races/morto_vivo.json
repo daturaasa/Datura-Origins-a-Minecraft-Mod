@@ -1,29 +1,29 @@
 {
 	"id": "morto_vivo",
 	"order": 16,
-	"name": "Morto-Vivo",
+	"name": "race.datura_origins.morto_vivo.name",
 	"color": "#7C9A5E",
 	"model": "chifres_galhada",
 	"nether_suppressed": true,
-	"description": "Morreu, mas não aceitou. A alma rastejou de volta para o próprio corpo e agora só quer acertar as contas. Não come, não descansa, e os mortos do mundo o reconhecem como um deles. Cada monstro que derruba fortalece o pequeno exército que ele ergue do chão.",
+	"description": "race.datura_origins.morto_vivo.description",
 	"advantages": [
-		"Não precisa comer.",
-		"Zumbis, esqueletos e outros mortos-vivos o ignoram, a menos que ele ataque.",
-		"Corpo duro de cadáver: 2 corações a mais, 2 de armadura natural e 1 a mais de dano.",
-		"Corpo sem vida: imune a veneno e fome.",
-		"Matar monstros fortalece seus zumbis, em 4 níveis (no lugar da experiência)."
+		"race.datura_origins.morto_vivo.advantage.0",
+		"race.datura_origins.morto_vivo.advantage.1",
+		"race.datura_origins.morto_vivo.advantage.2",
+		"race.datura_origins.morto_vivo.advantage.3",
+		"race.datura_origins.morto_vivo.advantage.4"
 	],
 	"disadvantages": [
-		"O fogo causa o dobro de dano.",
-		"A água o fere.",
-		"Poções e poderes de cura o machucam; efeitos ruins lhe dão força.",
-		"O sol o deixa 10% mais lento.",
-		"No Nether perde todas as vantagens e a habilidade (tudo volta ao sair, sem perder progresso)."
+		"race.datura_origins.morto_vivo.disadvantage.0",
+		"race.datura_origins.morto_vivo.disadvantage.1",
+		"race.datura_origins.morto_vivo.disadvantage.2",
+		"race.datura_origins.morto_vivo.disadvantage.3",
+		"race.datura_origins.morto_vivo.disadvantage.4"
 	],
 	"ability": {
 		"type": "datura_origins:summon_undead",
-		"name": "Exército dos Mortos",
-		"description": "Ergue 3 zumbis que atacam quem você atacar (ou quem te atacar) por 30 segundos. Começam com cota de malha; com mais níveis ganham espadas e armaduras melhores, até ferro encantado. Recarga de 1 minuto.",
+		"name": "race.datura_origins.morto_vivo.ability.name",
+		"description": "race.datura_origins.morto_vivo.ability.description",
 		"cooldown": 1200,
 		"count": 3,
 		"duration": 600

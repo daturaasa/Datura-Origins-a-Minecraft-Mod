@@ -1,24 +1,24 @@
 {
 	"id": "vampiro",
 	"order": 6,
-	"name": "Vampiro",
+	"name": "race.datura_origins.vampiro.name",
 	"color": "#C7263E",
-	"description": "Criatura da noite que vive de sangue. É mais forte e mais rápido que um humano, mas o sol o destrói.",
+	"description": "race.datura_origins.vampiro.description",
 	"advantages": [
-		"Mais forte e mais rápido que um humano: +2 de dano, +15% de velocidade e 2 corações a mais.",
-		"Visão noturna permanente.",
-		"Forma de morcego: pule no ar para virar morcego e voar livremente. Ao pousar ou desligar o voo, volta ao normal e precisa esperar 30 segundos para se transformar de novo."
+		"race.datura_origins.vampiro.advantage.0",
+		"race.datura_origins.vampiro.advantage.1",
+		"race.datura_origins.vampiro.advantage.2"
 	],
 	"disadvantages": [
-		"Só se alimenta de sangue, usando a Mordida Vampírica. Comida comum não serve.",
-		"A fome cai mais rápido, e bem mais rápido na forma de morcego.",
-		"O sol queima: de dia, em céu aberto, ele pega fogo e morre rápido. O fogo também causa 50% a mais de dano.",
-		"Com a fome zerada, perde todos os bônus e poderes. Só a mordida continua funcionando."
+		"race.datura_origins.vampiro.disadvantage.0",
+		"race.datura_origins.vampiro.disadvantage.1",
+		"race.datura_origins.vampiro.disadvantage.2",
+		"race.datura_origins.vampiro.disadvantage.3"
 	],
 	"ability": {
 		"type": "datura_origins:vampire_bite",
-		"name": "Mordida Vampírica",
-		"description": "Agarra a criatura à frente e bebe o sangue dela por 1,5 segundo, recuperando vida e fome. Sangue de monstro envenena. Recarga de 12 segundos.",
+		"name": "race.datura_origins.vampiro.ability.name",
+		"description": "race.datura_origins.vampiro.ability.description",
 		"cooldown": 240,
 		"range": 3.0,
 		"duration": 40,

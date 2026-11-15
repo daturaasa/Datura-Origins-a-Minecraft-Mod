@@ -120,11 +120,8 @@ public class AltarScreen extends Screen {
 			if (over) hover = i;
 			context.drawGuiTexture(over ? SLOT_HIGHLIGHTED : SLOT, sx, sy, 108, 19);
 			context.drawGuiTexture(LEVELS[i], sx + 1, sy + 1, 16, 16);
-			Text free = Text.translatable("screen.datura_origins.altar.free");
-			int freeWidth = textRenderer.getWidth(free);
-			StringVisitable phrase = EnchantingPhrases.getInstance().generatePhrase(textRenderer, 86 - freeWidth);
-			context.drawTextWrapped(textRenderer, phrase, sx + 20, sy + 2, 86 - freeWidth, over ? 0xFFFF80 : 0x685E4A);
-			context.drawTextWithShadow(textRenderer, free, sx + 106 - freeWidth, sy + 9, 0x80FF20);
+			StringVisitable phrase = EnchantingPhrases.getInstance().generatePhrase(textRenderer, 86);
+			context.drawTextWrapped(textRenderer, phrase, sx + 20, sy + 2, 86, over ? 0xFFFF80 : 0x685E4A);
 		}
 		if (hover >= 0) {
 			context.drawTooltip(textRenderer, List.of(names.get(hover).copy().formatted(Formatting.AQUA),

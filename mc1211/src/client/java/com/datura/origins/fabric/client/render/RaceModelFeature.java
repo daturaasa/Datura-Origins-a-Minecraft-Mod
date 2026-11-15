@@ -36,6 +36,7 @@ public class RaceModelFeature extends FeatureRenderer<AbstractClientPlayerEntity
 	};
 	private static final Map<Integer, float[]> MOTION = new HashMap<>();
 	private static final Map<Integer, float[]> FIT = new HashMap<>();
+	private static final Map<Integer, float[]> WAVE = new HashMap<>();
 
 	public RaceModelFeature(FeatureRendererContext<AbstractClientPlayerEntity, PlayerEntityModel<AbstractClientPlayerEntity>> context) {
 		super(context);
@@ -44,12 +45,14 @@ public class RaceModelFeature extends FeatureRenderer<AbstractClientPlayerEntity
 	public static void forget(int entityId) {
 		MOTION.remove(entityId);
 		FIT.remove(entityId);
+		WAVE.remove(entityId);
 		ModelAnimator.forget(entityId);
 	}
 
 	public static void clear() {
 		MOTION.clear();
 		FIT.clear();
+		WAVE.clear();
 		ModelAnimator.clear();
 	}
 
@@ -84,13 +87,20 @@ public class RaceModelFeature extends FeatureRenderer<AbstractClientPlayerEntity
 		PartModel.toModelSpace(matrices);
 		model.render(matrices, vertexConsumers.getBuffer(layer(player, texture)), light, overlay, color(player));
 		if (model.glows()) {
-			model.renderGlow(matrices, vertexConsumers.getBuffer(RenderLayer.getEntityTranslucentEmissive(texture)), overlay, color(player));
+			model.renderGlow(matrices, vertexConsumers.getBuffer(RenderLayer.getEntityTranslucentEmissive(texture)), overlay,
+					model.pulses() ? pulse(animationProgress) : color(player));
 		}
 		matrices.pop();
 	}
 
 	private static RenderLayer layer(AbstractClientPlayerEntity player, Identifier texture) {
 		return RaceModels.isGhost(player) ? RenderLayer.getItemEntityTranslucentCull(texture) : RenderLayer.getEntityCutoutNoCull(texture);
+	}
+
+	private static int pulse(float animationProgress) {
+		float wave = 0.5F - 0.5F * MathHelper.cos(animationProgress / 20.0F * MathHelper.TAU / 4.5F);
+		int alpha = Math.round(255.0F * (0.18F + 0.62F * wave * wave * (3.0F - 2.0F * wave)));
+		return (alpha << 24) | 0xFFFFFF;
 	}
 
 	private static int color(AbstractClientPlayerEntity player) {
@@ -108,11 +118,15 @@ public class RaceModelFeature extends FeatureRenderer<AbstractClientPlayerEntity
 			model.animate("walk", limbAngle / 9.4248F, walk);
 		} else {
 			float stretch = MathHelper.clamp(speed * 3.2F, 0.0F, 1.0F);
-			float phase = animationProgress * (0.09F + speed * 0.6F);
+			float[] wave = WAVE.computeIfAbsent(player.getId(), k -> new float[]{0.0F, animationProgress});
+			float elapsed = MathHelper.clamp(animationProgress - wave[1], 0.0F, 4.0F);
+			wave[1] = animationProgress;
+			wave[0] = (wave[0] + elapsed * (0.09F + speed * 0.6F)) % (MathHelper.TAU * 64.0F);
+			float phase = wave[0];
 			float amplitude = 5.0F + 16.0F * speed;
 			for (int i = 0; i < chain.size(); i++) {
-				float wave = MathHelper.sin(phase - i * 0.8F) * amplitude * (0.6F + i * 0.45F) * (1.0F - stretch * 0.4F);
-				chain.get(i).add(i == 0 ? 18.0F * stretch : wave * 0.15F, wave, 0.0F);
+				float swing = MathHelper.sin(phase - i * 0.8F) * amplitude * (0.6F + i * 0.45F) * (1.0F - stretch * 0.4F);
+				chain.get(i).add(i == 0 ? 18.0F * stretch : swing * 0.15F, swing, 0.0F);
 			}
 		}
 		PartModel.Bone root = model.liftBone();

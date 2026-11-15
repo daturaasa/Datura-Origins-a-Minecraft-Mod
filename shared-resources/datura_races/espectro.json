@@ -1,28 +1,28 @@
 {
 	"id": "espectro",
 	"order": 10,
-	"name": "Espectro",
+	"name": "race.datura_origins.espectro.name",
 	"color": "#8FE3C0",
 	"nether_suppressed": true,
-	"description": "A alma que se recusou a partir: o vulto no fim do corredor, o frio que atravessa a parede. Não sente fome, enxerga no escuro e os monstros o deixam passar como se fosse um deles. Mas a água o desfaz, o Nether reclama o que é seu e tudo que cura os vivos queima o que restou dele.",
+	"description": "race.datura_origins.espectro.description",
 	"advantages": [
-		"Já está morto: não sente fome e não precisa comer.",
-		"Visão noturna permanente.",
-		"Causa 1 a mais de dano corpo a corpo.",
-		"Os monstros não o atacam, a menos que ele ataque primeiro.",
-		"Leve como névoa: não toma dano de queda."
+		"race.datura_origins.espectro.advantage.0",
+		"race.datura_origins.espectro.advantage.1",
+		"race.datura_origins.espectro.advantage.2",
+		"race.datura_origins.espectro.advantage.3",
+		"race.datura_origins.espectro.advantage.4"
 	],
 	"disadvantages": [
-		"Corpo frágil: só 9 corações.",
-		"Chuva e água causam 2 corações de dano por segundo.",
-		"No Nether se desfaz como na chuva e perde todas as vantagens e a habilidade (tudo volta ao sair).",
-		"Poções de cura e efeitos bons o ferem; efeitos ruins lhe dão força.",
-		"De dia causa 1 a menos de dano."
+		"race.datura_origins.espectro.disadvantage.0",
+		"race.datura_origins.espectro.disadvantage.1",
+		"race.datura_origins.espectro.disadvantage.2",
+		"race.datura_origins.espectro.disadvantage.3",
+		"race.datura_origins.espectro.disadvantage.4"
 	],
 	"ability": {
 		"type": "datura_origins:phase",
-		"name": "Forma Espectral",
-		"description": "Fica invisível e atravessa paredes, como um espectador, sem limite de tempo. Aperte de novo para voltar ao corpo, desde que haja espaço. Recarga de 5 segundos.",
+		"name": "race.datura_origins.espectro.ability.name",
+		"description": "race.datura_origins.espectro.ability.description",
 		"cooldown": 100
 	},
 	"powers": [

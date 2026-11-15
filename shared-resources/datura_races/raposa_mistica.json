@@ -1,31 +1,34 @@
 {
 	"id": "raposa_mistica",
 	"order": 8,
-	"name": "Raposa Mística",
-	"variant_name": "Fogo",
+	"name": "race.datura_origins.raposa_mistica.name",
+	"variant_name": "race.datura_origins.raposa_mistica.variant",
 	"color": "#E8823F",
-	"model": ["cauda_raposa_laranja", "orelhas_raposa_laranja"],
-	"description": "Raposa encantada que vive entre as pessoas, mas prefere a companhia das raposas. Existe em duas formas, Fogo e Neve, escolhidas aqui mesmo antes de confirmar.",
+	"model": [
+		"cauda_raposa_laranja",
+		"orelhas_raposa_laranja"
+	],
+	"description": "race.datura_origins.raposa_mistica.description",
 	"advantages": [
-		"Mais forte que um humano: +1,5 de dano.",
-		"Não toma dano de queda.",
-		"Forma de Fogo: imune a fogo, e cada golpe incendeia o inimigo.",
-		"Forma de Fogo: passa por arbustos de frutas doces sem se machucar.",
-		"Passos silenciosos. Parada por 3 segundos, fica completamente camuflada e nenhum monstro a percebe.",
-		"As raposas confiam nela e a seguem por um tempo.",
-		"Visão noturna permanente."
+		"race.datura_origins.raposa_mistica.advantage.0",
+		"race.datura_origins.raposa_mistica.advantage.1",
+		"race.datura_origins.raposa_mistica.advantage.2",
+		"race.datura_origins.raposa_mistica.advantage.3",
+		"race.datura_origins.raposa_mistica.advantage.4",
+		"race.datura_origins.raposa_mistica.advantage.5",
+		"race.datura_origins.raposa_mistica.advantage.6"
 	],
 	"disadvantages": [
-		"Só tem 8 corações.",
-		"Nenhum efeito funciona nela, bom ou ruim (nem a maçã dourada).",
-		"Só come carne.",
-		"Não sabe nadar: afunda na água.",
-		"Explosões causam 50% a mais de dano."
+		"race.datura_origins.raposa_mistica.disadvantage.0",
+		"race.datura_origins.raposa_mistica.disadvantage.1",
+		"race.datura_origins.raposa_mistica.disadvantage.2",
+		"race.datura_origins.raposa_mistica.disadvantage.3",
+		"race.datura_origins.raposa_mistica.disadvantage.4"
 	],
 	"ability": {
 		"type": "datura_origins:fox_clones",
-		"name": "Ilusões de Raposa",
-		"description": "Cria três ilusões suas que lutam ao seu lado por 10 segundos e queimam os inimigos que atingem. Recarga de 67 segundos.",
+		"name": "race.datura_origins.raposa_mistica.ability.name",
+		"description": "race.datura_origins.raposa_mistica.ability.description",
 		"cooldown": 1350,
 		"count": 3,
 		"duration": 200,
