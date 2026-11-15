@@ -1,17 +1,28 @@
-<p align="center"><img src="docs/img/logo.png" alt="Datura Origins" width="820"></p>
+<p align="center"><img src="images/banner.png" alt="Datura Origins" width="820"></p>
 
 <p align="center"><b>Datura Origins v1.0.2</b> · Fabric · Minecraft 1.21.1</p>
+
+&nbsp;
 
 ## Sobre
 
 Datura Origins é um mod de raças para Minecraft. Ao entrar no mundo, você abre um grimório e escolhe sua origem. Cada raça tem um corpo próprio, vantagens, fraquezas e uma habilidade ativa. Nenhuma raça é perfeita: cada uma tem um ponto forte e uma fraqueza que o grupo ajuda a compensar.
 
-> 📷 *Espaço para captura de tela: tela de introdução*
+&nbsp;
+
+&nbsp;
+
+<p align="center">
+  <img src="images/displayimg2.jpeg" width="700" alt="Grimório de seleção">
+</p>
+
+&nbsp;
+
+&nbsp;
 
 ## Funcionalidades
 
 - **Multilíngue**: acompanha o idioma do Minecraft (português e inglês incluídos; outros idiomas usam o inglês).
-
 - **Tela de seleção em forma de grimório**, com prévia 3D do personagem já usando a raça, lista de vantagens, desvantagens e habilidade.
 - **Música ambiente original** e sons suaves de brilho na tela de seleção, seguindo o volume do jogo.
 - **24 raças**, cada uma com sua própria página no grimório.
@@ -21,7 +32,13 @@ Datura Origins é um mod de raças para Minecraft. Ao entrar no mundo, você abr
 - **Maturidade**: Dragão, Morto-Vivo e Demônio evoluem com o tempo, com barra própria no lugar da barra de experiência.
 - **Raças em JSON**: cada raça é um arquivo em `datura_races/`, e addons podem criar raças e tipos de poder novos (veja [docs/api.md](docs/api.md)).
 
-> 📷 *Espaço para captura de tela: grimório de seleção*
+&nbsp;
+
+<p align="center">
+  <img src="images/displayimg.jpeg" width="700" alt="Tela de introdução">
+</p>
+
+&nbsp;
 
 ## Controles
 
@@ -31,6 +48,8 @@ Datura Origins é um mod de raças para Minecraft. Ao entrar no mundo, você abr
 | `Z` | Usa a habilidade da raça |
 
 As teclas podem ser trocadas em *Opções → Controles*.
+
+&nbsp;
 
 ## Comandos
 
@@ -44,6 +63,8 @@ As teclas podem ser trocadas em *Opções → Controles*.
 | `/do full maturity` | Leva a maturidade ao máximo (cheats) |
 | `/do reset cooldown` | Zera a recarga da habilidade (cheats) |
 | `/do no cooldown` | Liga/desliga a habilidade sem recarga (cheats) |
+
+&nbsp;
 
 ## Raças
 
@@ -74,9 +95,33 @@ As teclas podem ser trocadas em *Opções → Controles*.
 | Kitsune (Celestial) | Raposa de nove caudas brancas que volta da morte. | Orbe Espiritual |
 | Kitsune Corrompida | Nove caudas vermelhas, acorrenta as presas. | Prisão de Correntes |
 
-> 📷 *Espaço para captura de tela: raças em jogo*
+&nbsp;
 
-> 📷 *Espaço para captura de tela: habilidades*
+&nbsp;
+
+<p align="center">
+  <img src="images/displayimg3.jpeg" width="700" alt="Raças em ação">
+</p>
+
+&nbsp;
+
+&nbsp;
+
+---
+
+## Créditos e Inspiração
+
+Este projeto é uma homenagem e uma reinterpretação inspirada no mod original **[Origins](https://github.com/apace100/origins-fabric)**, criado por **apace100**. Todo o mérito pela ideia original de escolha de raças com vantagens, desvantagens e habilidades no Minecraft pertence ao projeto original — o **Datura Origins** foi desenvolvido do zero como uma visão própria e independente dessa mecânica.
+
+&nbsp;
+
+<p align="center">
+  <img src="images/icongif.gif" width="180" alt="Ícone animado">
+</p>
+
+Feito por Daturaasa.
+
+&nbsp;
 
 ## Instalação
 
@@ -84,13 +129,21 @@ As teclas podem ser trocadas em *Opções → Controles*.
 2. Coloque o [Fabric API](https://modrinth.com/mod/fabric-api) e o `Datura-Origins-1.0.2-fabric-1.21.1.jar` na pasta `mods`.
 3. Requer Java 21.
 
-## Compilando
+&nbsp;
 
-Rode `Compilar.bat`. O `.jar` final fica em `release/`.
+&nbsp;
+
+&nbsp;
 
 ## Criando novas raças
 
+> Se você chegou até aqui apenas para jogar e não tem intenção de criar raças, mexer em códigos ou compilar o mod, pode parar a leitura por aqui — o resto é voltado apenas para desenvolvedores e criadores de add-ons!
+
+&nbsp;
+
 O Datura Origins carrega raças de **qualquer mod** instalado. Uma raça é um arquivo JSON com textos, poderes, habilidade e modelos; o grimório lista tudo sozinho. Você pode criar um addon separado (recomendado) ou adicionar arquivos direto neste projeto.
+
+&nbsp;
 
 ### Estrutura de arquivos
 
@@ -107,7 +160,7 @@ src/main/resources/
 
 Neste repositório, as raças do mod ficam em `shared-resources/datura_races/` e os recursos em `shared-resources/assets/datura_origins/`.
 
-### Modelos 3D e animações
+&nbsp;
 
 Modele no Blockbench (formato *Generic Model*, em cima do Steve: chão em y=0, pescoço em y=24) e converta:
 
@@ -117,6 +170,8 @@ python tools/bbmodel_to_part.py <pasta-resources> minha_parte.bbmodel=asas_guerr
 
 O conversor gera o modelo e a textura. Uma pasta raiz chamada `head` ou `body` define onde a peça prende; grupos terminados em `_glow` brilham no escuro. Opções após `:` — `hide_legs` (esconde as pernas, como nas sereias), `static` (sem física de balanço), `pulse` (brilho pulsando).
 Animações com estes nomes tocam sozinhas: `idle`, `walk`, `run` (correndo), `fly`, `glide`, `swim`, `swim_fast`, `swim_idle`, `crawl`, `sit_down`/`sit_idle`, `coil`/`coil_idle` (após 3 s parado) e `balanco` (ao atacar).
+
+&nbsp;
 
 ### A raça (JSON)
 
@@ -148,6 +203,8 @@ Animações com estes nomes tocam sozinhas: `idle`, `walk`, `run` (correndo), `f
 - Variantes: `"variant_of": "<id da raça base>"` coloca a raça logo depois da base.
 - Tipos de poder novos: entrypoint `datura_origins:powers` com `PowerRegistry.registerPowerType` / `registerAbilityType` (detalhes em [docs/api.md](docs/api.md)).
 
+&nbsp;
+
 ### Textos e traduções
 
 Use chaves de tradução nos campos de texto e crie os arquivos em `assets/<seu-mod>/lang/`. O jogo escolhe o idioma do jogador e cai para `en_us.json` quando não há tradução, então **sempre inclua o inglês**.
@@ -161,10 +218,14 @@ Use chaves de tradução nos campos de texto e crie os arquivos em `assets/<seu-
 
 Texto literal também funciona, mas não é traduzido.
 
+&nbsp;
+
 ### Registro e numeração
 
 Não é preciso registrar nada no código: na inicialização o mod lê a pasta `datura_races/` de todos os mods e coloca as raças no grimório pela ordem de `order`. Os números romanos são calculados na hora pela posição na lista, então uma raça nova continua a sequência (XXV, XXVI...) sem lacunas e sem mexer nas existentes.
 Para registrar pelo código em vez de JSON, implemente `RaceProvider` no entrypoint `datura_origins` (exemplo em [docs/api.md](docs/api.md)).
+
+&nbsp;
 
 ## Tecnologias
 
@@ -184,5 +245,9 @@ flowchart LR
 
 ---
 
+&nbsp;
+
 Feito por Daturaasa. Todos os direitos reservados.
 O **Datura Origins** é um projeto independente desenvolvido do zero, sem reutilização de código ou ativos de terceiros, criado como uma homenagem e inspirado pelo mod original **[Origins](https://github.com/apace100/origins-fabric)**!
+
+<p align="center"><img src="images/icongif.gif" width="180" alt="Ícone animado"></p>
