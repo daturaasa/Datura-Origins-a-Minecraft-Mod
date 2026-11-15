@@ -184,4 +184,5 @@ flowchart LR
 
 ---
 
-Feito por Daturaasa (Artur Carmo dos Santos). Todos os direitos reservados.
+Feito por Daturaasa. Todos os direitos reservados.
+O **Datura Origins** é um projeto independente desenvolvido do zero, sem reutilização de código ou ativos de terceiros, criado como uma homenagem e inspirado pelo mod original **[Origins](https://github.com/apace100/origins-fabric)**!
