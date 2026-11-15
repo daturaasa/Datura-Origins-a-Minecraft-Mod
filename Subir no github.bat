@@ -6,6 +6,7 @@ cd /d "%~dp0"
 set REPO=https://github.com/daturaasa/Datura-Origins-a-Minecraft-Mod.git
 set SLUG=daturaasa/Datura-Origins-a-Minecraft-Mod
 set AUTO=%~1
+if /i "%AUTO%"=="S" if "%~2"=="" (set "AUTOREL=S") else (set "AUTOREL=%~2")
 
 where git >nul 2>nul
 if errorlevel 1 (
@@ -67,7 +68,7 @@ if not exist "%JAR%" (
 	goto fim
 )
 
-if /i "%AUTO%"=="S" (set REL=S) else set /p REL=Criar o release v%VERSAO% com o .jar? (S/N): 
+if /i "%AUTO%"=="S" (set REL=%AUTOREL%) else set /p REL=Criar o release v%VERSAO% com o .jar? (S/N): 
 if /i not "%REL%"=="S" goto fim
 
 where gh >nul 2>nul

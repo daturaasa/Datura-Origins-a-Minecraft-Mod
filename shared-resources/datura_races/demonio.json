@@ -3,7 +3,6 @@
 	"order": 17,
 	"name": "race.datura_origins.demonio.name",
 	"color": "#A3121F",
-	"model": "chifres_demonio",
 	"description": "race.datura_origins.demonio.description",
 	"advantages": [
 		"race.datura_origins.demonio.advantage.0",
