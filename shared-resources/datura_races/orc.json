@@ -1,0 +1,85 @@
+{
+	"id": "orc",
+	"order": 14,
+	"name": "Orc",
+	"color": "#5E8C3A",
+	"description": "Guerreiro da horda, de pele verde e olhar feroz, criado entre cicatrizes e fogueiras de guerra. Não é sutil nem esperto, mas bate como ninguém e aguenta o tranco. Quando pisa com força, o chão inteiro responde.",
+	"advantages": [
+		"Brutamontes: 13 corações e 3 a mais de dano.",
+		"Couro grosso: 3 de armadura natural e recebe 30% menos empurrão.",
+		"Estômago de ferro: imune a veneno e fome.",
+		"Um pouco maior que um humano.",
+		"Açougueiro: animais abatidos por ele deixam o dobro de carne e couro."
+	],
+	"disadvantages": [
+		"Mente simples: ganha 25% menos experiência.",
+		"Malvisto: os aldeões cobram mais caro.",
+		"Pesado: anda 5% mais devagar."
+	],
+	"ability": {
+		"type": "datura_origins:stomp",
+		"name": "Pisão",
+		"description": "Ergue o pé e desce com todo o peso: a onda de choque joga para cima tudo num raio de 4 blocos e causa até 7 de dano. Recarga de 18 segundos.",
+		"cooldown": 360,
+		"radius": 4,
+		"damage": 7.0,
+		"launch": 0.9,
+		"windup": 9
+	},
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": 6.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 3.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor",
+			"operation": "add_value",
+			"amount": 3.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.knockback_resistance",
+			"operation": "add_value",
+			"amount": 0.3
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.scale",
+			"operation": "add_value",
+			"amount": 0.15
+		},
+		{
+			"type": "datura_origins:effect_immunity",
+			"effects": [
+				"minecraft:poison",
+				"minecraft:hunger"
+			]
+		},
+		{
+			"type": "datura_origins:xp_multiplier",
+			"factor": 0.75
+		},
+		{
+			"type": "datura_origins:marker",
+			"kind": "villager_markup"
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": -0.05
+		},
+		{
+			"type": "datura_origins:butcher"
+		}
+	]
+}

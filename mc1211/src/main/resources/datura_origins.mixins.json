@@ -1,0 +1,21 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "com.datura.origins.fabric.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ArmorSlotMixin",
+		"EntityMixin",
+		"FleeEntityGoalMixin",
+		"FoxEntityAccessor",
+		"LivingEntityMixin",
+		"MobEntityMixin",
+		"PlayerEntityMixin",
+		"PowderSnowBlockMixin",
+		"VillagerEntityMixin",
+		"WardenEntityMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

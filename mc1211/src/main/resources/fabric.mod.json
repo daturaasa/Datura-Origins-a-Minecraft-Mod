@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "datura_origins",
+	"version": "${version}",
+	"name": "Datura Origins",
+	"description": "Escolha sua origem. Cada espécie tem seus próprios dons, fraquezas e habilidades.",
+	"authors": [
+		"Daturaasa (Artur Carmo dos Santos)"
+	],
+	"contact": {
+		"sources": "https://github.com/daturaasa/Datura-Origins-a-Minecraft-Mod",
+		"issues": "https://github.com/daturaasa/Datura-Origins-a-Minecraft-Mod/issues"
+	},
+	"license": "All-Rights-Reserved",
+	"icon": "assets/datura_origins/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.datura.origins.fabric.DaturaOriginsMod"
+		],
+		"client": [
+			"com.datura.origins.fabric.client.DaturaOriginsClient"
+		]
+	},
+	"mixins": [
+		"datura_origins.mixins.json",
+		{
+			"config": "datura_origins.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.0",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

@@ -1,0 +1,119 @@
+{
+	"id": "gargula",
+	"order": 18,
+	"name": "Gárgula",
+	"color": "#8A8F99",
+	"model": "asas_gargula",
+	"description": "Estátua que a magia acordou. A carne é pedra, o sangue é encanto e, mesmo de pedra, ela voa de verdade com as próprias asas. Não come nem bebe: quando precisa de forças, fica imóvel e volta a ser estátua até o corpo se refazer.",
+	"advantages": [
+		"Mesma vida de um humano, mas com 8 de armadura natural, 3 de resistência e 2 a mais de dano.",
+		"Voa com as próprias asas, rápida como uma élitra com foguete: no ar, aperte pular de novo para levantar voo. Segure agachar para planar sem impulso.",
+		"Parada no chão por 5 segundos, vira estátua e recupera vida e fome.",
+		"Imune a empurrões e ao fogo, e não se afoga.",
+		"Pele de Pedra: golpes de mais de 5 corações perdem 3 corações de dano.",
+		"Guardiã da noite: à noite causa 2 a mais de dano.",
+		"Olhos de pedra: enxerga no escuro."
+	],
+	"disadvantages": [
+		"Não consegue comer nada (em compensação, a fome cai bem devagar).",
+		"Afunda na água e não sabe nadar.",
+		"Sob o sol a pedra pesa: de dia anda 10% mais devagar."
+	],
+	"ability": {
+		"type": "datura_origins:meteor",
+		"name": "Meteoro",
+		"description": "Salta altíssimo, vira pedra e despenca: o impacto causa até 16 de dano num raio de 4,5 blocos e arremessa os inimigos para longe. Não toma dano de queda. Recarga de 37,5 segundos.",
+		"cooldown": 750,
+		"launch": 1.9,
+		"fall": 2.6,
+		"radius": 4.5,
+		"damage": 16,
+		"push": 2.6
+	},
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor",
+			"operation": "add_value",
+			"amount": 8.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor_toughness",
+			"operation": "add_value",
+			"amount": 3.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 2.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.knockback_resistance",
+			"operation": "add_value",
+			"amount": 1.0
+		},
+		{
+			"type": "datura_origins:wing_flight",
+			"speed": 1.1,
+			"exhaustion": 0.01
+		},
+		{
+			"type": "datura_origins:statue",
+			"still_ticks": 100,
+			"interval": 20,
+			"heal": 1.0,
+			"food": 1
+		},
+		{
+			"type": "datura_origins:damage_cap",
+			"above": 10,
+			"reduce": 6
+		},
+		{
+			"type": "datura_origins:damage_immunity",
+			"damage_tag": "minecraft:is_fire"
+		},
+		{
+			"type": "datura_origins:damage_immunity",
+			"damage_type": "minecraft:drown"
+		},
+		{
+			"type": "datura_origins:no_swim"
+		},
+		{
+			"type": "datura_origins:restricted_diet",
+			"allowed": [],
+			"message": "datura_origins.message.stone_diet"
+		},
+		{
+			"type": "datura_origins:hunger_rate",
+			"factor": 0.4
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 2.0,
+			"when": "night"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": -0.1,
+			"when": "day"
+		},
+		{
+			"type": "datura_origins:flag",
+			"flag": "fireproof",
+			"when": "always"
+		},
+		{
+			"type": "datura_origins:status_effect",
+			"effect": "minecraft:night_vision"
+		}
+	]
+}

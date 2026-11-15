@@ -1,0 +1,146 @@
+{
+	"id": "driade",
+	"order": 9,
+	"name": "Dríade",
+	"variant_name": "Dríade",
+	"color": "#6FBF5A",
+	"model": "chifres_galhos",
+	"nether_suppressed": true,
+	"description": "Ninfa da natureza, nascida da seiva e do orvalho. Onde ela pisa as plantas crescem e os bichos a tratam como parte da floresta. Mas o fogo a consome, o Nether a queima viva e a própria floresta pune a dríade que derrubar uma árvore.",
+	"advantages": [
+		"Meio bloco mais alta que um humano, com 2 corações a mais e 4 de armadura natural.",
+		"Fotossíntese: sob o sol regenera vida e a fome se enche sozinha.",
+		"Plantações e plantas por perto crescem sozinhas, e bem mais rápido quando ela fica parada perto delas.",
+		"Em florestas causa 2 a mais de dano.",
+		"Imune a veneno, decomposição e aos espinhos de arbustos de frutas.",
+		"Raízes firmes: recebe metade do empurrão.",
+		"Os animais não a atacam e não fogem dela."
+	],
+	"disadvantages": [
+		"Não come carne.",
+		"À noite causa 1 a menos de dano.",
+		"Quebrar um tronco de árvore é traição: a floresta a mata na hora.",
+		"No deserto e nas terras áridas fica 20% mais lenta.",
+		"O fogo causa o dobro de dano, e no Nether ela pega fogo.",
+		"No Nether perde todas as vantagens e a habilidade (tudo volta ao sair)."
+	],
+	"passives": [
+		"Ao morrer, flores brotam pelo chão ao redor."
+	],
+	"ability": {
+		"type": "datura_origins:natural_growth",
+		"name": "Florescer",
+		"description": "Solta uma onda de energia num raio de 20 blocos: mudas viram árvores, plantações amadurecem e as plantas crescem na hora. A onda também empurra para longe as criaturas que estiverem a até 8 blocos dela. Recarga de 5 minutos.",
+		"cooldown": 6000,
+		"radius": 20,
+		"height": 8,
+		"max_steps": 12,
+		"push_radius": 8,
+		"push_power": 1.6
+	},
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.scale",
+			"operation": "add_value",
+			"amount": 0.278
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": 4.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor",
+			"operation": "add_value",
+			"amount": 4.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 1.0
+		},
+		{
+			"type": "datura_origins:photosynthesis",
+			"heal": 1.0,
+			"heal_interval": 40,
+			"food_interval": 60
+		},
+		{
+			"type": "datura_origins:growth_aura",
+			"radius": 6,
+			"interval": 10,
+			"attempts": 8,
+			"chance": 0.3
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 2.0,
+			"when": "forest"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": -1.0,
+			"when": "night"
+		},
+		{
+			"type": "datura_origins:effect_immunity",
+			"effects": [
+				"minecraft:poison",
+				"minecraft:wither"
+			]
+		},
+		{
+			"type": "datura_origins:damage_immunity",
+			"damage_type": "minecraft:sweet_berry_bush"
+		},
+		{
+			"type": "datura_origins:restricted_diet",
+			"forbidden": [
+				"#minecraft:meat"
+			],
+			"message": "datura_origins.message.no_meat"
+		},
+		{
+			"type": "datura_origins:nature_oath"
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_tag": "minecraft:is_fire",
+			"multiplier": 2.0
+		},
+		{
+			"type": "datura_origins:environment_damage",
+			"when": "nether",
+			"interval": 20,
+			"ignite": true
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.knockback_resistance",
+			"operation": "add_value",
+			"amount": 0.5
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": -0.2,
+			"when": "desert"
+		},
+		{
+			"type": "datura_origins:marker",
+			"kind": "animal_friend"
+		},
+		{
+			"type": "datura_origins:animal_peace"
+		}
+	]
+}

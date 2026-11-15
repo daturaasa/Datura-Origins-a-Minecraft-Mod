@@ -1,0 +1,113 @@
+{
+	"id": "dama_cogumelo",
+	"order": 9,
+	"name": "Dama Cogumelo",
+	"variant_of": "driade",
+	"variant_name": "Dama Cogumelo",
+	"color": "#B066FF",
+	"model": "chapeu_amanita",
+	"description": "Uma dríade que cresceu na sombra úmida das florestas, onde a luz quase não chega. Em vez de flores, carrega um chapéu de amanita e um caldeirão de esporos venenosos. Quando está à beira da morte, um cogumelo gigante brota da terra e a ergue para longe do perigo.",
+	"advantages": [
+		"Meio bloco mais alta que um humano, com 2 corações a mais e 2 de armadura natural.",
+		"Dentro dos próprios esporos não sofre nada: ganha um escudo de 2 corações e se cura.",
+		"Imune a veneno e decomposição.",
+		"Criatura da sombra: à noite causa 2 a mais de dano.",
+		"Raízes firmes: recebe 40% menos empurrão."
+	],
+	"disadvantages": [
+		"O sol a resseca: de dia causa 1 a menos de dano.",
+		"Não come carne.",
+		"O fogo causa o dobro de dano."
+	],
+	"passives": [
+		"Cogumelo de Emergência: ao cair para 4 corações, solta uma explosão de esporos que fere e empurra os inimigos, um cogumelo gigante brota do chão e a leva para o topo, regenerando vida por 10 s. O cogumelo some depois de 30 s. Recarga de 5 minutos."
+	],
+	"ability": {
+		"type": "datura_origins:toxic_cauldron",
+		"name": "Caldeirão Venenoso",
+		"description": "Arremessa um caldeirão em arco. Onde cai, ele fica no chão por 10 s soltando uma nuvem de esporos de até 8 blocos: quem está dentro fica envenenado, fraco, tonto e brilhando através das paredes, e perde meio coração por segundo. Recarga de 30 segundos.",
+		"cooldown": 600,
+		"speed": 1.15,
+		"radius": 8,
+		"duration": 200,
+		"damage": 1,
+		"impact": 5
+	},
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.scale",
+			"operation": "add_value",
+			"amount": 0.278
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": 4.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor",
+			"operation": "add_value",
+			"amount": 2.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 1.5
+		},
+		{
+			"type": "datura_origins:marker",
+			"kind": "toxic_affinity"
+		},
+		{
+			"type": "datura_origins:fungal_emergency",
+			"threshold": 8,
+			"cooldown": 6000,
+			"radius": 6,
+			"damage": 6,
+			"stay": 600
+		},
+		{
+			"type": "datura_origins:effect_immunity",
+			"effects": [
+				"minecraft:poison",
+				"minecraft:wither"
+			]
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 2.0,
+			"when": "night"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": -1.0,
+			"when": "day"
+		},
+		{
+			"type": "datura_origins:restricted_diet",
+			"forbidden": [
+				"#minecraft:meat"
+			],
+			"message": "datura_origins.message.no_meat"
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_tag": "minecraft:is_fire",
+			"multiplier": 2.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.knockback_resistance",
+			"operation": "add_value",
+			"amount": 0.4
+		}
+	]
+}

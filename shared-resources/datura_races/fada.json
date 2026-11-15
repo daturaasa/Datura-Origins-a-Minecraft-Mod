@@ -1,0 +1,115 @@
+{
+	"id": "fada",
+	"order": 12,
+	"name": "Fada",
+	"color": "#C8FFB0",
+	"model": "asas_mariposa",
+	"description": "Pequena, brilhante e travessa, nascida do orvalho das florestas. Voa sem parar com asas de mariposa, faz as plantas crescerem e prefere ajudar a lutar: abre um campo de flores que cura os amigos e afasta os monstros. Sozinha é frágil, mas um grupo com uma fada por perto dificilmente cai.",
+	"advantages": [
+		"Voa sem limite, rápida como uma élitra com foguete: no ar, aperte pular de novo para levantar voo. Segure agachar para planar sem impulso.",
+		"Pequena demais para ser notada: os monstros não a atacam até ela atacar um deles (a trégua volta 30 segundos depois).",
+		"Come como um passarinho: cada alimento enche o dobro e a fome cai pela metade.",
+		"Regenera vida aos poucos e faz as plantas por perto crescerem.",
+		"Vitória-régia: ao pousar na água, uma vitória-régia surge sob seus pés e a mantém boiando (agache para mergulhar).",
+		"Não toma dano de queda, enxerga no escuro, tem sorte, anda 15% mais rápido e alcança blocos 1,5 bloco mais longe."
+	],
+	"disadvantages": [
+		"Tem só um bloco de altura e 6 corações, e seus golpes causam 1 a menos de dano.",
+		"Não veste nenhuma armadura.",
+		"Não sabe nadar: dentro d'água, afunda.",
+		"Voar cansa: a fome cai enquanto ela está no ar."
+	],
+	"ability": {
+		"type": "datura_origins:flower_sanctuary",
+		"name": "Santuário de Flores",
+		"description": "Abre no chão um círculo de flores de 10 blocos por 20 segundos. Nenhum monstro consegue entrar, e quem estiver lá dentro (jogadores e animais domados) recupera 1 coração por segundo. Recarga de 52 segundos.",
+		"cooldown": 1050,
+		"radius": 10,
+		"duration": 400,
+		"heal": 2.0,
+		"interval": 20
+	},
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.scale",
+			"operation": "add_value",
+			"amount": -0.444
+		},
+		{
+			"type": "datura_origins:wing_flight",
+			"speed": 1.25,
+			"exhaustion": 0.015
+		},
+		{
+			"type": "datura_origins:regeneration",
+			"interval": 40,
+			"amount": 1.0
+		},
+		{
+			"type": "datura_origins:growth_aura",
+			"radius": 8,
+			"interval": 20,
+			"attempts": 8,
+			"chance": 0.4
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": -8.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": -1.0
+		},
+		{
+			"type": "datura_origins:no_armor",
+			"message": "datura_origins.message.fairy_armor"
+		},
+		{
+			"type": "datura_origins:food_multiplier",
+			"factor": 2.0
+		},
+		{
+			"type": "datura_origins:hunger_rate",
+			"factor": 0.5
+		},
+		{
+			"type": "datura_origins:monster_truce",
+			"break_on_attack": 600
+		},
+		{
+			"type": "datura_origins:no_swim"
+		},
+		{
+			"type": "datura_origins:lily_pad"
+		},
+		{
+			"type": "datura_origins:damage_immunity",
+			"damage_tag": "minecraft:is_fall"
+		},
+		{
+			"type": "datura_origins:status_effect",
+			"effect": "minecraft:night_vision"
+		},
+		{
+			"type": "datura_origins:status_effect",
+			"effect": "minecraft:luck"
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": 0.15
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:player.block_interaction_range",
+			"operation": "add_value",
+			"amount": 1.5
+		}
+	]
+}

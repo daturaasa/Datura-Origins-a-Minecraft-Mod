@@ -1,0 +1,106 @@
+{
+	"id": "morto_vivo",
+	"order": 16,
+	"name": "Morto-Vivo",
+	"color": "#7C9A5E",
+	"model": "chifres_galhada",
+	"nether_suppressed": true,
+	"description": "Morreu, mas não aceitou. A alma rastejou de volta para o próprio corpo e agora só quer acertar as contas. Não come, não descansa, e os mortos do mundo o reconhecem como um deles. Cada monstro que derruba fortalece o pequeno exército que ele ergue do chão.",
+	"advantages": [
+		"Não precisa comer.",
+		"Zumbis, esqueletos e outros mortos-vivos o ignoram, a menos que ele ataque.",
+		"Corpo duro de cadáver: 2 corações a mais, 2 de armadura natural e 1 a mais de dano.",
+		"Corpo sem vida: imune a veneno e fome.",
+		"Matar monstros fortalece seus zumbis, em 4 níveis (no lugar da experiência)."
+	],
+	"disadvantages": [
+		"O fogo causa o dobro de dano.",
+		"A água o fere.",
+		"Poções e poderes de cura o machucam; efeitos ruins lhe dão força.",
+		"O sol o deixa 10% mais lento.",
+		"No Nether perde todas as vantagens e a habilidade (tudo volta ao sair, sem perder progresso)."
+	],
+	"ability": {
+		"type": "datura_origins:summon_undead",
+		"name": "Exército dos Mortos",
+		"description": "Ergue 3 zumbis que atacam quem você atacar (ou quem te atacar) por 30 segundos. Começam com cota de malha; com mais níveis ganham espadas e armaduras melhores, até ferro encantado. Recarga de 1 minuto.",
+		"cooldown": 1200,
+		"count": 3,
+		"duration": 600
+	},
+	"powers": [
+		{
+			"type": "datura_origins:no_hunger"
+		},
+		{
+			"type": "datura_origins:monster_truce",
+			"undead_only": true
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": 4.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor",
+			"operation": "add_value",
+			"amount": 2.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 1.0
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_tag": "minecraft:is_fire",
+			"multiplier": 2.0
+		},
+		{
+			"type": "datura_origins:environment_damage",
+			"when": "water",
+			"interval": 20,
+			"damage": 2.0
+		},
+		{
+			"type": "datura_origins:inverted_potions",
+			"damage_per_level": 2.0
+		},
+		{
+			"type": "datura_origins:maturity",
+			"thresholds": [
+				1125,
+				3375,
+				7500
+			],
+			"points_per_health": 0.5,
+			"only_monsters": true,
+			"colors": [
+				"#6E7F5A",
+				"#8FA35E",
+				"#B9C77A",
+				"#E2E8B0"
+			],
+			"grow_message": "datura_origins.message.undead_grow",
+			"from_xp": false,
+			"from_kills": true
+		},
+		{
+			"type": "datura_origins:effect_immunity",
+			"effects": [
+				"minecraft:poison",
+				"minecraft:hunger"
+			]
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": -0.1,
+			"when": "day"
+		}
+	]
+}

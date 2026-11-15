@@ -1,0 +1,88 @@
+{
+	"id": "elfo",
+	"order": 2,
+	"name": "Elfo",
+	"color": "#7FD6A0",
+	"description": "Leve, atento e paciente. Atravessa florestas sem fazer barulho e acerta flechas onde outros mal enxergam o alvo, mas tem o corpo frágil.",
+	"advantages": [
+		"10% mais rápido e cai de 3 blocos a mais sem se machucar.",
+		"Flechas e outros projéteis causam 50% a mais de dano.",
+		"A fome cai na metade do ritmo.",
+		"Visão noturna permanente.",
+		"Os animais não fogem dele."
+	],
+	"disadvantages": [
+		"Só tem 9 corações.",
+		"Explosões causam 50% a mais de dano.",
+		"Recusa carne podre, olho de aranha e batata venenosa.",
+		"No Nether causa 1,5 a menos de dano corpo a corpo."
+	],
+	"ability": {
+		"type": "datura_origins:dash",
+		"name": "Recuo Ágil",
+		"description": "Salta para trás e, no meio do salto, dispara para a frente uma esfera de energia que explode ao acertar, causando 6 de dano e empurrando o alvo. Recarga de 7,5 segundos.",
+		"cooldown": 150,
+		"power": 1.3,
+		"lift": 0.45,
+		"orb": true,
+		"orb_damage": 6,
+		"orb_speed": 1.6
+	},
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": 0.1
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.safe_fall_distance",
+			"operation": "add_value",
+			"amount": 3.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": -2.0
+		},
+		{
+			"type": "datura_origins:archery",
+			"multiplier": 1.5
+		},
+		{
+			"type": "datura_origins:hunger_rate",
+			"factor": 0.5
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_tag": "minecraft:is_explosion",
+			"multiplier": 1.5
+		},
+		{
+			"type": "datura_origins:restricted_diet",
+			"forbidden": [
+				"minecraft:rotten_flesh",
+				"minecraft:spider_eye",
+				"minecraft:poisonous_potato"
+			],
+			"message": "datura_origins.message.elf_food"
+		},
+		{
+			"type": "datura_origins:status_effect",
+			"effect": "minecraft:night_vision"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": -1.5,
+			"when": "nether"
+		},
+		{
+			"type": "datura_origins:marker",
+			"kind": "animal_friend"
+		}
+	]
+}

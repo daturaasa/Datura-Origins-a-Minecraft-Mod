@@ -1,0 +1,100 @@
+{
+	"id": "raposa_mistica",
+	"order": 8,
+	"name": "Raposa Mística",
+	"variant_name": "Fogo",
+	"color": "#E8823F",
+	"model": ["cauda_raposa_laranja", "orelhas_raposa_laranja"],
+	"description": "Raposa encantada que vive entre as pessoas, mas prefere a companhia das raposas. Existe em duas formas, Fogo e Neve, escolhidas aqui mesmo antes de confirmar.",
+	"advantages": [
+		"Mais forte que um humano: +1,5 de dano.",
+		"Não toma dano de queda.",
+		"Forma de Fogo: imune a fogo, e cada golpe incendeia o inimigo.",
+		"Forma de Fogo: passa por arbustos de frutas doces sem se machucar.",
+		"Passos silenciosos. Parada por 3 segundos, fica completamente camuflada e nenhum monstro a percebe.",
+		"As raposas confiam nela e a seguem por um tempo.",
+		"Visão noturna permanente."
+	],
+	"disadvantages": [
+		"Só tem 8 corações.",
+		"Nenhum efeito funciona nela, bom ou ruim (nem a maçã dourada).",
+		"Só come carne.",
+		"Não sabe nadar: afunda na água.",
+		"Explosões causam 50% a mais de dano."
+	],
+	"ability": {
+		"type": "datura_origins:fox_clones",
+		"name": "Ilusões de Raposa",
+		"description": "Cria três ilusões suas que lutam ao seu lado por 10 segundos e queimam os inimigos que atingem. Recarga de 67 segundos.",
+		"cooldown": 1350,
+		"count": 3,
+		"duration": 200,
+		"snow": false
+	},
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 1.5
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": -4.0
+		},
+		{
+			"type": "datura_origins:damage_immunity",
+			"damage_tag": "minecraft:is_fall"
+		},
+		{
+			"type": "datura_origins:damage_immunity",
+			"damage_tag": "minecraft:is_fire"
+		},
+		{
+			"type": "datura_origins:flag",
+			"flag": "fireproof",
+			"when": "always"
+		},
+		{
+			"type": "datura_origins:hit_effect",
+			"mode": "fire",
+			"seconds": 4
+		},
+		{
+			"type": "datura_origins:damage_immunity",
+			"damage_type": "minecraft:sweet_berry_bush"
+		},
+		{
+			"type": "datura_origins:stealth",
+			"still_ticks": 60
+		},
+		{
+			"type": "datura_origins:fox_friend"
+		},
+		{
+			"type": "datura_origins:effect_immunity",
+			"all": true
+		},
+		{
+			"type": "datura_origins:restricted_diet",
+			"allowed": [
+				"#minecraft:meat"
+			],
+			"message": "datura_origins.message.meat_only"
+		},
+		{
+			"type": "datura_origins:no_swim"
+		},
+		{
+			"type": "datura_origins:status_effect",
+			"effect": "minecraft:night_vision"
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_tag": "minecraft:is_explosion",
+			"multiplier": 1.5
+		}
+	]
+}

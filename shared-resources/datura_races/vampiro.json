@@ -1,0 +1,94 @@
+{
+	"id": "vampiro",
+	"order": 6,
+	"name": "Vampiro",
+	"color": "#C7263E",
+	"description": "Criatura da noite que vive de sangue. É mais forte e mais rápido que um humano, mas o sol o destrói.",
+	"advantages": [
+		"Mais forte e mais rápido que um humano: +2 de dano, +15% de velocidade e 2 corações a mais.",
+		"Visão noturna permanente.",
+		"Forma de morcego: pule no ar para virar morcego e voar livremente. Ao pousar ou desligar o voo, volta ao normal e precisa esperar 30 segundos para se transformar de novo."
+	],
+	"disadvantages": [
+		"Só se alimenta de sangue, usando a Mordida Vampírica. Comida comum não serve.",
+		"A fome cai mais rápido, e bem mais rápido na forma de morcego.",
+		"O sol queima: de dia, em céu aberto, ele pega fogo e morre rápido. O fogo também causa 50% a mais de dano.",
+		"Com a fome zerada, perde todos os bônus e poderes. Só a mordida continua funcionando."
+	],
+	"ability": {
+		"type": "datura_origins:vampire_bite",
+		"name": "Mordida Vampírica",
+		"description": "Agarra a criatura à frente e bebe o sangue dela por 1,5 segundo, recuperando vida e fome. Sangue de monstro envenena. Recarga de 12 segundos.",
+		"cooldown": 240,
+		"range": 3.0,
+		"duration": 40,
+		"hits": 7,
+		"damage_per_hit": 1.8,
+		"heal_ratio": 1.3,
+		"food_ratio": 1.2,
+		"saturation_ratio": 0.4,
+		"monster_effects": [
+			{
+				"effect": "minecraft:poison",
+				"duration": 80,
+				"amplifier": 0
+			}
+		]
+	},
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 2.0,
+			"requires_food": true
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": 0.15,
+			"requires_food": true
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": 4.0,
+			"requires_food": true
+		},
+		{
+			"type": "datura_origins:status_effect",
+			"effect": "minecraft:night_vision",
+			"requires_food": true
+		},
+		{
+			"type": "datura_origins:bat_form",
+			"fly_speed": 0.06,
+			"cooldown": 600,
+			"exhaustion_per_second": 0.6,
+			"requires_food": true
+		},
+		{
+			"type": "datura_origins:sunlight_damage",
+			"interval": 20,
+			"damage": 3.0,
+			"fire_seconds": 4,
+			"helmet_protects": false
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_tag": "minecraft:is_fire",
+			"multiplier": 1.5
+		},
+		{
+			"type": "datura_origins:restricted_diet",
+			"allowed": [],
+			"message": "datura_origins.message.blood_only"
+		},
+		{
+			"type": "datura_origins:hunger_rate",
+			"factor": 1.5
+		}
+	]
+}

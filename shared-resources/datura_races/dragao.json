@@ -1,0 +1,168 @@
+{
+	"id": "dragao",
+	"order": 7,
+	"name": "Dragão",
+	"color": "#E2593A",
+	"model": "cauda_vermelha",
+	"description": "Um dragão em corpo de gente. Cresce, fica mais forte e mais resistente conforme mata monstros.",
+	"advantages": [
+		"Couraça natural igual a uma armadura de ferro completa. Ela fica mais dura e o corpo ganha mais corações a cada estágio de maturidade.",
+		"Mais forte que um humano: o dano dos golpes sobe a cada estágio.",
+		"Imune a fogo e lava, e recupera vida dentro das chamas. O fogo não gruda no corpo.",
+		"Não sofre repulsão (knockback).",
+		"Cresce matando monstros: cada estágio de maturidade deixa o corpo maior e mais forte."
+	],
+	"disadvantages": [
+		"Não pode usar armaduras: são pequenas demais para ele.",
+		"Só come carne.",
+		"Precisa de espaço: com menos de 6 blocos livres acima, fica lento, treme e sente mais fome.",
+		"Não ganha experiência: no lugar dela, a barra mostra a maturidade."
+	],
+	"ability": {
+		"type": "datura_origins:fireball",
+		"name": "Bola de Fogo",
+		"description": "Dispara uma bola de fogo que explode com a força de uma TNT, incendeia quem estiver perto e o chão em volta. O dano cresce com a maturidade. Recarga de 15 segundos.",
+		"cooldown": 300,
+		"speed": 1.6,
+		"life": 50,
+		"explosion_power": 4.0,
+		"block_power": 1.5,
+		"fire_count": 12,
+		"fire_radius": 3,
+		"maturity_damage": [
+			0.6,
+			0.85,
+			1.1
+		]
+	},
+	"powers": [
+		{
+			"type": "datura_origins:maturity",
+			"thresholds": [
+				3750,
+				11250
+			],
+			"points_per_health": 0.5,
+			"only_monsters": true,
+			"colors": [
+				"#7ED957",
+				"#F2B33D",
+				"#D9364A"
+			],
+			"from_xp": false,
+			"from_kills": true
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.scale",
+			"maturity_range": [
+				0.389,
+				0.944
+			],
+			"smooth": true,
+			"smooth_step": 0.02,
+			"check_space": true
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"stage_values": [
+				4,
+				8,
+				12
+			]
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor",
+			"stage_values": [
+				15,
+				17,
+				20
+			]
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor_toughness",
+			"stage_values": [
+				0,
+				2,
+				4
+			]
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"stage_values": [
+				1.0,
+				2.0,
+				3.0
+			]
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.knockback_resistance",
+			"operation": "add_value",
+			"amount": 1.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.step_height",
+			"stage_values": [
+				0.4,
+				0.5,
+				0.6
+			]
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:player.block_interaction_range",
+			"stage_values": [
+				0.5,
+				1.0,
+				1.5
+			]
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:player.entity_interaction_range",
+			"stage_values": [
+				0.5,
+				1.0,
+				1.5
+			]
+		},
+		{
+			"type": "datura_origins:damage_immunity",
+			"damage_tag": "minecraft:is_fire"
+		},
+		{
+			"type": "datura_origins:flag",
+			"flag": "fireproof",
+			"when": "always"
+		},
+		{
+			"type": "datura_origins:regeneration",
+			"when": "in_heat",
+			"interval": 10,
+			"amount": 1.0
+		},
+		{
+			"type": "datura_origins:restricted_diet",
+			"allowed": [
+				"#minecraft:meat"
+			],
+			"message": "datura_origins.message.meat_only"
+		},
+		{
+			"type": "datura_origins:no_armor",
+			"message": "datura_origins.message.no_armor"
+		},
+		{
+			"type": "datura_origins:claustrophobia",
+			"clearance": 6,
+			"slowness": 0,
+			"exhaustion_per_second": 0.25
+		}
+	]
+}

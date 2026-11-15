@@ -1,0 +1,140 @@
+{
+	"id": "minotauro",
+	"order": 11,
+	"name": "Minotauro",
+	"color": "#A0522D",
+	"model": "chifres_touro",
+	"description": "Gigante com cabeça de touro, criado nos labirintos de pedra. Lento e pesado, mas cada golpe derruba muralhas. Odeia ser encurralado, e quando sangra de verdade a fúria toma conta: bufando fumaça, fica ainda mais forte.",
+	"advantages": [
+		"3 blocos de altura, com 3 corações a mais, 3 de dano a mais e 6 de armadura natural.",
+		"Quebra blocos 60% mais rápido e sobe degraus mais altos.",
+		"A fome cai mais devagar.",
+		"Pisada firme: quase impossível de empurrar."
+	],
+	"disadvantages": [
+		"Grande demais para portas e túneis comuns.",
+		"Ataca 20% mais devagar e anda 5% mais devagar.",
+		"Fica lento e cansado em lugares apertados.",
+		"Vegetariano, e cada alimento enche 40% menos.",
+		"Os chifres não deixam usar capacete.",
+		"Quedas pesadas: dano de queda dobrado."
+	],
+	"passives": [
+		"Fúria do Touro: com 4 corações ou menos entra em fúria, com força e regeneração fortes, bufando fumaça. Passa quando volta a 6 corações."
+	],
+	"ability": {
+		"type": "datura_origins:boulder",
+		"name": "Arremesso de Rocha",
+		"description": "Arranca um bloco grande de pedra do chão, ergue acima da cabeça e arremessa na mira: causa 10 de dano, explode no impacto e solta estilhaços. Precisa estar no chão. Recarga de 30 segundos.",
+		"cooldown": 600,
+		"windup": 14,
+		"speed": 1.25,
+		"power": 2.8,
+		"damage": 10,
+		"size": 1.4
+	},
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.scale",
+			"operation": "add_value",
+			"amount": 0.667
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": 6.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 3.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor",
+			"operation": "add_value",
+			"amount": 6.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor_toughness",
+			"operation": "add_value",
+			"amount": 2.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.knockback_resistance",
+			"operation": "add_value",
+			"amount": 0.7
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_speed",
+			"operation": "add_multiplied_base",
+			"amount": -0.2
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": -0.05
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:player.block_break_speed",
+			"operation": "add_multiplied_base",
+			"amount": 0.6
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.step_height",
+			"operation": "add_value",
+			"amount": 0.4
+		},
+		{
+			"type": "datura_origins:hunger_rate",
+			"factor": 0.6
+		},
+		{
+			"type": "datura_origins:claustrophobia",
+			"clearance": 4,
+			"slowness": 1,
+			"exhaustion_per_second": 0.2
+		},
+		{
+			"type": "datura_origins:restricted_diet",
+			"forbidden": [
+				"#minecraft:meat",
+				"#minecraft:fishes",
+				"minecraft:rabbit_stew"
+			],
+			"message": "datura_origins.message.vegetarian"
+		},
+		{
+			"type": "datura_origins:food_multiplier",
+			"factor": 0.6
+		},
+		{
+			"type": "datura_origins:berserk",
+			"threshold": 8,
+			"release": 12,
+			"strength": 1,
+			"regen": 1
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_tag": "minecraft:is_fall",
+			"multiplier": 2.0
+		},
+		{
+			"type": "datura_origins:no_armor",
+			"slots": [
+				"head"
+			],
+			"message": "datura_origins.message.no_helmet"
+		}
+	]
+}

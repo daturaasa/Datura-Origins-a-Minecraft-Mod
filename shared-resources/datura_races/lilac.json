@@ -1,0 +1,89 @@
+{
+	"id": "lilac",
+	"order": 19,
+	"name": "Lilac",
+	"color": "#FFC83A",
+	"description": "Uma gênia da lâmpada que só realiza os próprios desejos. Cercada de ouro e viciada em apostas, sente o cheiro de minério de longe e transforma qualquer coisa numa aposta.",
+	"advantages": [
+		"Mais forte e resistente que um humano: 2 a mais de dano, 2 corações a mais e 2 de armadura.",
+		"Fortuna natural: os minérios que ela quebra caem como se a ferramenta tivesse Fortuna II, mesmo sem encantamento.",
+		"Ganha 30% mais experiência e tem sorte.",
+		"Toque de Midas: monstros derrotados às vezes deixam pepitas de ouro."
+	],
+	"disadvantages": [
+		"Só usa ferramentas e armas de ouro, diamante ou netherita.",
+		"Sem ouro no inventário, causa 2 a menos de dano e anda 10% mais devagar.",
+		"Ouro molhado: 25% mais lenta na água."
+	],
+	"ability": {
+		"type": "datura_origins:casino",
+		"name": "Cassino",
+		"description": "Aposta o item da mão numa roleta que só ela vê: pode perder tudo, empatar ou multiplicar por 2, 3, 4 ou até 5. Quanto mais raro o item, mais difícil ganhar. Recarga de 5 minutos.",
+		"cooldown": 6000,
+		"spin": 140
+	},
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 2.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": 4.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor",
+			"operation": "add_value",
+			"amount": 2.0
+		},
+		{
+			"type": "datura_origins:greed",
+			"ore_chance": 0.0,
+			"midas_chance": 0.3
+		},
+		{
+			"type": "datura_origins:xp_multiplier",
+			"factor": 1.3
+		},
+		{
+			"type": "datura_origins:noble_tools",
+			"message": "datura_origins.message.noble_tools"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": -2.0,
+			"when": "no_gold"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": -0.1,
+			"when": "no_gold"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": -0.25,
+			"when": "water"
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.luck",
+			"operation": "add_value",
+			"amount": 2.0
+		},
+		{
+			"type": "datura_origins:fortune",
+			"level": 2
+		}
+	]
+}

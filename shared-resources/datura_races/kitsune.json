@@ -1,0 +1,125 @@
+{
+	"id": "kitsune",
+	"order": 20,
+	"name": "Kitsune",
+	"variant_name": "Celestial",
+	"color": "#BDE7FF",
+	"model": [
+		"caudas_kitsune",
+		"orelhas_raposa_branca"
+	],
+	"description": "Uma raposa que viveu mil anos e ganhou nove caudas brancas como a neve. Mensageira dos santuários, guarda uma pérola estelar que a traz de volta da morte, e suas chamas-fantasma queimam e congelam quem ela caça.",
+	"advantages": [
+		"Ágil: 2 corações a mais, 1,5 a mais de dano, corre 18% mais rápido e pula mais alto.",
+		"Olhos de raposa: visão noturna, e a sorte sempre a acompanha.",
+		"Não toma dano de queda.",
+		"Fogo de raposa e gelo espiritual: os golpes queimam e congelam, e ela é imune ao gelo.",
+		"Patas leves: anda sobre a neve fofa sem afundar.",
+		"As raposas a tratam como uma delas."
+	],
+	"disadvantages": [
+		"Caudas encharcadas: 30% mais lenta na água.",
+		"Explosões causam 50% mais dano.",
+		"Criatura da noite: de dia causa 1 a menos de dano."
+	],
+	"passives": [
+		"Pérola Estelar: ao morrer, volta de pé com 1 coração, empurrando e ferindo quem estiver perto (a cada 10 minutos)."
+	],
+	"ability": {
+		"type": "datura_origins:spirit_orb",
+		"name": "Orbe Espiritual",
+		"description": "Lança uma esfera de mana azul na direção da mira. Se acertar uma criatura, explode, causa 5 de dano e congela os inimigos em volta, depois volta para a Kitsune e explode de novo ao chegar. Se não acertar ninguém, só volta. Recarga de 9 segundos.",
+		"cooldown": 180,
+		"range": 14,
+		"speed": 1.1,
+		"damage": 5,
+		"radius": 2.5,
+		"return_damage": 5,
+		"return_radius": 3.5
+	},
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": 4.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 1.5
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": 0.18
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.jump_strength",
+			"operation": "add_value",
+			"amount": 0.15
+		},
+		{
+			"type": "datura_origins:status_effect",
+			"effect": "minecraft:night_vision"
+		},
+		{
+			"type": "datura_origins:status_effect",
+			"effect": "minecraft:luck"
+		},
+		{
+			"type": "datura_origins:damage_immunity",
+			"damage_tag": "minecraft:is_fall"
+		},
+		{
+			"type": "datura_origins:second_chance",
+			"cooldown": 12000,
+			"regen_seconds": 6,
+			"burst_damage": 8,
+			"burst_radius": 5,
+			"burst_push": 1.8
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": -0.3,
+			"when": "water"
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_tag": "minecraft:is_explosion",
+			"multiplier": 1.5
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": -1.0,
+			"when": "day"
+		},
+		{
+			"type": "datura_origins:fox_friend"
+		},
+		{
+			"type": "datura_origins:hit_effect",
+			"mode": "fire",
+			"seconds": 4
+		},
+		{
+			"type": "datura_origins:hit_effect",
+			"mode": "frost",
+			"seconds": 4
+		},
+		{
+			"type": "datura_origins:damage_immunity",
+			"damage_tag": "minecraft:is_freezing"
+		},
+		{
+			"type": "datura_origins:powder_snow_walker"
+		}
+	]
+}

@@ -1,0 +1,90 @@
+{
+	"id": "elfo_noturno",
+	"order": 4,
+	"name": "Elfo Noturno",
+	"color": "#9B5CFF",
+	"description": "Elfo que trocou o sol pelas sombras. Assassino silencioso que caça quando a lua sobe e some na escuridão num piscar.",
+	"advantages": [
+		"À noite causa 2 a mais de dano e fica 15% mais rápido.",
+		"Passos silenciosos, de dia e de noite.",
+		"Visão noturna permanente.",
+		"Cai de 3 blocos a mais sem se machucar.",
+		"Seus golpes causam decomposição (Wither) por 3 segundos.",
+		"Ganha 25% mais experiência."
+	],
+	"disadvantages": [
+		"De dia causa 1,5 a menos de dano.",
+		"Só tem 9 corações.",
+		"O fogo causa 50% a mais de dano.",
+		"Os animais fogem dele."
+	],
+	"ability": {
+		"type": "datura_origins:shadow_step",
+		"name": "Passo Sombrio",
+		"description": "Some em sombra e reaparece em qualquer chão firme que estiver olhando, até 32 blocos, ficando invisível por 3 segundos. Nunca atravessa paredes. Recarga de 12 segundos.",
+		"cooldown": 240,
+		"range": 32,
+		"invis": 60
+	},
+	"powers": [
+		{
+			"type": "datura_origins:status_effect",
+			"effect": "minecraft:night_vision"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 2.0,
+			"when": "night"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": 0.15,
+			"when": "night"
+		},
+		{
+			"type": "datura_origins:flag",
+			"flag": "silent_steps",
+			"when": "always"
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.safe_fall_distance",
+			"operation": "add_value",
+			"amount": 3.0
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": -1.5,
+			"when": "day"
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": -2.0
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_tag": "minecraft:is_fire",
+			"multiplier": 1.5
+		},
+		{
+			"type": "datura_origins:hit_effect",
+			"mode": "wither",
+			"seconds": 3
+		},
+		{
+			"type": "datura_origins:xp_multiplier",
+			"factor": 1.25
+		},
+		{
+			"type": "datura_origins:scare_animals"
+		}
+	]
+}

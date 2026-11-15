@@ -1,13 +1,9 @@
-projeto/build/
-projeto/.gradle/
-projeto/run/
-logs/
-builds/
+.gradle/
+build/
+run/
+out/
+.idea/
+.vscode/
 *.log
-
-# local helper scripts and working files (kept on the developer machine only)
-*.bat
-LEIA-ME.md
-ferramentas/
-arte/
-!projeto/gradlew.bat
+*.iml
+release/*.jar

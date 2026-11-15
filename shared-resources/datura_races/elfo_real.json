@@ -1,0 +1,115 @@
+{
+	"id": "elfo_real",
+	"order": 3,
+	"name": "Elfo Real",
+	"color": "#FFD45E",
+	"description": "Elfo da linhagem real, criado entre ouro, honra e magia antiga. Um pouco mais alto que um humano, protegido por uma égide dourada.",
+	"advantages": [
+		"12% mais rápido e cai de 3 blocos a mais sem se machucar.",
+		"+2 de armadura natural.",
+		"Flechas e outros projéteis causam 50% a mais de dano.",
+		"Ganha 25% mais experiência.",
+		"Visão noturna permanente.",
+		"Os animais não fogem dele.",
+		"Égide Dourada: a cada 60 segundos ganha um contorno dourado que anula o próximo ataque. Se for corpo a corpo, o atacante e quem estiver perto são arremessados. Se for projétil ou habilidade lançada, ele se teletransporta antes do impacto (e cai devagar se surgir no ar)."
+	],
+	"disadvantages": [
+		"Só tem 9 corações e causa 1 a menos de dano corpo a corpo.",
+		"Explosões causam 50% a mais de dano.",
+		"Quando a queda machuca, machuca 50% mais.",
+		"Recusa carne podre, olho de aranha e batata venenosa.",
+		"A fome cai 25% mais rápido."
+	],
+	"ability": {
+		"type": "datura_origins:mirror_shield",
+		"name": "Égide Espelhada",
+		"description": "Abre à frente um círculo rúnico dourado por 3 segundos. Todo golpe de um inimigo nesse tempo é anulado e devolvido a ele. Enquanto o escudo está aberto, anda devagar e não ataca. Recarga de 30 segundos.",
+		"cooldown": 600,
+		"duration": 60,
+		"reflect": 1.0
+	},
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.scale",
+			"operation": "add_value",
+			"amount": 0.08
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor",
+			"operation": "add_value",
+			"amount": 2.0
+		},
+		{
+			"type": "datura_origins:status_effect",
+			"effect": "minecraft:night_vision"
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": -1.0
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_tag": "minecraft:is_fall",
+			"multiplier": 1.5
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": 0.12
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.safe_fall_distance",
+			"operation": "add_value",
+			"amount": 3.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": -2.0
+		},
+		{
+			"type": "datura_origins:xp_multiplier",
+			"factor": 1.25
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_tag": "minecraft:is_explosion",
+			"multiplier": 1.5
+		},
+		{
+			"type": "datura_origins:restricted_diet",
+			"forbidden": [
+				"minecraft:rotten_flesh",
+				"minecraft:spider_eye",
+				"minecraft:poisonous_potato"
+			],
+			"message": "datura_origins.message.refined_palate"
+		},
+		{
+			"type": "datura_origins:hunger_rate",
+			"factor": 1.25
+		},
+		{
+			"type": "datura_origins:archery",
+			"multiplier": 1.5
+		},
+		{
+			"type": "datura_origins:golden_ward",
+			"interval": 1200,
+			"push": 1.6,
+			"min": 6,
+			"max": 12
+		},
+		{
+			"type": "datura_origins:marker",
+			"kind": "animal_friend"
+		}
+	]
+}

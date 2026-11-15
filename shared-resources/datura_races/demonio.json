@@ -1,0 +1,200 @@
+{
+	"id": "demonio",
+	"order": 17,
+	"name": "Demônio",
+	"color": "#A3121F",
+	"model": "chifres_demonio",
+	"description": "Criatura das trevas que vive de enganar e negociar com os humanos. Sorri na troca e cobra depois. Os monstros o reconhecem e se afastam, e o Nether o recebe como em casa. Cada alma que colhe o torna mais forte, mas o brilho de um encantamento o fere como nada mais.",
+	"advantages": [
+		"Mais forte e 10% mais rápido que um humano: 2 a mais de dano, 2 corações a mais, 4 de armadura natural e recebe 40% menos empurrão.",
+		"No Nether causa mais 2 de dano e ganha mais 3 de armadura.",
+		"Lábia infernal: os aldeões dão desconto.",
+		"Os monstros não o atacam, a menos que ele ataque primeiro.",
+		"Quanto mais perto da morte, mais rápido regenera.",
+		"Imune ao fogo, enxerga no escuro e seus golpes incendeiam os inimigos.",
+		"Maldições (Vínculo e Desaparecimento) não o afetam."
+	],
+	"disadvantages": [
+		"Armas encantadas causam 75% a mais de dano nele, e ele não pode usar nem vestir nada encantado.",
+		"Carregar qualquer item encantado no inventário causa dano.",
+		"Veneno, fome e decomposição o machucam 50% mais.",
+		"Só come carne.",
+		"Dentro da água causa 2 a menos de dano."
+	],
+	"passives": [
+		"Colheita de almas: quem ele mata deixa almas vermelhas (mais almas quanto mais forte a vítima). Ao absorvê-las, amadurece em 5 fases, cada uma com mais dano, vida e armadura. Na forma final, Espinhos Infernais devolvem 30% do dano recebido a quem o atacou. A experiência normal continua à parte."
+	],
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 2.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": 0.1
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 2.0,
+			"when": "nether"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.armor",
+			"operation": "add_value",
+			"amount": 3.0,
+			"when": "nether"
+		},
+		{
+			"type": "datura_origins:marker",
+			"kind": "villager_discount"
+		},
+		{
+			"type": "datura_origins:monster_truce"
+		},
+		{
+			"type": "datura_origins:desperate_regeneration",
+			"max": 1.0,
+			"interval": 20
+		},
+		{
+			"type": "datura_origins:damage_immunity",
+			"damage_tag": "minecraft:is_fire"
+		},
+		{
+			"type": "datura_origins:enchanted_weakness",
+			"multiplier": 1.75,
+			"message": "datura_origins.message.no_enchanted"
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_types": [
+				"minecraft:magic",
+				"minecraft:wither",
+				"minecraft:starve"
+			],
+			"multiplier": 1.5
+		},
+		{
+			"type": "datura_origins:restricted_diet",
+			"allowed": [
+				"#minecraft:meat"
+			],
+			"message": "datura_origins.message.meat_only"
+		},
+		{
+			"type": "datura_origins:flag",
+			"flag": "fireproof",
+			"when": "always"
+		},
+		{
+			"type": "datura_origins:status_effect",
+			"effect": "minecraft:night_vision"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": -2.0,
+			"when": "water"
+		},
+		{
+			"type": "datura_origins:flag",
+			"flag": "curse_immune",
+			"when": "always"
+		},
+		{
+			"type": "datura_origins:maturity",
+			"thresholds": [
+				250,
+				700,
+				1400,
+				2400
+			],
+			"from_kills": false,
+			"keep_xp": true,
+			"colors": [
+				"#7A0F1A",
+				"#A3121F",
+				"#C8102E",
+				"#8E0B2E",
+				"#5C0012"
+			]
+		},
+		{
+			"type": "datura_origins:soul_harvest",
+			"points_per_health": 1.0,
+			"player_points": 60,
+			"max_orbs": 10,
+			"thorns": 0.3
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 0,
+			"stage_values": [
+				0,
+				1,
+				2,
+				3,
+				4
+			]
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": 0,
+			"stage_values": [
+				0,
+				2,
+				3,
+				4,
+				6
+			]
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor",
+			"operation": "add_value",
+			"amount": 0,
+			"stage_values": [
+				0,
+				1,
+				2,
+				3,
+				4
+			]
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": 4.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.armor",
+			"operation": "add_value",
+			"amount": 4.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.knockback_resistance",
+			"operation": "add_value",
+			"amount": 0.4
+		},
+		{
+			"type": "datura_origins:hit_effect",
+			"mode": "fire",
+			"seconds": 3
+		}
+	]
+}

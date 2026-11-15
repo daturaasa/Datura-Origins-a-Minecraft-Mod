@@ -1,0 +1,114 @@
+{
+	"id": "elfo_lua",
+	"order": 5,
+	"name": "Elfo da Lua",
+	"color": "#B8BCFF",
+	"description": "Elfo gracioso que dança sob o luar. Um pouco mais alto que um humano, delicado de dia e perigoso quando a lua nasce.",
+	"advantages": [
+		"À noite causa 3 a mais de dano, fica 15% mais rápido e ganha +4 de armadura.",
+		"Visão noturna permanente e passos silenciosos.",
+		"Os animais não fogem dele.",
+		"O Warden não o ataca.",
+		"Seus golpes causam decomposição (Wither) por 3 segundos.",
+		"Marca do Eclipse: à noite, a cada 3 golpes no mesmo alvo um clarão lunar explode nele, causando 5 de dano e cegueira.",
+		"À noite tem mais sorte em pescas e baús."
+	],
+	"disadvantages": [
+		"De dia causa 2 a menos de dano.",
+		"Só tem 9 corações.",
+		"O fogo causa 50% a mais de dano."
+	],
+	"ability": {
+		"type": "datura_origins:moonfall",
+		"name": "Queda da Lua",
+		"description": "Ergue os braços e invoca uma lua enorme: quem está perto fica cego e muito lento, e ele não pode atacar durante a invocação. Depois a lua cai sobre o alvo da mira, abrindo uma cratera e causando dano altíssimo. Recarga de 4 minutos.",
+		"cooldown": 4800,
+		"windup": 50,
+		"radius": 10,
+		"damage": 34,
+		"blast": 6,
+		"crater": 4.5,
+		"range": 40
+	},
+	"powers": [
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.scale",
+			"operation": "add_value",
+			"amount": 0.08
+		},
+		{
+			"type": "datura_origins:status_effect",
+			"effect": "minecraft:night_vision"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 3.0,
+			"when": "night"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "add_multiplied_base",
+			"amount": 0.15,
+			"when": "night"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.armor",
+			"operation": "add_value",
+			"amount": 4.0,
+			"when": "night"
+		},
+		{
+			"type": "datura_origins:flag",
+			"flag": "silent_steps",
+			"when": "always"
+		},
+		{
+			"type": "datura_origins:marker",
+			"kind": "animal_friend"
+		},
+		{
+			"type": "datura_origins:marker",
+			"kind": "warden_friend"
+		},
+		{
+			"type": "datura_origins:hit_effect",
+			"mode": "wither",
+			"seconds": 3
+		},
+		{
+			"type": "datura_origins:moon_mark",
+			"hits": 3,
+			"damage": 5
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.luck",
+			"operation": "add_value",
+			"amount": 3.0,
+			"when": "night"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": -2.0,
+			"when": "day"
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": -2.0
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_tag": "minecraft:is_fire",
+			"multiplier": 1.5
+		}
+	]
+}

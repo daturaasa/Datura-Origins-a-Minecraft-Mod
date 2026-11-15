@@ -1,0 +1,111 @@
+{
+	"id": "sereia_cristal",
+	"order": 13,
+	"name": "Sereia das Profundezas",
+	"variant_of": "sereia",
+	"variant_name": "Profundezas",
+	"color": "#7FE8FF",
+	"model": "cauda_sereia_cristal",
+	"description": "Vive no fundo escuro do oceano, onde a cauda maior se cobriu de cristais que brilham sozinhos. Guarda os segredos antigos do mar e sabe despertar a magia escondida em armas e armaduras.",
+	"advantages": [
+		"Respira debaixo d'água, nada como um golfinho (graça do golfinho e poder do conduíte) e enxerga bem no fundo do mar.",
+		"Também respira fora d'água normalmente.",
+		"Na água causa 7 a mais de dano, ganha 8 de armadura e 5 corações a mais, ataca 30% mais rápido e regenera meio coração por segundo.",
+		"Debaixo d'água quebra blocos na velocidade normal."
+	],
+	"disadvantages": [
+		"Fora d'água não anda: só se arrasta devagar. Se ficar parada por 3 segundos, senta na própria cauda.",
+		"Escamas secas: depois de 60 segundos longe da água e da chuva, fica lenta e fraca até se molhar de novo.",
+		"Fora d'água tem só 9 corações.",
+		"O fogo causa o dobro de dano.",
+		"A cauda não deixa usar calças nem botas."
+	],
+	"ability": {
+		"type": "datura_origins:blessing_altar",
+		"name": "Altar Abissal",
+		"description": "Abre só para ela uma mesa de encantamento com três encantamentos sorteados, em níveis também sorteados, para o item da mão. Escolher um não custa nada. Recarga de 3 minutos.",
+		"cooldown": 3600,
+		"options": 3
+	},
+	"powers": [
+		{
+			"type": "datura_origins:aquatic",
+			"dry_seconds": 60,
+			"night_vision": true
+		},
+		{
+			"type": "datura_origins:flag",
+			"flag": "mermaid",
+			"when": "always"
+		},
+		{
+			"type": "datura_origins:damage_immunity",
+			"damage_tag": "minecraft:is_drowning"
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 2.0
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": -2.0
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "add_value",
+			"amount": 7.0,
+			"when": "water"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.armor",
+			"operation": "add_value",
+			"amount": 8.0,
+			"when": "water"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.max_health",
+			"operation": "add_value",
+			"amount": 10.0,
+			"when": "water"
+		},
+		{
+			"type": "datura_origins:conditional_attribute",
+			"attribute": "minecraft:generic.attack_speed",
+			"operation": "add_multiplied_base",
+			"amount": 0.3,
+			"when": "water"
+		},
+		{
+			"type": "datura_origins:regeneration",
+			"interval": 20,
+			"amount": 1.0,
+			"when": "in_water"
+		},
+		{
+			"type": "datura_origins:attribute",
+			"attribute": "minecraft:player.submerged_mining_speed",
+			"operation": "add_value",
+			"amount": 0.8
+		},
+		{
+			"type": "datura_origins:damage_multiplier",
+			"damage_tag": "minecraft:is_fire",
+			"multiplier": 2.0
+		},
+		{
+			"type": "datura_origins:no_armor",
+			"slots": [
+				"legs",
+				"feet"
+			],
+			"message": "datura_origins.message.mermaid_armor"
+		}
+	]
+}
