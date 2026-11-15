@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/img/logo.png" alt="Datura Origins" width="820"></p>
 
-<p align="center"><b>Datura Origins v1.0.1</b> · Fabric · Minecraft 1.21.1</p>
+<p align="center"><b>Datura Origins v1.0.2</b> · Fabric · Minecraft 1.21.1</p>
 
 ## Sobre
 
@@ -81,7 +81,7 @@ As teclas podem ser trocadas em *Opções → Controles*.
 ## Instalação
 
 1. Instale o [Fabric Loader](https://fabricmc.net/use/) para o Minecraft 1.21.1.
-2. Coloque o [Fabric API](https://modrinth.com/mod/fabric-api) e o `Datura-Origins-1.0.1-fabric-1.21.1.jar` na pasta `mods`.
+2. Coloque o [Fabric API](https://modrinth.com/mod/fabric-api) e o `Datura-Origins-1.0.2-fabric-1.21.1.jar` na pasta `mods`.
 3. Requer Java 21.
 
 ## Compilando
