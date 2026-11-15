@@ -72,10 +72,8 @@ public final class ModelAnimator {
 		} else {
 			state.since += dt;
 		}
-		String clip = target;
-		if (target.equals("sit")) {
-			clip = state.since < model.length("sit_down") || !model.hasAnimation("sit_idle") ? "sit_down" : "sit_idle";
-		}
+		String clip = !target.equals("sit") ? target
+				: state.since < model.length("sit_down") || !model.hasAnimation("sit_idle") ? "sit_down" : "sit_idle";
 		float rate = rate(clip, speed);
 		float blend = 1.0F - (float) Math.exp(-dt * BLEND_RATE);
 		if (state.clips.isEmpty()) state.clips.put(clip, new float[]{1, 0});
